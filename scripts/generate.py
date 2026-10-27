@@ -208,7 +208,7 @@ def gallery(lang, prefix, page_prefix):
         local = {'en': s['name_zh'], 'zh': s['name_en'], 'ja': s['name_en']}[lang]
         head = {'en': s['name_en'], 'zh': s['name_zh'], 'ja': JA[s['id']]}[lang]
         name = f'<b>{s["order"]:02d} · {head}</b><br><sub>{local}</sub>'
-        tag = {'en': 'source included', 'zh': '含源码', 'ja': 'ソースあり'}[lang] if s['scene'] else {'en': tool(e['card']), 'zh': '提示语加来源', 'ja': 'プロンプト＋出典'}[lang]
+        tag = {'en': 'source included', 'zh': '含源码', 'ja': 'ソースあり'}[lang] if s['scene'] else {'en': 'prompt + source link', 'zh': '提示语加来源', 'ja': 'プロンプト＋出典'}[lang]
         if s['scene'] and lang == 'en': tag += f' · {tool(e["card"])}'
         cells.append(f'<td width="33%" valign="top" align="center"><a href="{page_prefix}{s["slug"]}.md"><img src="{img(s, prefix)}" width="260" alt="{s["name_en"]}"></a><br>{name}<br><sub>{tag}</sub></td>')
     rows = ['<tr>\n' + '\n'.join(cells[i:i + 3]) + '\n</tr>' for i in range(0, len(cells), 3)]

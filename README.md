@@ -37,11 +37,11 @@ The order follows the video we cut from them: neighbouring styles sit on roughly
 <table>
 <tr>
 <td width="33%" valign="top" align="center"><a href="./docs/styles/retro-paper-collage.md"><img src="./assets/previews/retro-paper-collage.webp" width="260" alt="Retro Paper Collage"></a><br><b>01 · Retro Paper Collage</b><br><sub>复古纸张拼贴</sub><br><sub>source included · HTML</sub></td>
-<td width="33%" valign="top" align="center"><a href="./docs/styles/product-ui-2-5d.md"><img src="./assets/posters/product-ui-2-5d.jpg" width="260" alt="Product UI 2.5D Camera"></a><br><b>02 · Product UI 2.5D Camera</b><br><sub>产品界面2.5D运镜</sub><br><sub>Remotion</sub></td>
+<td width="33%" valign="top" align="center"><a href="./docs/styles/product-ui-2-5d.md"><img src="./assets/posters/product-ui-2-5d.jpg" width="260" alt="Product UI 2.5D Camera"></a><br><b>02 · Product UI 2.5D Camera</b><br><sub>产品界面2.5D运镜</sub><br><sub>prompt + source link</sub></td>
 <td width="33%" valign="top" align="center"><a href="./docs/styles/neon-synthwave.md"><img src="./assets/previews/neon-synthwave.webp" width="260" alt="Neon Synthwave"></a><br><b>03 · Neon Synthwave</b><br><sub>霓虹复古Synthwave</sub><br><sub>source included · any stack</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top" align="center"><a href="./docs/styles/hand-drawn-notes.md"><img src="./assets/posters/hand-drawn-notes.jpg" width="260" alt="Hand-drawn Paper Notes"></a><br><b>04 · Hand-drawn Paper Notes</b><br><sub>纸面手绘笔记</sub><br><sub>HTML</sub></td>
+<td width="33%" valign="top" align="center"><a href="./docs/styles/hand-drawn-notes.md"><img src="./assets/posters/hand-drawn-notes.jpg" width="260" alt="Hand-drawn Paper Notes"></a><br><b>04 · Hand-drawn Paper Notes</b><br><sub>纸面手绘笔记</sub><br><sub>prompt + source link</sub></td>
 <td width="33%" valign="top" align="center"><a href="./docs/styles/watercolor.md"><img src="./assets/previews/watercolor.webp" width="260" alt="Watercolor"></a><br><b>05 · Watercolor</b><br><sub>水彩手绘</sub><br><sub>source included · Canvas</sub></td>
 <td width="33%" valign="top" align="center"><a href="./docs/styles/woodcut.md"><img src="./assets/previews/woodcut.webp" width="260" alt="Black-and-white Woodcut"></a><br><b>06 · Black-and-white Woodcut</b><br><sub>黑白木刻版画</sub><br><sub>source included · any stack</sub></td>
 </tr>
@@ -52,18 +52,18 @@ The order follows the video we cut from them: neighbouring styles sit on roughly
 </tr>
 <tr>
 <td width="33%" valign="top" align="center"><a href="./docs/styles/sticker-explainer.md"><img src="./assets/previews/sticker-explainer.webp" width="260" alt="Die-cut Sticker Explainer"></a><br><b>10 · Die-cut Sticker Explainer</b><br><sub>贴纸科普</sub><br><sub>source included · HTML</sub></td>
-<td width="33%" valign="top" align="center"><a href="./docs/styles/feature-3d-character.md"><img src="./assets/posters/feature-3d-character.jpg" width="260" alt="Feature-film 3D Character"></a><br><b>11 · Feature-film 3D Character</b><br><sub>动画电影式3D角色</sub><br><sub>the best technology you can think of</sub></td>
+<td width="33%" valign="top" align="center"><a href="./docs/styles/feature-3d-character.md"><img src="./assets/posters/feature-3d-character.jpg" width="260" alt="Feature-film 3D Character"></a><br><b>11 · Feature-film 3D Character</b><br><sub>动画电影式3D角色</sub><br><sub>prompt + source link</sub></td>
 <td width="33%" valign="top" align="center"><a href="./docs/styles/chinese-ink-wash.md"><img src="./assets/previews/chinese-ink-wash.webp" width="260" alt="Chinese Ink Wash"></a><br><b>12 · Chinese Ink Wash</b><br><sub>中国水墨</sub><br><sub>source included · code</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top" align="center"><a href="./docs/styles/ascii-crt.md"><img src="./assets/previews/ascii-crt.webp" width="260" alt="ASCII Character Visuals"></a><br><b>13 · ASCII Character Visuals</b><br><sub>ASCII字符视觉</sub><br><sub>any stack</sub></td>
-<td width="33%" valign="top" align="center"><a href="./docs/styles/isometric-world.md"><img src="./assets/previews/isometric-world.webp" width="260" alt="Isometric 2.5D World"></a><br><b>14 · Isometric 2.5D World</b><br><sub>等轴2.5D世界</sub><br><sub>any stack</sub></td>
+<td width="33%" valign="top" align="center"><a href="./docs/styles/ascii-crt.md"><img src="./assets/previews/ascii-crt.webp" width="260" alt="ASCII Character Visuals"></a><br><b>13 · ASCII Character Visuals</b><br><sub>ASCII字符视觉</sub><br><sub>prompt + source link</sub></td>
+<td width="33%" valign="top" align="center"><a href="./docs/styles/isometric-world.md"><img src="./assets/previews/isometric-world.webp" width="260" alt="Isometric 2.5D World"></a><br><b>14 · Isometric 2.5D World</b><br><sub>等轴2.5D世界</sub><br><sub>prompt + source link</sub></td>
 <td width="33%" valign="top" align="center"><a href="./docs/styles/van-gogh-impasto.md"><img src="./assets/previews/van-gogh-impasto.webp" width="260" alt="Van Gogh Impasto"></a><br><b>15 · Van Gogh Impasto</b><br><sub>梵高厚涂油画</sub><br><sub>source included · Canvas 2D</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top" align="center"><a href="./docs/styles/psychedelic-shader.md"><img src="./assets/posters/psychedelic-shader.jpg" width="260" alt="Iridescent Psychedelic Shader"></a><br><b>16 · Iridescent Psychedelic Shader</b><br><sub>虹彩迷幻Shader</sub><br><sub>a shader</sub></td>
+<td width="33%" valign="top" align="center"><a href="./docs/styles/psychedelic-shader.md"><img src="./assets/posters/psychedelic-shader.jpg" width="260" alt="Iridescent Psychedelic Shader"></a><br><b>16 · Iridescent Psychedelic Shader</b><br><sub>虹彩迷幻Shader</sub><br><sub>prompt + source link</sub></td>
 <td width="33%" valign="top" align="center"><a href="./docs/styles/claymation.md"><img src="./assets/previews/claymation.webp" width="260" alt="Claymation Stop-motion"></a><br><b>17 · Claymation Stop-motion</b><br><sub>黏土定格</sub><br><sub>source included · Blender</sub></td>
-<td width="33%" valign="top" align="center"><a href="./docs/styles/pixel-game.md"><img src="./assets/posters/pixel-game.jpg" width="260" alt="Pixel Game"></a><br><b>18 · Pixel Game</b><br><sub>像素游戏</sub><br><sub>Canvas</sub></td>
+<td width="33%" valign="top" align="center"><a href="./docs/styles/pixel-game.md"><img src="./assets/posters/pixel-game.jpg" width="260" alt="Pixel Game"></a><br><b>18 · Pixel Game</b><br><sub>像素游戏</sub><br><sub>prompt + source link</sub></td>
 </tr>
 <tr>
 <td width="33%" valign="top" align="center"><a href="./docs/styles/flat-vector.md"><img src="./assets/previews/flat-vector.webp" width="260" alt="Flat Vector"></a><br><b>19 · Flat Vector</b><br><sub>扁平矢量</sub><br><sub>source included · SVG plus GSAP</sub></td>
@@ -76,13 +76,13 @@ The order follows the video we cut from them: neighbouring styles sit on roughly
 <td width="33%" valign="top" align="center"><a href="./docs/styles/exploded-view.md"><img src="./assets/previews/exploded-view.webp" width="260" alt="Product Exploded View"></a><br><b>24 · Product Exploded View</b><br><sub>产品爆炸拆解</sub><br><sub>source included · Blender</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top" align="center"><a href="./docs/styles/editorial-dataviz.md"><img src="./assets/previews/editorial-dataviz.webp" width="260" alt="Editorial Paper Data Story"></a><br><b>25 · Editorial Paper Data Story</b><br><sub>纸面编辑式数据叙事</sub><br><sub>Canvas</sub></td>
+<td width="33%" valign="top" align="center"><a href="./docs/styles/editorial-dataviz.md"><img src="./assets/previews/editorial-dataviz.webp" width="260" alt="Editorial Paper Data Story"></a><br><b>25 · Editorial Paper Data Story</b><br><sub>纸面编辑式数据叙事</sub><br><sub>prompt + source link</sub></td>
 <td width="33%" valign="top" align="center"><a href="./docs/styles/glassmorphism-ui.md"><img src="./assets/previews/glassmorphism-ui.webp" width="260" alt="Glassmorphism UI"></a><br><b>26 · Glassmorphism UI</b><br><sub>玻璃拟态UI</sub><br><sub>source included · HTML</sub></td>
 <td width="33%" valign="top" align="center"><a href="./docs/styles/brick-toy.md"><img src="./assets/previews/brick-toy.webp" width="260" alt="Brick Toy"></a><br><b>27 · Brick Toy</b><br><sub>积木玩具</sub><br><sub>source included · Blender</sub></td>
 </tr>
 <tr>
 <td width="33%" valign="top" align="center"><a href="./docs/styles/risograph.md"><img src="./assets/previews/risograph.webp" width="260" alt="Risograph Print"></a><br><b>28 · Risograph Print</b><br><sub>Risograph孔版套印</sub><br><sub>source included · code</sub></td>
-<td width="33%" valign="top" align="center"><a href="./docs/styles/scifi-hud.md"><img src="./assets/previews/scifi-hud.webp" width="260" alt="Sci-fi Scan HUD"></a><br><b>29 · Sci-fi Scan HUD</b><br><sub>科幻扫描HUD</sub><br><sub>Three.js wireframes</sub></td>
+<td width="33%" valign="top" align="center"><a href="./docs/styles/scifi-hud.md"><img src="./assets/previews/scifi-hud.webp" width="260" alt="Sci-fi Scan HUD"></a><br><b>29 · Sci-fi Scan HUD</b><br><sub>科幻扫描HUD</sub><br><sub>prompt + source link</sub></td>
 </tr>
 </table>
 
