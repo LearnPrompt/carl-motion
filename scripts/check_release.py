@@ -27,7 +27,7 @@ def digest(paths):
 
 
 def generated():
-    return ([os.path.join(ROOT, f) for f in ('README.md', 'README_zh.md', '.claude-plugin/marketplace.json')]
+    return ([os.path.join(ROOT, f) for f in ('README.md', 'README_zh.md', 'README_ja.md', '.claude-plugin/marketplace.json')]
             + glob.glob(os.path.join(ROOT, 'docs/styles/*.md')) + glob.glob(os.path.join(SKILL, 'references/styles/*.md'))
             + [os.path.join(SKILL, 'SKILL.md')])
 

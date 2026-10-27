@@ -190,12 +190,25 @@ Palette 主色：{chips}
 
 
 # ---------- gallery ----------
+JA = {
+    'S05': 'レトロ紙コラージュ', 'S20': 'プロダクトUI 2.5Dカメラ', 'S08': 'ネオン・シンセウェイヴ', 'S17': '手描きペーパーノート',
+    'S19': '水彩', 'S30': '白黒木版画', 'S34': 'ふわふわインフレータブル3D', 'S27': '点群測量', 'S04': '青図ドローイング',
+    'S14': 'ダイカットステッカー解説', 'S13': '長編アニメ風3Dキャラクター', 'S03': '水墨画', 'S10': 'ASCII文字ビジュアル',
+    'S01': 'アイソメトリック2.5Dワールド', 'S23': 'ゴッホ風厚塗り', 'S37': '虹色サイケデリック・シェーダー', 'S12': 'クレイアニメ',
+    'S02': 'ピクセルゲーム', 'S07': 'フラットベクター', 'S24': '印象派油彩（モネ）', 'S35': 'パーティクルモーフ',
+    'S28': 'ホワイトモデル・プロジェクション', 'S22': '古代エジプト壁画', 'S29': '製品分解図', 'S16': '紙のエディトリアル・データストーリー',
+    'S06': 'グラスモーフィズムUI', 'S33': 'ブロック玩具', 'S11': 'リソグラフ印刷', 'S15': 'SFスキャンHUD',
+}
+
+
 def gallery(lang, prefix, page_prefix):
     cells = []
     for s in ZH:
         e = EN[s['id']]
-        name = f'<b>{s["order"]:02d} · {s["name_en"]}</b><br><sub>{s["name_zh"]}</sub>' if lang == 'en' else f'<b>{s["order"]:02d} · {s["name_zh"]}</b><br><sub>{s["name_en"]}</sub>'
-        tag = ('source included' if lang == 'en' else '含源码') if s['scene'] else (tool(e['card']) if lang == 'en' else '提示语加来源')
+        local = {'en': s['name_zh'], 'zh': s['name_en'], 'ja': s['name_en']}[lang]
+        head = {'en': s['name_en'], 'zh': s['name_zh'], 'ja': JA[s['id']]}[lang]
+        name = f'<b>{s["order"]:02d} · {head}</b><br><sub>{local}</sub>'
+        tag = {'en': 'source included', 'zh': '含源码', 'ja': 'ソースあり'}[lang] if s['scene'] else {'en': tool(e['card']), 'zh': '提示语加来源', 'ja': 'プロンプト＋出典'}[lang]
         if s['scene'] and lang == 'en': tag += f' · {tool(e["card"])}'
         cells.append(f'<td width="33%" valign="top" align="center"><a href="{page_prefix}{s["slug"]}.md"><img src="{img(s, prefix)}" width="260" alt="{s["name_en"]}"></a><br>{name}<br><sub>{tag}</sub></td>')
     rows = ['<tr>\n' + '\n'.join(cells[i:i + 3]) + '\n</tr>' for i in range(0, len(cells), 3)]
@@ -207,9 +220,9 @@ def scene_table(lang):
     for s in OURS:
         if s['scene'] in seen: continue
         seen.add(s['scene']); ids = [x for x in OURS if x['scene'] == s['scene']]
-        names = ' / '.join(x['name_en'] if lang == 'en' else x['name_zh'] for x in ids)
+        names = ' / '.join({'en': x['name_en'], 'zh': x['name_zh'], 'ja': JA[x['id']]}[lang] for x in ids)
         rows.append(f'| [`{s["scene"].split("/")[-1]}`]({s["scene"]}) | {names} | {stack(s["scene"])} |')
-    head = '| Folder | Style | Stack |' if lang == 'en' else '| 目录 | 画风 | 技术栈 |'
+    head = {'en': '| Folder | Style | Stack |', 'zh': '| 目录 | 画风 | 技术栈 |', 'ja': '| フォルダ | スタイル | 技術スタック |'}[lang]
     return head + '\n|---|---|---|\n' + '\n'.join(rows)
 
 
@@ -241,7 +254,7 @@ AUTHOR_ZH = '''**卡尔（@卡尔的AI沃茨）** 是 GoodCase 的发起人，�
 
 
 def readme_en():
-    return f'''**[English](./README.md)** | [中文](./README_zh.md)
+    return f'''**[English](./README.md)** | [中文](./README_zh.md) | [日本語](./README_ja.md)
 
 <img src="./assets/style-wall.webp" width="100%" alt="carl-motion style wall: 29 motion-graphics styles playing at once">
 
@@ -326,7 +339,7 @@ Code, prompts and our own renders (`assets/previews`, `assets/posters` for style
 
 
 def readme_zh():
-    return f'''[English](./README.md) | **[中文](./README_zh.md)**
+    return f'''[English](./README.md) | **[中文](./README_zh.md)** | [日本語](./README_ja.md)
 
 <img src="./assets/style-wall.webp" width="100%" alt="carl-motion 画风墙：29 种动效画风同时播放">
 
@@ -407,6 +420,103 @@ Claude Code 也可以按插件装：先 `/plugin marketplace add {REPO}`，再 `
 ## 作者
 
 {AUTHOR_ZH}
+'''
+
+
+UPSTREAM_JA = '''| 上流 | 使ったもの | ライセンス |
+|---|---|---|
+| [lemomo-ai/lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar) | 29 スタイルのうち 13 のレシピとデモ映像（青図、水彩、水墨、木版、点群、ホワイトモデル、分解図、ブロック玩具、リソグラフ、ASCII、アイソメトリック、データ、HUD） | プロンプトとコードは MIT、デモ映像は CC BY 4.0 |
+| [Vincentwei1021/mg-styles-15](https://github.com/Vincentwei1021/mg-styles-15) | コラージュ、フラットベクター、ステッカー解説、グラスUI、シンセウェイヴ、ソフト3D、アイソメトリック、HUD のスタイルプロンプト | MIT（プロンプトとコード） |
+| [alchaincyf/huashu-art-motion](https://github.com/alchaincyf/huashu-art-motion) | エジプト壁画、ゴッホ、モネの描画エンジン。A クリップはこのソースから再レンダリング | MIT |
+| [Vincentwei1021/video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft) | プロダクトUIのプロモーションとリソグラフのズレの参考 | 上流に準拠 |
+| [prompt-motion.com](https://prompt-motion.com) | ピクセル、クレイ、3Dキャラクター、手描きノート、シェーダー、パーティクル、ASCII の公開参考 | リンクのみ |
+| [yasue.org の Opus 5.5 動画生成の限界を試す記事](https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits) | 英語解説クリップ 7 本が語り直している、猫が村に住みついた話 | リンクのみ |'''
+
+AUTHOR_JA = '''**Carl（@卡尔的AI沃茨）** は GoodCase の発起人で、このリポジトリのメンテナーです。ByteDance、Alibaba、Baidu で 6 年間大規模モデルの研究開発に携わったあと AI 映像に転向し、AI 短編は中国のテレビ局でも放送されました。各プラットフォームの合計フォロワーは 50 万人以上。[X @aiwarts](https://x.com/aiwarts) で発信しています。お問い合わせや協業は [carl@goodcase.ai](mailto:carl@goodcase.ai) まで。'''
+
+
+def readme_ja():
+    return f'''[English](./README.md) | [中文](./README_zh.md) | **[日本語](./README_ja.md)**
+
+<img src="./assets/style-wall.webp" width="100%" alt="carl-motion スタイルウォール：29 種類のモーショングラフィックスが同時に再生">
+
+# carl-motion
+
+**{N} 種類のモーショングラフィックス・スタイル、それぞれにコピペで使えるプロンプト付き。** 紙コラージュ、シンセウェイヴ、水墨画、木版画、点群、クレイアニメ、リソグラフ、グラスUI など。どのスタイルにも 8 秒のサンプル、プロンプト、崩れやすいポイントがあり、そのうち {len(OURS)} 種類はサンプルをレンダリングしたソースコードも同梱しています。
+
+Skill を入れて、エージェントに「リソグラフ風で私のテーマを作って」と頼むだけです：
+
+{INSTALL}
+
+Claude Code ではプラグインとしても使えます：`/plugin marketplace add {REPO}` のあと `/plugin install carl-motion@carl-motion`。
+
+## 目次
+
+- [まず試す](#まず試す)
+- [{N} のスタイル](#{N}-のスタイル)
+- [Skill](#skill)
+- [テンプレートとソース](#テンプレートとソース)
+- [サンプルの作り方](#サンプルの作り方)
+- [上流の Skill と参考](#上流の-skill-と参考)
+- [素材とライセンス](#素材とライセンス)
+- [謝辞](#謝辞)
+- [作者](#作者)
+
+## まず試す
+
+最初はインストール不要です。下のギャラリーから好きな見た目を選んでページを開き、プロンプトをコピーして「your topic / 你的主题」の部分を自分のテーマに置き換えます。Claude、ChatGPT などコードを書けるモデルに貼り、1920×1080、30 fps、8 秒の MP4 を頼んでください。うまくいかなければ、そのページの「崩れやすいポイント」を読んでもう一度。スタイル別ページは英語と中国語です。
+
+## {N} のスタイル
+
+並び順は、これらをまとめた紹介動画と同じです。隣り合うスタイルはおおむね補色関係になるよう並べてあり、切り替わりがひと目でわかります。{N} 種類のうち {len(MOVING)} 種類はここで動きを見られます。残りの {N - len(MOVING)} 種類は再配布できない第三者のサンプルしかないため、ページから出典にリンクしています。
+
+{gallery("ja", "./", "./docs/styles/")}
+
+## Skill
+
+`carl-motion` はこのライブラリをコーディングエージェントで使える形にしたものです。スタイル名でも、「フラット、あたたかい、手作り感」のような雰囲気でも頼めます。エージェントは一番近いスタイルを選び、プロンプトにテーマを入れ、既知の崩れポイントと照らし合わせます。ソースがあるスタイルは、白紙からではなくそのエンジンから作り始めます。各カードにはそのスタイルがどこまで検証済みか（実装済み、上流のみ、研究段階）が書かれていて、完成したクリップは同じ納品ゲートを通ります。
+
+| | スタイルページ | Skill |
+|---|---|---|
+| 対象 | どなたでも、インストール不要 | Claude Code、Codex などのコーディングエージェント |
+| 使い方 | コピーしてテーマを差し替えて貼るだけ | `npx skills add {REPO}` のあと頼むだけ |
+| 得られるもの | プロンプト 1 本 | プロンプト、レンダリング計画、崩れポイントのチェック |
+
+## テンプレートとソース
+
+**スタイルエンジン。** {len(OURS)} 種類のスタイルに、B クリップをレンダリングしたコードが付いています。すべて 1920×1080、30 fps、240 フレームです。どのエンジンも入口は同じ `./render.sh <作業フォルダ>` で、240 枚の PNG を書き出し、`scripts/deliver.py` がエンコードして赤・黄・緑の判定を返します。始める前に `scripts/doctor.py <エンジン>` で環境を確認できます。取り決めは [scene-contract.md](skills/carl-motion/references/scene-contract.md) にあります。
+
+{scene_table("ja")}
+
+**9:16 解説レイアウト。** [`skills/carl-motion/pipeline/script_layout.py`](skills/carl-motion/pipeline/script_layout.py) は同じスタイルの 2 本のクリップを上下に重ね、上にタイトルバーを固定します。結果を先に見せる作りで、各スタイルの 0 フレーム目からスタイル名と、すでに半分まで書かれたプロンプトカードが表示され、残りはモデルの出力のように流れ込み、5.4 秒で注意帯が入ります。右側の枠は話し手の撮影用プレースホルダーです。
+
+<img src="./assets/layout-9x16.jpg" width="300" alt="9:16 レイアウト：A と B を上下に重ね、下にプロンプトカードと注意帯">
+
+**パイプライン。** [`skills/carl-motion/pipeline`](skills/carl-motion/pipeline) には紹介動画を作ったツールもあります。補色で並べる `color_order_v4.py`、完成動画の切り替わりを測り直す `color_stitch_verify.py`、CIELAB でオープニング候補を採点する `opener_salience.py` など。詳しくは [README](skills/carl-motion/pipeline/README.md) を参照してください。
+
+## サンプルの作り方
+
+各スタイルは 8 秒のクリップ 2 本の組です。A は上流の参考、B は同じスタイルで題材を変えた 2 本目で、見た目が別のテーマにも移せることを示します。B のうち {len(OURS)} 本はこのリポジトリのために Claude Opus 5.5 がゼロからコードを書いてレンダリングしたもので、スタイルプロンプトと A を参考にしています。そのうち 7 本は、猫が最初の農村に住みついた話を、それぞれのスタイルでリレーしています。どのクリップも同じチェックを通しています：1920×1080、30 fps、ちょうど 240 フレーム、完全デコード、黒フレームなし、検出されたジャンプフレームは目視で確認済み。
+
+## 上流の Skill と参考
+
+このライブラリは以下のオープンなスタイル Skill と公開ギャラリーの上に作られています。各スタイルページから対応する上流プロンプトにリンクしています。
+
+{UPSTREAM_JA}
+
+## 素材とライセンス
+
+コード、プロンプト、私たちがレンダリングしたクリップは MIT です（`skills/` 以下すべてと、「ソースあり」のスタイルの `assets/` プレビュー）。4 種類のスタイルのプレビューは LemoLab のデモ映像で、CC BY 4.0 に従いページでクレジットしています。prompt-motion.com、X、yasue.org、video-shotcraft のクリップはリポジトリに複製せず、リンクのみです。9:16 のサンプルフレームは huashu（MIT）の A と私たちの B を使っています。
+
+## 謝辞
+
+- オープンなスタイルレシピ：[lemomo-ai/lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar)、[Vincentwei1021/mg-styles-15](https://github.com/Vincentwei1021/mg-styles-15)、[alchaincyf/huashu-art-motion](https://github.com/alchaincyf/huashu-art-motion)
+- 公開参考：[prompt-motion.com](https://prompt-motion.com)、[yasue.org](https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits)
+- ギャラリー＋Skill の構成：[LearnPrompt/awesome-seedance](https://github.com/LearnPrompt/awesome-seedance)
+
+## 作者
+
+{AUTHOR_JA}
 '''
 
 
@@ -520,6 +630,7 @@ if __name__ == '__main__':
     w('docs/styles/README.md', styles_index())
     w('README.md', readme_en())
     w('README_zh.md', readme_zh())
+    w('README_ja.md', readme_ja())
     for s in ZH: w(f'{SKILL}/references/styles/{s["order"]:02d}_{s["slug"]}.md', card(s))
     w(f'{SKILL}/references/styles/INDEX.md', cards_index())
     stamp_version()

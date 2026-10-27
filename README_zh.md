@@ -1,4 +1,4 @@
-[English](./README.md) | **[中文](./README_zh.md)**
+[English](./README.md) | **[中文](./README_zh.md)** | [日本語](./README_ja.md)
 
 <img src="./assets/style-wall.webp" width="100%" alt="carl-motion 画风墙：29 种动效画风同时播放">
 

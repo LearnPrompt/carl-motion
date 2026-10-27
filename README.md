@@ -1,4 +1,4 @@
-**[English](./README.md)** | [中文](./README_zh.md)
+**[English](./README.md)** | [中文](./README_zh.md) | [日本語](./README_ja.md)
 
 <img src="./assets/style-wall.webp" width="100%" alt="carl-motion style wall: 29 motion-graphics styles playing at once">
 

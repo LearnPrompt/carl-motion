@@ -9,6 +9,7 @@
 - Field notes: projects log to `carl-motion-log.md`; `scripts/import_experience.py` pulls them into `data/experience/`.
 - `scripts/check_release.py` plus a GitHub Actions workflow.
 - Removed the rubber-hose scene that is not one of the 29 styles.
+- README in English (default), Chinese and Japanese.
 
 ## 0.1.0 · 2026-10-27
 
