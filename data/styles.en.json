@@ -1,0 +1,292 @@
+[
+ {
+  "id": "S05",
+  "card": "Use HTML to turn your topic into a retro paper collage: cut-out assets with white scissor edges and halftone dots, motion dropped to 12 fps, with a slight hand jitter.",
+  "keywords": "newspaper and kraft paper background, cut-outs with a 2 to 4px white scissor edge, halftone dots, 12fps down to 6fps, plus or minus 2px hand-moved jitter, slap-on and page-flip transitions, red and black constructivist type, ransom-note lettering",
+  "warn": "Full-frame smooth motion loses the handmade feel; drop to 12 fps and add 2px of jitter.",
+  "fail": "Full-frame smooth motion looks like PowerPoint animation; drop to 12 fps and add a light jitter on every beat. Cut-outs without torn edges and drop shadows fall back to flat vector. Using only one typeface loses the ransom-note collage feel.",
+  "fx_a": "A Victorian vintage photo portrait with the top of the head cut open; a universe, rockets, flowers and birds grow out of the skull, on a red circle over old newspaper, closing on a NOGGIN magazine cover.",
+  "fx_b": "Our render: an English explainer version. Ransom-note letters on kraft paper spell Why did cats move in with us; the village, clay jars, mice and a tabby wildcat are all torn-paper cut-outs, moving at one step per 12 fps beat.",
+  "full_prompt": "Use HTML to turn your topic into a retro paper collage: cut-out assets with white scissor edges and halftone dots, motion dropped to 12 fps, with a slight hand jitter. Key visuals: newspaper and kraft paper background, cut-outs with a 2 to 4px white scissor edge, halftone dots, 12fps down to 6fps, plus or minus 2px hand-moved jitter, slap-on and page-flip transitions, red and black constructivist type, ransom-note lettering. Watch out: Full-frame smooth motion loses the handmade feel; drop to 12 fps and add 2px of jitter. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S20",
+  "card": "Use Remotion to turn real screenshots of your product's pages into a promo video: tilt the screenshots in 3D for a 2.5D camera move, and hold key information for more than one second.",
+  "keywords": "Remotion, real page screenshots, 2.5D page camera, pages tilted then layered, beat-synced cuts, number roll-ups, flash frames, key information held for one second",
+  "warn": "Pacing that is too fast, with the whole screen shaking on every beat, looks cheap; slow it down one notch.",
+  "fail": "Fast pacing with the whole screen shaking together looks cheap; slow it down one notch. UI text must be real and readable, since gray blurred bars look like placeholders. A perspective angle that keeps changing causes dizziness.",
+  "fx_a": "A stack of research-card interfaces tilts into 2.5D in a gray-white space; the camera slowly pushes past, with a local light focusing on the current card.",
+  "fx_b": "White-background profile cards unfold one by one into a row, and the camera pulls back to reveal the title Character Profiles, handy to look up anytime.",
+  "full_prompt": "Use Remotion to turn real screenshots of your product's pages into a promo video: tilt the screenshots in 3D for a 2.5D camera move, and hold key information for more than one second. Key visuals: Remotion, real page screenshots, 2.5D page camera, pages tilted then layered, beat-synced cuts, number roll-ups, flash frames, key information held for one second. Watch out: Pacing that is too fast, with the whole screen shaking on every beat, looks cheap; slow it down one notch. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S08",
+  "card": "Make your topic into an 80s Synthwave: a one-point-perspective neon grid rolling forward, a layered sunset on the horizon, double-layer glow on the lines, with scanlines and chromatic aberration on top.",
+  "keywords": "one-point-perspective grid scrolling, multi-layer gradient sunset, double-layer glow, scanlines and RGB color shift, chrome lettering, palm tree silhouettes, tape stutter at 15fps in selected spots",
+  "warn": "Without the grid rolling there is no sense of speed; the camera must keep rushing forward.",
+  "fail": "A grid that does not roll forward becomes a static wallpaper; colors outside magenta, cyan and orange look muddy; stacking too many glow layers blurs everything together.",
+  "fx_a": "A magenta-purple grid floor rolls forward, a striped sunset sits on the horizon, a sports car drives toward it, and NEON DRIVE Midnight chrome lettering slams in.",
+  "fx_b": "Our render: A neon tape recorder hops to the beat on the grid, the sun rises, and a chrome NEON TAPE title slams in at the end.",
+  "full_prompt": "Make your topic into an 80s Synthwave: a one-point-perspective neon grid rolling forward, a layered sunset on the horizon, double-layer glow on the lines, with scanlines and chromatic aberration on top. Key visuals: one-point-perspective grid scrolling, multi-layer gradient sunset, double-layer glow, scanlines and RGB color shift, chrome lettering, palm tree silhouettes, tape stutter at 15fps in selected spots. Watch out: Without the grid rolling there is no sense of speed; the camera must keep rushing forward. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S17",
+  "card": "Use HTML to make a step-by-step animation of your topic on off-white paper: hand-drawn thin lines draw the equipment, and each time something is added, its name and amount pop up in sync.",
+  "keywords": "off-white paper, hand-drawn thin-line equipment, handwritten titles and amounts, numbered step cards, from empty to finished, tick marks, explainer pacing",
+  "warn": "If text and action are out of sync there is no explainer feel; every step appears on the same beat.",
+  "fail": "If the label and the pouring action are not on the same beat there is no explainer feel; lines that are too regular look like an icon library; too many colors kill the hand-drawn feel.",
+  "fx_a": "A hand-drawn bottle on off-white paper pours gin into a glass, and a card on the right pops up 1 oz GIN with a tick-mark bar in sync.",
+  "fx_b": "A cocktail step diagram: the handwritten label Pour the vodka and the amount number rise together with the liquid level.",
+  "full_prompt": "Use HTML to make a step-by-step animation of your topic on off-white paper: hand-drawn thin lines draw the equipment, and each time something is added, its name and amount pop up in sync. Key visuals: off-white paper, hand-drawn thin-line equipment, handwritten titles and amounts, numbered step cards, from empty to finished, tick marks, explainer pacing. Watch out: If text and action are out of sync there is no explainer feel; every step appears on the same beat. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S19",
+  "card": "Use Canvas to draw a watercolor journal page that colors itself, with your topic as the subject: transparent strokes layered one on another, dry-brush skips, and paper white kept for highlights.",
+  "keywords": "warm cotton paper fibers, transparent wash that deepens as it layers, dry-brush skips, paper white as highlight, handwritten notes with leader lines, stroke-by-stroke coloring, mist-wipe transition, low-saturation ochre and gray-blue",
+  "warn": "Vector shapes with a watercolor texture look fake; use variable-width strokes plus bristle trails.",
+  "fail": "Vector shapes with a watercolor texture look fake at a glance; use variable-width strokes and bristle edges, leave paper white in the highlights, and do not fill whole areas with color.",
+  "fx_a": "A watercolor of an Australian eucalyptus forest, with bleeding distant hills and a paper-white sky, a rainfall reading changing in the top right, and bilingual subtitles at the bottom.",
+  "fx_b": "Our render: an English explainer version, part two of the cat-moves-into-the-village story. Adobe houses and clay jars are brushed in stroke by stroke, mice shift toward the grain pile, a tabby wildcat steps out of the reeds, and the subtitle STORED GRAIN DREW MICE changes to THEN CAME THE WILDCAT.",
+  "full_prompt": "Use Canvas to draw a watercolor journal page that colors itself, with your topic as the subject: transparent strokes layered one on another, dry-brush skips, and paper white kept for highlights. Key visuals: warm cotton paper fibers, transparent wash that deepens as it layers, dry-brush skips, paper white as highlight, handwritten notes with leader lines, stroke-by-stroke coloring, mist-wipe transition, low-saturation ochre and gray-blue. Watch out: Vector shapes with a watercolor texture look fake; use variable-width strokes plus bristle trails. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S30",
+  "card": "Turn your topic into a black-and-white woodcut print: a solid black block, highlights are white lines cut away by the knife, the image is carved out one cut at a time, with at most one red.",
+  "keywords": "white lines cut into a black block, light is carved out, image appears cut by cut with no fade-in, bold cuts in front and fine lines behind, cut lines follow the form, at most one color, paper margin left white, mirrored-lettering print-out transition",
+  "warn": "Hatching on every surface looks like fur and rain; cut only three to six strokes on the lit edge.",
+  "fail": "Hatching on every surface looks like fur and rain, so cut only three to six strokes on the lit edge; if the image fades in it no longer looks carved; keep at most one color.",
+  "fx_a": "White cuts on a black block: an iron pot, a ring and a blacksmith's forge are carved out cut by cut, with English subtitles at the bottom.",
+  "fx_b": "Our render: a sailboat at sea after a storm raises its sails again, the waves are knife-cut hatching, the sun rises out of the cut lines, with Chinese and English subtitles.",
+  "full_prompt": "Turn your topic into a black-and-white woodcut print: a solid black block, highlights are white lines cut away by the knife, the image is carved out one cut at a time, with at most one red. Key visuals: white lines cut into a black block, light is carved out, image appears cut by cut with no fade-in, bold cuts in front and fine lines behind, cut lines follow the form, at most one color, paper margin left white, mirrored-lettering print-out transition. Watch out: Hatching on every surface looks like fur and rain; cut only three to six strokes on the lit edge. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S34",
+  "card": "Use Blender to make your topic as soft inflatable 3D: candy-colored soft rubber with subsurface scattering, squashing flat on landing then bouncing back fast, studio three-point lighting, shallow depth of field.",
+  "keywords": "SSS soft rubber, candy colors, AO plus HDRI three-point lighting, cloner arrays, soft-body collision squash, long-tail easing, shallow depth of field and motion blur, 24fps cinematic frame rate",
+  "warn": "A slow rebound has no weight: accelerate on the fall, squash on contact, and bounce back fast.",
+  "fail": "A slow rebound has no weight; a material without subsurface scattering looks like hard plastic; flat lighting looks like a web illustration.",
+  "fx_a": "Pink soft-rubber letters spelling soft land on a grainy floor, get squashed and bounce back after small balls hit them, and the background shifts to purple.",
+  "fx_b": "Our render: Green inflatable GO letters land on a soft cushion, squash and spring back up, under warm yellow studio light.",
+  "full_prompt": "Use Blender to make your topic as soft inflatable 3D: candy-colored soft rubber with subsurface scattering, squashing flat on landing then bouncing back fast, studio three-point lighting, shallow depth of field. Key visuals: SSS soft rubber, candy colors, AO plus HDRI three-point lighting, cloner arrays, soft-body collision squash, long-tail easing, shallow depth of field and motion blur, 24fps cinematic frame rate. Watch out: A slow rebound has no weight: accelerate on the fall, squash on contact, and bounce back fast. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S27",
+  "card": "Use Three.js to turn your location into a laser point cloud: real measured points floating on black, a scan plane passes and the points solidify into solid terrain, then peel apart layer by layer by ground, vegetation and buildings.",
+  "keywords": "real airborne lidar points, near-black background, scan line or section plane advancing, points condense into a solid lit at grazing angle, layers peeled by ground, vegetation and building classes, hairline measurement readouts, one designed camera move",
+  "warn": "From afar a point cloud looks like a flat carpet; the camera must fly low and close.",
+  "fail": "From afar a point cloud looks like a flat carpet, so the camera must fly low and close; points that are too sparse cannot read as terrain; peel the layers by ground, vegetation and building class.",
+  "fx_a": "A lidar point-cloud terrain on black; after the scan plane passes it solidifies, old field-ridge lines light up one by one, with Chinese and English subtitles.",
+  "fx_b": "Our render: a sub-canopy point cloud has one layer of tree canopy peeled off, revealing a wall foundation and an arch.",
+  "full_prompt": "Use Three.js to turn your location into a laser point cloud: real measured points floating on black, a scan plane passes and the points solidify into solid terrain, then peel apart layer by layer by ground, vegetation and buildings. Key visuals: real airborne lidar points, near-black background, scan line or section plane advancing, points condense into a solid lit at grazing angle, layers peeled by ground, vegetation and building classes, hairline measurement readouts, one designed camera move. Watch out: From afar a point cloud looks like a flat carpet; the camera must fly low and close. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S04",
+  "card": "Use Canvas to draw your topic on Prussian-blue blueprint paper in thin white lines, in drawing order, with dimension lines, numbered balloons and a drawing frame.",
+  "keywords": "cyanotype blueprint paper, thin white engineering lines, layer-by-layer drawing order, dimension lines and leader lines, numbered balloons, title block frame, section hatching, pan and zoom of the whole sheet",
+  "warn": "Keep it a 2D line drawing in blue and white only; once it becomes 3D or a glowing wireframe it no longer fits.",
+  "fail": "Once it becomes 3D or a glowing wireframe it no longer fits; use a 2D line drawing in blue and white only; if all lines appear at once the sense of drawing is lost.",
+  "fx_a": "On Prussian-blue paper, white lines draw a machine and a crane in drawing order, with numbered balloons, dimension lines and a drawing frame.",
+  "fx_b": "Our render: an English explainer version. White lines draw FIG. 1 granary, FIG. 2 mouse, FIG. 3 wildcat in figure order, with dimension lines, numbered balloons and an enlarged detail view, and the drawing frame is added at the end.",
+  "full_prompt": "Use Canvas to draw your topic on Prussian-blue blueprint paper in thin white lines, in drawing order, with dimension lines, numbered balloons and a drawing frame. Key visuals: cyanotype blueprint paper, thin white engineering lines, layer-by-layer drawing order, dimension lines and leader lines, numbered balloons, title block frame, section hatching, pan and zoom of the whole sheet. Watch out: Keep it a 2D line drawing in blue and white only; once it becomes 3D or a glowing wireframe it no longer fits. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S14",
+  "card": "Use HTML on a large canvas to make a science-explainer animation of your topic: photo cut-outs with a 10px white border become stickers, a blue-gray background uses only two or three colors, and the camera pans and zooms across the canvas.",
+  "keywords": "photo cut-out stickers with white outline, blue-gray and off-white background, two or three colors plus one accent, flat icons with precise charts, oversized canvas, long-eased pan and zoom, bar growth and number roll-ups",
+  "warn": "With too many colors or inaccurate chart proportions, the science-explainer seriousness is lost.",
+  "fail": "More than three colors falls apart; bar heights and numbers must be proportionally accurate or the seriousness is lost; stickers without a white border and drop shadow are just ordinary cut-outs.",
+  "fx_a": "A periodic table, a world map and a phone, photo cut-outs with white borders made into stickers, and a big 70/118 number slams in.",
+  "fx_b": "Our render: an English explainer version. Clay jar and mouse stickers slap on, a bar chart grows to 48 mice, the camera pushes in to THEN THE WILDCAT ARRIVED, a wildcat sticker slaps down, and a Felis lybica label is hung.",
+  "full_prompt": "Use HTML on a large canvas to make a science-explainer animation of your topic: photo cut-outs with a 10px white border become stickers, a blue-gray background uses only two or three colors, and the camera pans and zooms across the canvas. Key visuals: photo cut-out stickers with white outline, blue-gray and off-white background, two or three colors plus one accent, flat icons with precise charts, oversized canvas, long-eased pan and zoom, bar growth and number roll-ups. Watch out: With too many colors or inaccurate chart proportions, the science-explainer seriousness is lost. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S13",
+  "card": "Use the best technology you can think of to make an animated short, with your topic as the protagonist: cinematic lighting, shallow depth of field, a character with expression and performance, as complex and refined as you can make it.",
+  "keywords": "one-shot animated short, tech stack of your choice, cinematic backlight and sunset, shallow depth of field, character expression and performance, a small story told shot by shot, cinematic subtitle bar",
+  "warn": "Just saying make a character falls back to a crude stick figure; explicitly ask for the most complex and refined result.",
+  "fail": "Just saying make a character falls back to a crude SVG figure; state that it should be made as complex as possible and open up Three.js or Blender; without depth of field and rim light it does not look like an animated film.",
+  "fx_a": "A pelican rides a bicycle past a sunset pier, with cinematic shallow depth of field and warm backlight.",
+  "fx_b": "A small robot and a retro radio in a lighthouse, an oscilloscope screen lights up, with English subtitles.",
+  "full_prompt": "Use the best technology you can think of to make an animated short, with your topic as the protagonist: cinematic lighting, shallow depth of field, a character with expression and performance, as complex and refined as you can make it. Key visuals: one-shot animated short, tech stack of your choice, cinematic backlight and sunset, shallow depth of field, character expression and performance, a small story told shot by shot, cinematic subtitle bar. Watch out: Just saying make a character falls back to a crude stick figure; explicitly ask for the most complex and refined result. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S03",
+  "card": "Use code to draw an ink-wash animation of your topic on rice paper, with only five ink tones, more than half left blank, brushstrokes drawn one stroke at a time, and a single vermilion seal stamped.",
+  "keywords": "freehand xieyi style, procedural rice-paper texture, five tones of ink, boneless strokes with ink load, dry-brush skips, 60 to 80 percent blank space, ink-bleed transition, one vermilion seal",
+  "warn": "Do not draw closed outlines; use brush strokes with an ink load that runs dry.",
+  "fail": "Vector outlines plus a brush texture look fake; use brush strokes with ink load and no closed outlines; with less blank space it becomes a colorful illustration.",
+  "fx_a": "On rice paper with large blank areas, a bird skims the water, with reeds and ripples and an English poem as subtitles.",
+  "fx_b": "Our render: an English explainer version. A villager puts down a broom and reaches out, a cat curls up by the stove, the moon comes out, a red seal lands, and the subtitle PEOPLE DID NOT CHASE IT AWAY changes to THE CAT STAYED.",
+  "full_prompt": "Use code to draw an ink-wash animation of your topic on rice paper, with only five ink tones, more than half left blank, brushstrokes drawn one stroke at a time, and a single vermilion seal stamped. Key visuals: freehand xieyi style, procedural rice-paper texture, five tones of ink, boneless strokes with ink load, dry-brush skips, 60 to 80 percent blank space, ink-bleed transition, one vermilion seal. Watch out: Do not draw closed outlines; use brush strokes with an ink load that runs dry. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S10",
+  "card": "Build your topic from a monospace character grid on an amber monochrome CRT phosphor screen, with scanlines and glow, and do the camera push and pull by changing the font size.",
+  "keywords": "monospace character grid, amber or green phosphor monochrome, CRT scanlines and barrel distortion, bloom glow, character density gradient, blinking cursor, push and pull by changing font size, typewriter subtitles",
+  "warn": "Every bright spot must be a real character in the grid; applying an ASCII filter to the whole image gives it away.",
+  "fail": "Applying an ASCII filter to the whole image looks like a filter at a glance; every pixel must come from a real character in the grid; too small a character set blurs the image.",
+  "fx_a": "Warm yellow characters form a city night scene on black, and a character-built globe slowly rises.",
+  "fx_b": "A side-profile head and fingerprint ripples made of green characters.",
+  "full_prompt": "Build your topic from a monospace character grid on an amber monochrome CRT phosphor screen, with scanlines and glow, and do the camera push and pull by changing the font size. Key visuals: monospace character grid, amber or green phosphor monochrome, CRT scanlines and barrel distortion, bloom glow, character density gradient, blinking cursor, push and pull by changing font size, typewriter subtitles. Watch out: Every bright spot must be a real character in the grid; applying an ASCII filter to the whole image gives it away. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S01",
+  "card": "Use Canvas or a Three.js orthographic camera to turn your topic into an isometric miniature world, with flat three-tone shading on every face and small icons with leader lines labeling the data.",
+  "keywords": "true isometric 30 degrees, flat three-tone shading per face, floating base with cross-section, Isotype icon counting, label leader lines, cutaway, buildings growing with overshoot, camera following a route",
+  "warn": "Keep a fixed 30 degree isometric; adding perspective or outlines turns it into low-poly 3D.",
+  "fail": "Slipping in perspective turns it into low-poly 3D; use a fixed 30 degree projection with no outlines; a camera that spins around breaks the isometric feel.",
+  "fx_a": "An isometric hillside coffee plantation, small trucks hauling cargo, coffee bean cross-section round badges, with English subtitles.",
+  "fx_b": "A pale lavender-white isometric city rises tile by tile, the central tower lights up, and the city name title is slammed out at the end.",
+  "full_prompt": "Use Canvas or a Three.js orthographic camera to turn your topic into an isometric miniature world, with flat three-tone shading on every face and small icons with leader lines labeling the data. Key visuals: true isometric 30 degrees, flat three-tone shading per face, floating base with cross-section, Isotype icon counting, label leader lines, cutaway, buildings growing with overshoot, camera following a route. Watch out: Keep a fixed 30 degree isometric; adding perspective or outlines turns it into low-poly 3D. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S23",
+  "card": "Use Canvas 2D to draw your topic: lay down flat base colors first, then fill short thick impasto strokes following a flow field, a dozen-plus hues per region, with the strokes changing eight times per second.",
+  "keywords": "flat-color underpainting plus flow-field strokes, walls vertical and floor along perspective, starry sky swirling around vortexes, region palettes of a dozen-plus hues, short thick impasto, dark blue outlines, 8fps stroke boil, small objects on their own layers",
+  "warn": "Lay strokes in three separate passes for wall, floor and figure; one parameter set for the whole image blurs into a carpet.",
+  "fail": "Changing only colors without laying strokes is just an ordinary illustration; wall, floor and figure need separate layers with their own strokes; strokes shaking across the whole screen cause dizziness.",
+  "fx_a": "A girl and a cat in Van Gogh's bedroom, with the wall, floor and figures all made of short impasto strokes.",
+  "fx_b": "Our render: Carl walks through a wheat field, with a swirling starry sky and cypress trees overhead.",
+  "full_prompt": "Use Canvas 2D to draw your topic: lay down flat base colors first, then fill short thick impasto strokes following a flow field, a dozen-plus hues per region, with the strokes changing eight times per second. Key visuals: flat-color underpainting plus flow-field strokes, walls vertical and floor along perspective, starry sky swirling around vortexes, region palettes of a dozen-plus hues, short thick impasto, dark blue outlines, 8fps stroke boil, small objects on their own layers. Watch out: Lay strokes in three separate passes for wall, floor and figure; one parameter set for the whole image blurs into a carpet. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S37",
+  "card": "Use a shader to make a psychedelic hypnosis animation with your topic as the subject: concentric lines and kaleidoscope symmetry rotating continuously, with iridescent color flowing along the edges.",
+  "keywords": "psychedelic hypnosis, concentric lines, kaleidoscope mirror symmetry, vortex tunnel, iridescent thin-film color flowing along edges, high-saturation clashing colors, VJ loop",
+  "warn": "Just writing psychedelic falls back to a plain gradient; spell out the symmetry and the motion.",
+  "fail": "The source is only one sentence and easily falls back to a plain gradient background; specify how many-fold the symmetry is, how it rotates and which colors to use; the first 0.5 seconds of A is black, so avoid it when cutting.",
+  "fx_a": "After a black opening, an iridescent eye lights up and the pupil radiates into a tunnel of light beams.",
+  "fx_b": "A magenta, cyan and yellow-green kaleidoscope rotates symmetrically and finally turns into a geometric tunnel.",
+  "full_prompt": "Use a shader to make a psychedelic hypnosis animation with your topic as the subject: concentric lines and kaleidoscope symmetry rotating continuously, with iridescent color flowing along the edges. Key visuals: psychedelic hypnosis, concentric lines, kaleidoscope mirror symmetry, vortex tunnel, iridescent thin-film color flowing along edges, high-saturation clashing colors, VJ loop. Watch out: Just writing psychedelic falls back to a plain gradient; spell out the symmetry and the motion. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S12",
+  "card": "Use Blender to make a clay stop-motion animation of your topic, with fingerprints and dents on the surface, a pose change every two frames played at 12 fps, and soft studio lighting with shallow depth of field.",
+  "keywords": "clay material with fingerprints and dents, on twos 12fps, slight shape change boil on every beat, soft studio light, shallow-depth macro, handmade jump-cut rhythm",
+  "warn": "Smooth motion looks like CG; drop frames on purpose and change the shape slightly on every beat.",
+  "fail": "Motion that is too smooth looks like 3D animation; drop frames to get a stop-motion feel; a material without fingerprints and dents is just plastic; the light should look like a real tabletop shoot.",
+  "fx_a": "On a yellow background a clay old man and a row of clay objects (avocado, toast, headphones) dance, with blue clay splatters flying.",
+  "fx_b": "Our render: a blue clay cat kneads a lump of clay, pinches out a flower pot and plants a sprout.",
+  "full_prompt": "Use Blender to make a clay stop-motion animation of your topic, with fingerprints and dents on the surface, a pose change every two frames played at 12 fps, and soft studio lighting with shallow depth of field. Key visuals: clay material with fingerprints and dents, on twos 12fps, slight shape change boil on every beat, soft studio light, shallow-depth macro, handmade jump-cut rhythm. Watch out: Smooth motion looks like CG; drop frames on purpose and change the shape slightly on every beat. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S02",
+  "card": "Use Canvas with a 320×180 internal resolution to draw your topic, upscale 6x with nearest neighbor, limit to 16 to 32 colors, animate sprites in stepped frames, and layer the background with parallax.",
+  "keywords": "low-resolution big pixels, limited 16 to 32 color palette, nearest-neighbour integer upscaling, 8 to 12fps sprite frames, parallax scrolling, steps() stepped timing, dithering, game HUD type",
+  "warn": "Smooth scaling or smooth easing blurs it; keep all coordinates and offsets as integers.",
+  "fail": "Scaling interpolation or easing smears the pixels into a blur; use integer coordinates everywhere and upscale with nearest neighbor; keep the palette within 16 to 32 colors.",
+  "fx_a": "A pixel city on Mid-Autumn night, a rabbit pounding medicine in the moon, rainbow light strips, and HAPPY CHUSEOK in pixel type.",
+  "fx_b": "A pixel-game battle over a night lake: a wizard casts meteors and a fire dragon while the score ticks up.",
+  "full_prompt": "Use Canvas with a 320×180 internal resolution to draw your topic, upscale 6x with nearest neighbor, limit to 16 to 32 colors, animate sprites in stepped frames, and layer the background with parallax. Key visuals: low-resolution big pixels, limited 16 to 32 color palette, nearest-neighbour integer upscaling, 8 to 12fps sprite frames, parallax scrolling, steps() stepped timing, dithering, game HUD type. Watch out: Smooth scaling or smooth easing blurs it; keep all coordinates and offsets as integers. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S07",
+  "card": "Use SVG plus GSAP to make a flat vector explainer of your topic: solid colors with no gradients, five or six high-saturation colors, elements entering with springy motion, in one continuous shot.",
+  "keywords": "SVG plus GSAP, large solid color blocks, five-or-six-color high-saturation palette, overshoot elastic easing, anticipation then burst then rebound, about 10% squash and stretch, stagger of two to four frames, shape-wipe transitions",
+  "warn": "Adding gradients or moving several subjects at once falls apart; move only one hero at any moment.",
+  "fail": "Adding gradients or moving several subjects at once falls apart; let only one hero move at a time; keep solid colors to five or six.",
+  "fx_a": "A computer screen flies in, a red dot bounces, and the popwise brand wordmark on blue closes it out.",
+  "fx_b": "Our render: an English explainer version, the start of the story. 10,000 YEARS AGO pops up, field rows and wheat grow, a farmer waves, the camera pans to three clay jars, and grain is poured in.",
+  "full_prompt": "Use SVG plus GSAP to make a flat vector explainer of your topic: solid colors with no gradients, five or six high-saturation colors, elements entering with springy motion, in one continuous shot. Key visuals: SVG plus GSAP, large solid color blocks, five-or-six-color high-saturation palette, overshoot elastic easing, anticipation then burst then rebound, about 10% squash and stretch, stagger of two to four frames, shape-wipe transitions. Watch out: Adding gradients or moving several subjects at once falls apart; move only one hero at any moment. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S24",
+  "card": "Use Canvas 2D to draw your topic with no outlines, short horizontal strokes for the water, warm yellow layered on the lit side and pale purple on the shadow side, with light flecks that flicker.",
+  "keywords": "impressionist with no outlines, horizontal water strokes, colored shadows with warm yellow in light and pale purple in shade, bright short-stroke light flecks trembling, 6fps local stroke boil, water lily and Japanese bridge motifs",
+  "warn": "Boiling across the whole screen turns into full-screen noise; keep large areas like the floor and bridge still.",
+  "fail": "Strokes shaking across the whole screen cause dizziness, so animate only the water and light flecks; strokes that are too large blur the figures; juxtapose complementary colors and do not mix them into gray.",
+  "fx_a": "A girl and a cat in front of Monet's water lily window, the whole frame in broken dabs of strokes.",
+  "fx_b": "Our render: Carl walks onto a green Japanese bridge, with water lilies floating on the water below.",
+  "full_prompt": "Use Canvas 2D to draw your topic with no outlines, short horizontal strokes for the water, warm yellow layered on the lit side and pale purple on the shadow side, with light flecks that flicker. Key visuals: impressionist with no outlines, horizontal water strokes, colored shadows with warm yellow in light and pale purple in shade, bright short-stroke light flecks trembling, 6fps local stroke boil, water lily and Japanese bridge motifs. Watch out: Boiling across the whole screen turns into full-screen noise; keep large areas like the floor and bridge still. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S35",
+  "card": "Make a particle animation: hundreds of thousands of glowing particles gather on a dark background into the shape and text of your topic, then scatter and become the next shape.",
+  "keywords": "hundreds of thousands of glowing particles, gather into shape then scatter, deep blue-black background, lines connecting into a relationship network, big number counter, one English conclusion line as subtitle",
+  "warn": "Too few particles or no target shape, and the form cannot be read.",
+  "fail": "Too few particles or no target shape and the form cannot be read; provide a defined shape and enough particles; the gathering and scattering needs rhythm, so do not let them drift all the time.",
+  "fx_a": "Millions of particles gather into an object on a deep blue background and scatter again, with a counter ticking in the top right.",
+  "fx_b": "Our render: an English explainer version, the story's ending. 60,000 particles gather into the village, curl into a vortex, then gather into a reaching person and a seated cat, and the particles spell MAYBE... THE CAT CHOSE US.",
+  "full_prompt": "Make a particle animation: hundreds of thousands of glowing particles gather on a dark background into the shape and text of your topic, then scatter and become the next shape. Key visuals: hundreds of thousands of glowing particles, gather into shape then scatter, deep blue-black background, lines connecting into a relationship network, big number counter, one English conclusion line as subtitle. Watch out: Too few particles or no target shape, and the form cannot be read. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S28",
+  "card": "Use Three.js to make a white-model city: pure white blocks on a dark-room display plinth, with data added only as projected light layer by layer, soft light edges spilling over the base.",
+  "keywords": "pure white block model, dark-room plinth, data as projected light, only faces toward the projector light up, soft light edges spilling over the base, one question per layer, lights on and off as opener and closer, real building data",
+  "warn": "Do not paint color into the material; warm ambient light will also tint the white model yellow.",
+  "fail": "If the white model carries its own color it is no longer a projection; color may only come from the projected light; text should be projected onto the model, not float on the screen.",
+  "fx_a": "Blue-purple era color blocks are projected onto a gray-white city model, switching between the years 1971 and 2015.",
+  "fx_b": "Our render: The white model changes from an old factory into a public library, and projected light draws the routes.",
+  "full_prompt": "Use Three.js to make a white-model city: pure white blocks on a dark-room display plinth, with data added only as projected light layer by layer, soft light edges spilling over the base. Key visuals: pure white block model, dark-room plinth, data as projected light, only faces toward the projector light up, soft light edges spilling over the base, one question per layer, lights on and off as opener and closer, real building data. Watch out: Do not paint color into the material; warm ambient light will also tint the white model yellow. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S22",
+  "card": "Use Canvas 2D to paint your topic as an ancient Egyptian tomb mural: figures with profile faces and frontal eyes, register bands composed with hieroglyph columns, flat ochre and lapis fills with black outlines.",
+  "keywords": "profile-face frontal-eye convention, column-divided horizontal registers, hieroglyph columns, flat fills of ochre, lapis, peacock green and earth yellow, black outlines, small hands at the ends of sun rays, lime plaster wall texture",
+  "warn": "A mural is flat, so add no perspective or shadows, and animate the river and light so it is not too static.",
+  "fail": "Adding perspective and shadows no longer looks like a mural; figures must use the canonical pose with frontal torso and profile head; use only mineral colors such as ochre red, earth yellow and blue-green.",
+  "fx_a": "A girl and a cat painted as an Egyptian mural, torsos frontal and heads in profile, with a hieroglyph border.",
+  "fx_b": "Our render: Carl walks through the mural panels, with papyrus and a sun disk beside him.",
+  "full_prompt": "Use Canvas 2D to paint your topic as an ancient Egyptian tomb mural: figures with profile faces and frontal eyes, register bands composed with hieroglyph columns, flat ochre and lapis fills with black outlines. Key visuals: profile-face frontal-eye convention, column-divided horizontal registers, hieroglyph columns, flat fills of ochre, lapis, peacock green and earth yellow, black outlines, small hands at the ends of sun rays, lime plaster wall texture. Watch out: A mural is flat, so add no perspective or shadows, and animate the river and light so it is not too static. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S29",
+  "card": "Use Blender to make an exploded teardown of your product: parts lift evenly spaced in layers along one axis, studio key light plus a cool rim light, leader lines labeling real specs, and everything closes back into one piece at the end.",
+  "keywords": "real CAD/PCB/BOM, evenly spaced layers along one axis, PBR studio key light plus cool rim light, HDRI reflections, leader lines and dimension lines, camera moving between layers, closing back together at the end",
+  "warn": "Annotate only numbers that appear in the drawings; never estimate dimensions.",
+  "fail": "Made-up model numbers and figures give it away; parts must separate along the assembly axis; materials must distinguish metal, plastic and PCB.",
+  "fx_a": "An exploded teardown of a PCB, with the RP2040 chip and components rising layer by layer, with Chinese and English subtitles.",
+  "fx_b": "Our render: The camera is taken apart layer by layer, the aperture blades open and close, with Chinese and English subtitles.",
+  "full_prompt": "Use Blender to make an exploded teardown of your product: parts lift evenly spaced in layers along one axis, studio key light plus a cool rim light, leader lines labeling real specs, and everything closes back into one piece at the end. Key visuals: real CAD/PCB/BOM, evenly spaced layers along one axis, PBR studio key light plus cool rim light, HDRI reflections, leader lines and dimension lines, camera moving between layers, closing back together at the end. Watch out: Annotate only numbers that appear in the drawings; never estimate dimensions. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S16",
+  "card": "Use Canvas to draw the real data of your topic on beige dot-grid paper, with red and blue pencils plotting point by point, handwritten notes pinned beside the data points, and the chart itself acting as the camera.",
+  "keywords": "beige dot-grid paper, real data drawn point by point, red and blue pencil strokes, handwritten notes pinned to data points, RdBu diverging color scale, chart as camera, chart type chosen by the data",
+  "warn": "Do not turn it into a dashboard or slide deck; make one point at a time.",
+  "fail": "Turning it into a dashboard or slide deck loses the editorial feel; make one point at a time; use only changes in the chart itself as transitions.",
+  "fx_a": "A colored pencil draws a line chart on off-white paper, marking years and birth events.",
+  "fx_b": "Red dots spread across an old map, the printed number 20,000,000+ slams in, and a BANNED stamp lands.",
+  "full_prompt": "Use Canvas to draw the real data of your topic on beige dot-grid paper, with red and blue pencils plotting point by point, handwritten notes pinned beside the data points, and the chart itself acting as the camera. Key visuals: beige dot-grid paper, real data drawn point by point, red and blue pencil strokes, handwritten notes pinned to data points, RdBu diverging color scale, chart as camera, chart type chosen by the data. Watch out: Do not turn it into a dashboard or slide deck; make one point at a time. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S06",
+  "card": "Use HTML to make a glassmorphism animation of your topic: three to five large Gaussian-blurred color blobs drift slowly underneath, with frosted glass cards floating on top, with a 1px translucent white border.",
+  "keywords": "aurora color blobs with blur 80 to 150px, backdrop-filter frosted cards, white fill at 5 to 10%, 1px white border, two or three adjacent hues, 3 to 5% noise to prevent banding, sine breathing easing",
+  "warn": "Clashing colors get muddy and fast motion looks cheap; keep a slow breathing pace throughout.",
+  "fail": "Contrasting colors look cheap, so use only adjacent hues; keep motion slow; glass without a 1px translucent white edge and background blur looks like an ordinary card.",
+  "fx_a": "Frosted glass cards drift over deep blue-purple light blobs, switches and sliders move, and an Aurora wordmark closes it out.",
+  "fx_b": "Our render: A to-do glass card over warm amber-orange light blobs, items checked off one by one, and a Focus orb lights up.",
+  "full_prompt": "Use HTML to make a glassmorphism animation of your topic: three to five large Gaussian-blurred color blobs drift slowly underneath, with frosted glass cards floating on top, with a 1px translucent white border. Key visuals: aurora color blobs with blur 80 to 150px, backdrop-filter frosted cards, white fill at 5 to 10%, 1px white border, two or three adjacent hues, 3 to 5% noise to prevent banding, sine breathing easing. Watch out: Clashing colors get muddy and fast motion looks cheap; keep a slow breathing pace throughout. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S33",
+  "card": "Use Blender to make a toy-brick stop-motion of your topic, macro-shot on a real wooden table, glossy plastic with studs, characters posed on twos, with a smooth camera.",
+  "keywords": "real tabletop, macro shallow depth of field, glossy ABS rectangular highlights, studs on top faces, contact shadows in the seams, characters stop-motion on twos, camera smooth frame by frame, neutral studio HDRI",
+  "warn": "No brand names or minifigure silhouettes; build the characters out of bricks.",
+  "fail": "Using branded minifigures carries copyright risk; bricks need studs and plastic highlights; deep depth of field no longer looks like a real macro shot.",
+  "fx_a": "A brick robot knocks over a red and white brick tower, with a teapot in the background, shot like a real tabletop.",
+  "fx_b": "Our render: a brick car drives over a brick bridge while a little figure stacks bricks beside it.",
+  "full_prompt": "Use Blender to make a toy-brick stop-motion of your topic, macro-shot on a real wooden table, glossy plastic with studs, characters posed on twos, with a smooth camera. Key visuals: real tabletop, macro shallow depth of field, glossy ABS rectangular highlights, studs on top faces, contact shadows in the seams, characters stop-motion on twos, camera smooth frame by frame, neutral studio HDRI. Watch out: No brand names or minifigure silhouettes; build the characters out of bricks. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S11",
+  "card": "Use code to simulate risograph-style stencil printing of your topic: two or three spot colors multiplied together, with halftone dots and slight misregistration, and color blocks with no outlines.",
+  "keywords": "two or three spot ink colors, multiply to produce a third color, misregistration, halftone dots, grain and pinholes, warm white paper, outline-free color blocks, characters at 12fps and camera at 24fps",
+  "warn": "Vector art plus noise does not count; every color must come from separated overprinted plates.",
+  "fail": "Vector art plus noise does not count, every color must come from separated overprinted plates; without misregistration it does not look right; the screen angles of the three plates must be offset.",
+  "fx_a": "A street printed in yellow, blue and pink halftone dots, a cyclist rides through a park and pigeons take off.",
+  "fx_b": "Our render: big MAKE IT and MOVE IT type slams down with misregistration, and a cyclist rides through a park.",
+  "full_prompt": "Use code to simulate risograph-style stencil printing of your topic: two or three spot colors multiplied together, with halftone dots and slight misregistration, and color blocks with no outlines. Key visuals: two or three spot ink colors, multiply to produce a third color, misregistration, halftone dots, grain and pinholes, warm white paper, outline-free color blocks, characters at 12fps and camera at 24fps. Watch out: Vector art plus noise does not count; every color must come from separated overprinted plates. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ },
+ {
+  "id": "S15",
+  "card": "Use Three.js wireframes to scan your topic into a glowing holographic volume: target boxes lock onto parts and then pull them apart, numbers roll from garbled characters to true values, in a single color with glow.",
+  "keywords": "glowing wireframe, projection base, scan plane growth, target-lock boxes, local teardown, garbled digits rolling down to settle, one cool color plus one warm accent, near-black stage, bloom",
+  "warn": "Do not put text directly over the wireframe; put it on a dark backing plate, and keep the parts connected.",
+  "fail": "Text laid directly over a wireframe is hard to read, so put it on a dark backing plate; floating parts look fake, so keep them connected; too many colors get messy.",
+  "fx_a": "A holographic scan of an electric bicycle, battery and motor readouts lighting up one by one on a dark cyan-blue background.",
+  "fx_b": "A cyan globe scanning interface with scrolling readouts, finally turning into an orange target lock.",
+  "full_prompt": "Use Three.js wireframes to scan your topic into a glowing holographic volume: target boxes lock onto parts and then pull them apart, numbers roll from garbled characters to true values, in a single color with glow. Key visuals: glowing wireframe, projection base, scan plane growth, target-lock boxes, local teardown, garbled digits rolling down to settle, one cool color plus one warm accent, near-black stage, bloom. Watch out: Do not put text directly over the wireframe; put it on a dark backing plate, and keep the parts connected. Output 1920×1080, 30 fps, 8 seconds, as reproducible source code rendered to MP4."
+ }
+]

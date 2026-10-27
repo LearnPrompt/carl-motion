@@ -1,0 +1,13 @@
+{
+  "name": "carl-motion",
+  "owner": { "name": "LearnPrompt", "url": "https://github.com/LearnPrompt" },
+  "plugins": [
+    {
+      "name": "carl-motion",
+      "source": "./agents/skills/carl-motion",
+      "description": "29 motion-graphics styles with tested prompts, failure points and source for 20 of them.",
+      "version": "0.1.0",
+      "license": "MIT"
+    }
+  ]
+}

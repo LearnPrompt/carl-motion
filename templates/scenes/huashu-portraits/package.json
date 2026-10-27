@@ -1,0 +1,6 @@
+{
+  "name": "carl-b-s22-s25",
+  "private": true,
+  "description": "S22/S23/S24/S25 卡尔 B：在 huashu-art-motion 引擎上新增卡尔骨架与新场景",
+  "dependencies": { "@napi-rs/canvas": "0.1.65" }
+}

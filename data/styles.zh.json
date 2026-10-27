@@ -1,0 +1,1180 @@
+[
+ {
+  "order": 1,
+  "id": "S05",
+  "slug": "retro-paper-collage",
+  "name_en": "Retro Paper Collage",
+  "name_zh": "复古纸张拼贴",
+  "card": "用 HTML 做你的主题的复古纸张拼贴，素材抠图加白色剪刀边和半调网点，运动降到 12 帧，加轻微手抖。",
+  "keywords": "报纸牛皮纸底、抠图加 2 到 4px 白剪刀边、halftone 网点、12fps 乃至 6fps、正负 2px 手摆抖动、拍上来与翻页转场、红黑构成主义字、勒索信拼字",
+  "warn": "满帧顺滑就没有手作感，降到 12 帧再加 2px 抖动。",
+  "fail": "满帧顺滑运动像 PPT 动画，要降到 12 帧再加每拍轻抖；剪片缺撕边和投影就退成扁平矢量；字体只用一种就没有勒索信的拼贴味。",
+  "fx_a": "维多利亚老照片人像被剪开头顶，宇宙、火箭、花鸟从脑壳里长出来，红圆底配旧报纸，收在 NOGGIN 杂志封面。",
+  "fx_b": "我们做的英文讲解版。牛皮纸上勒索信字拼出 Why did cats move in with us，村子、陶罐、老鼠和虎斑野猫都是撕纸剪片，按 12 帧一拍走。",
+  "full_prompt": "用 HTML 做你的主题的复古纸张拼贴，素材抠图加白色剪刀边和半调网点，运动降到 12 帧，加轻微手抖。画面要点：报纸牛皮纸底、抠图加 2 到 4px 白剪刀边、halftone 网点、12fps 乃至 6fps、正负 2px 手摆抖动、拍上来与翻页转场、红黑构成主义字、勒索信拼字。注意：满帧顺滑就没有手作感，降到 12 帧再加 2px 抖动。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#b88a3e",
+   "#3e8ab8"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "男子打开脑盖喷出宇宙",
+    "url": "https://vincentwei1021.github.io/mg-styles-15/?lang=zh#06-collage",
+    "by": "Vincentwei1021 · mg-styles-15",
+    "license": "prompts/code MIT; demo video not redistributed",
+    "media_ok": false
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": "https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits"
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/retro-paper-collage"
+ },
+ {
+  "order": 2,
+  "id": "S20",
+  "slug": "product-ui-2-5d",
+  "name_en": "Product UI 2.5D Camera",
+  "name_zh": "产品界面2.5D运镜",
+  "card": "用 Remotion 把你的产品真实页面截图做成宣传片，截图 3D 倾斜做 2.5D 运镜，关键信息停留一秒以上。",
+  "keywords": "Remotion、真实页面截图、2.5D 页面相机、页面倾斜后分层、卡点剪辑、数字滚动、闪帧、关键信息停留一秒",
+  "warn": "节奏太快、整屏一拍一抖会廉价，放慢一档。",
+  "fail": "节奏快、整屏一起抖会显廉价，要放慢一档；界面字要真实可读，糊成灰条就像占位图；透视角度来回变会晕。",
+  "fx_a": "一叠研究卡片界面在灰白空间里斜成 2.5D，镜头慢慢推过，局部打光聚焦在当前卡片。",
+  "fx_b": "白底人物资料卡一张张展开排成一列，镜头拉远，露出标题 人物设定，随手可查。",
+  "full_prompt": "用 Remotion 把你的产品真实页面截图做成宣传片，截图 3D 倾斜做 2.5D 运镜，关键信息停留一秒以上。画面要点：Remotion、真实页面截图、2.5D 页面相机、页面倾斜后分层、卡点剪辑、数字滚动、闪帧、关键信息停留一秒。注意：节奏太快、整屏一拍一抖会廉价，放慢一档。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#d2d2d2"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "Ink Press 内置宣传片模板 · the built-in promo template",
+    "url": "https://vincentwei1021.github.io/video-shotcraft/showcase.html",
+    "by": "Vincentwei1021 · video-shotcraft",
+    "license": "link only",
+    "media_ok": false
+   },
+   {
+    "layer": "B",
+    "title": "云梦小说智能体宣传片",
+    "url": "https://vincentwei1021.github.io/video-shotcraft/showcase.html",
+    "by": "Vincentwei1021 · video-shotcraft",
+    "license": "link only",
+    "media_ok": false
+   }
+  ],
+  "preview": null,
+  "scene": null
+ },
+ {
+  "order": 3,
+  "id": "S08",
+  "slug": "neon-synthwave",
+  "name_en": "Neon Synthwave",
+  "name_zh": "霓虹复古Synthwave",
+  "card": "做你的主题的 80 年代 Synthwave，一点透视霓虹网格往前滚，地平线放分层落日，线条双层辉光，叠扫描线和色偏。",
+  "keywords": "一点透视网格滚动、多层渐变落日、双层辉光、扫描线与 RGB 色偏、镀铬字、棕榈剪影、局部抽到 15fps 的磁带卡顿",
+  "warn": "网格不滚就没速度感，镜头要一直往前冲。",
+  "fail": "网格不往前滚就成了静态壁纸；颜色跑出品红、青、橙会发脏；辉光叠太多层会糊成一片。",
+  "fx_a": "紫红网格地面往前滚，条纹落日，跑车开向地平线，NEON DRIVE Midnight 镀铬字砸出。",
+  "fx_b": "我们做的。霓虹录音机在网格上跟拍子跳，太阳升起，结尾砸出 NEON TAPE 镀铬标题。",
+  "full_prompt": "做你的主题的 80 年代 Synthwave，一点透视霓虹网格往前滚，地平线放分层落日，线条双层辉光，叠扫描线和色偏。画面要点：一点透视网格滚动、多层渐变落日、双层辉光、扫描线与 RGB 色偏、镀铬字、棕榈剪影、局部抽到 15fps 的磁带卡顿。注意：网格不滚就没速度感，镜头要一直往前冲。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#b83ea8"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "NEON DRIVE棕榈公路小车",
+    "url": "https://vincentwei1021.github.io/mg-styles-15/?lang=zh#10-synthwave",
+    "by": "Vincentwei1021 · mg-styles-15",
+    "license": "prompts/code MIT; demo video not redistributed",
+    "media_ok": false
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": ""
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/neon-synthwave"
+ },
+ {
+  "order": 4,
+  "id": "S17",
+  "slug": "hand-drawn-notes",
+  "name_en": "Hand-drawn Paper Notes",
+  "name_zh": "纸面手绘笔记",
+  "card": "用 HTML 在米白纸面上做你的主题的步骤动画，手绘细线画器物，每加一样东西就同步跳出名称和用量。",
+  "keywords": "米白纸面、手绘细线器物、手写体标题与用量、步骤编号卡、从空到成品、刻度线、讲解节奏",
+  "warn": "字和动作不同步就没有讲解感，每一步同一拍出现。",
+  "fail": "标签和倒酒动作不在同一拍就没有讲解感；线条太规整会像图标库；颜色一多就压掉手绘感。",
+  "fx_a": "米白纸上的手绘酒瓶往杯里倒金酒，右侧卡片同步跳出 1 oz GIN 和刻度条。",
+  "fx_b": "调酒步骤图，Pour the vodka 的手写标注和用量数字跟着液面一起涨。",
+  "full_prompt": "用 HTML 在米白纸面上做你的主题的步骤动画，手绘细线画器物，每加一样东西就同步跳出名称和用量。画面要点：米白纸面、手绘细线器物、手写体标题与用量、步骤编号卡、从空到成品、刻度线、讲解节奏。注意：字和动作不同步就没有讲解感，每一步同一拍出现。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#ededed"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "Negroni手绘酒方",
+    "url": "https://prompt-motion.com/ror-fly-9950f1",
+    "by": "prompt-motion.com",
+    "license": "link only",
+    "media_ok": false
+   },
+   {
+    "layer": "B",
+    "title": "White Russian手绘酒方",
+    "url": "https://prompt-motion.com/sarut0bisasuke-cefa43",
+    "by": "prompt-motion.com",
+    "license": "link only",
+    "media_ok": false
+   }
+  ],
+  "preview": null,
+  "scene": null
+ },
+ {
+  "order": 5,
+  "id": "S19",
+  "slug": "watercolor",
+  "name_en": "Watercolor",
+  "name_zh": "水彩手绘",
+  "card": "用 Canvas 画一页会自己上色的水彩手账，主题是你的主题，透明笔触一层层叠，干笔飞白，纸白留作高光。",
+  "keywords": "暖色棉纸纤维、透明 wash 越叠越深、dry-brush 飞白、纸白当高光、手写批注加引线、逐笔上色、薄雾擦除转场、赭石灰蓝低饱和",
+  "warn": "矢量图贴水彩纹理会假，要用变宽笔触加毛刷轨迹。",
+  "fail": "矢量形状贴水彩纹理一眼就假；要用变宽笔触和毛刷边，亮部留纸白；颜色别填满整块。",
+  "fx_a": "澳洲桉树林水彩，远山晕染、纸白天空，右上角雨量读数在变，底部双语字幕。",
+  "fx_b": "我们做的英文讲解版，猫进村故事第二段。土坯房、陶罐一笔笔刷出来，老鼠挪向谷堆，虎斑野猫从芦苇里走出，字幕 STORED GRAIN DREW MICE 换成 THEN CAME THE WILDCAT。",
+  "full_prompt": "用 Canvas 画一页会自己上色的水彩手账，主题是你的主题，透明笔触一层层叠，干笔飞白，纸白留作高光。画面要点：暖色棉纸纤维、透明 wash 越叠越深、dry-brush 飞白、纸白当高光、手写批注加引线、逐笔上色、薄雾擦除转场、赭石灰蓝低饱和。注意：矢量图贴水彩纹理会假，要用变宽笔触加毛刷轨迹。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#b88a3e"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "澳洲树木与水彩地图",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/watercolor",
+    "by": "LemoLab · lemo-opuscar",
+    "license": "prompts/code MIT, demo video CC BY 4.0",
+    "media_ok": true
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": "https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits"
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/watercolor"
+ },
+ {
+  "order": 6,
+  "id": "S30",
+  "slug": "woodcut",
+  "name_en": "Black-and-white Woodcut",
+  "name_zh": "黑白木刻版画",
+  "card": "把你的主题做成黑白木刻版画，整块黑版，亮部是刀刻掉的白线，画面一刀一刀刻出来，最多留一种红。",
+  "keywords": "黑版白刻、光是刻出来的、画面逐刀刻出不淡入、粗刀在前细线在后、刀线顺形体走、最多一种颜色、纸边留白、反字印出转场",
+  "warn": "每个面都排线会像毛和雨，只在受光边刻三到六刀。",
+  "fail": "每个面都排线会像毛和雨，只在受光边刻三到六刀；画面用淡入出现就不像刻的；颜色最多留一种。",
+  "fx_a": "黑版白刻，铁锅、戒指、铁匠炉一刀一刀刻出来，底部英文字幕。",
+  "fx_b": "我们做的制作。风暴后的海上帆船重新升帆，海浪是刀刻排线，太阳从刻线里升起，中英字幕。",
+  "full_prompt": "把你的主题做成黑白木刻版画，整块黑版，亮部是刀刻掉的白线，画面一刀一刀刻出来，最多留一种红。画面要点：黑版白刻、光是刻出来的、画面逐刀刻出不淡入、粗刀在前细线在后、刀线顺形体走、最多一种颜色、纸边留白、反字印出转场。注意：每个面都排线会像毛和雨，只在受光边刻三到六刀。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#565656"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "木刻版画：The Bell Founder",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/woodcut",
+    "by": "LemoLab · lemo-opuscar",
+    "license": "prompts/code MIT, demo video CC BY 4.0",
+    "media_ok": true
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": ""
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/woodcut"
+ },
+ {
+  "order": 7,
+  "id": "S34",
+  "slug": "soft-inflatable-3d",
+  "name_en": "Soft Inflatable 3D",
+  "name_zh": "软体充气3D",
+  "card": "用 Blender 做你的主题的软体充气 3D，糖果色软胶带次表面散射，落地压扁再快速弹起，棚拍三点光，浅景深。",
+  "keywords": "SSS 软胶、糖果色、AO 加 HDRI 三点光、克隆阵列、软体碰撞挤压、长尾缓动、浅景深与运动模糊、24fps 电影帧率",
+  "warn": "回弹一慢就没重量，下落加速、触地压扁、弹起要快。",
+  "fail": "回弹一慢就没重量；材质缺次表面散射会像硬塑料；光打平了就像网页插图。",
+  "fx_a": "粉色软胶 soft 字母落在颗粒地面上，被小球撞得压扁回弹，底色转紫。",
+  "fx_b": "我们做的。绿色充气 GO 字母落在软垫上压扁再弹起，暖黄棚拍光。",
+  "full_prompt": "用 Blender 做你的主题的软体充气 3D，糖果色软胶带次表面散射，落地压扁再快速弹起，棚拍三点光，浅景深。画面要点：SSS 软胶、糖果色、AO 加 HDRI 三点光、克隆阵列、软体碰撞挤压、长尾缓动、浅景深与运动模糊、24fps 电影帧率。注意：回弹一慢就没重量，下落加速、触地压扁、弹起要快。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#b83e6c",
+   "#b86c3e"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "3D 渲染：soft.「柔软着陆」",
+    "url": "https://vincentwei1021.github.io/mg-styles-15/?lang=zh#04-3d-render",
+    "by": "Vincentwei1021 · mg-styles-15",
+    "license": "prompts/code MIT; demo video not redistributed",
+    "media_ok": false
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": ""
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/soft-inflatable-3d"
+ },
+ {
+  "order": 8,
+  "id": "S27",
+  "slug": "point-cloud-survey",
+  "name_en": "Point-cloud Survey",
+  "name_zh": "点云测绘／剥层",
+  "card": "用 Three.js 把你的地点做成激光点云，黑底悬浮真实测量点，扫描面经过后凝成实体地形，再按地面植被建筑逐层剥开。",
+  "keywords": "真实机载激光点、近黑底、扫描线或剖切面推进、点凝成掠射光实体、按地面植被建筑分类剥层、发丝线测量读数、一条设计好的运镜",
+  "warn": "远看点云像平地毯，镜头要贴低穿过去。",
+  "fail": "远看点云像平铺地毯，镜头要贴低穿过去；点太稀读不出地形；剥层要按地面、植被、建筑分类。",
+  "fx_a": "黑底激光点云地形，扫描面过后凝成实体，旧田埂线一条条亮出来，中英字幕。",
+  "fx_b": "我们做的制作。林下点云剥掉一层树冠，露出墙基和一座拱门。",
+  "full_prompt": "用 Three.js 把你的地点做成激光点云，黑底悬浮真实测量点，扫描面经过后凝成实体地形，再按地面植被建筑逐层剥开。画面要点：真实机载激光点、近黑底、扫描线或剖切面推进、点凝成掠射光实体、按地面植被建筑分类剥层、发丝线测量读数、一条设计好的运镜。注意：远看点云像平地毯，镜头要贴低穿过去。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#777777"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "点云测绘：The Fields Under the Forest",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/lidar-survey",
+    "by": "LemoLab · lemo-opuscar",
+    "license": "prompts/code MIT, demo video CC BY 4.0",
+    "media_ok": true
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": ""
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/point-cloud-survey"
+ },
+ {
+  "order": 9,
+  "id": "S04",
+  "slug": "blueprint",
+  "name_en": "Blueprint Drawing",
+  "name_zh": "蓝图工程制图",
+  "card": "用 Canvas 在普鲁士蓝晒图纸上，用白色细线按绘图顺序画出你的主题，配尺寸线、编号气泡和图框。",
+  "keywords": "cyanotype 蓝晒纸、白色工程细线、逐层绘制顺序、尺寸线与引线、编号气泡、title block 图框、剖面线、整张图纸平移缩放",
+  "warn": "只用蓝白两色的 2D 线稿，一做成 3D 或发光线框就不像了。",
+  "fail": "做成 3D 或发光线框就不像了；只用蓝白两色的 2D 线稿；线条一次全出现会丢掉绘制感。",
+  "fx_a": "普鲁士蓝图纸上，白线按绘图顺序画出机器和吊车，带编号气泡、尺寸线和图框。",
+  "fx_b": "我们做的英文讲解版。白线按图号依次画出 FIG. 1 粮仓、FIG. 2 老鼠、FIG. 3 野猫，带尺寸线、编号气泡和放大详图，最后补上图框。",
+  "full_prompt": "用 Canvas 在普鲁士蓝晒图纸上，用白色细线按绘图顺序画出你的主题，配尺寸线、编号气泡和图框。画面要点：cyanotype 蓝晒纸、白色工程细线、逐层绘制顺序、尺寸线与引线、编号气泡、title block 图框、剖面线、整张图纸平移缩放。注意：只用蓝白两色的 2D 线稿，一做成 3D 或发光线框就不像了。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#3e6cb8"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "捕云机器专利图",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/blueprint",
+    "by": "LemoLab · lemo-opuscar",
+    "license": "prompts/code MIT, demo video CC BY 4.0",
+    "media_ok": true
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": "https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits"
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/blueprint"
+ },
+ {
+  "order": 10,
+  "id": "S14",
+  "slug": "sticker-explainer",
+  "name_en": "Die-cut Sticker Explainer",
+  "name_zh": "贴纸科普",
+  "card": "用 HTML 大画布做你的主题的科普动画，照片抠图加 10px 白边做成贴纸，蓝灰底只用两三种颜色，镜头在画布上平移缩放。",
+  "keywords": "照片抠图白描边贴纸、蓝灰米白底、两三色加一个强调色、扁平图标配精确图表、超大画布、长缓动平移缩放、柱状生长与数字滚动",
+  "warn": "配色一多、图表比例不准，就没有科普的严肃感。",
+  "fail": "配色超过三种就散；柱高和数字比例要准，不然没有科普的严肃感；贴纸缺白边和投影就是普通抠图。",
+  "fx_a": "元素周期表、世界地图和手机，照片抠图加白边做成贴纸，70/118 大数字砸出。",
+  "fx_b": "我们做的英文讲解版。陶罐和老鼠贴纸拍上来，柱状图涨到 48 只，镜头推到 THEN THE WILDCAT ARRIVED，野猫贴纸拍下，挂出 Felis lybica 标签。",
+  "full_prompt": "用 HTML 大画布做你的主题的科普动画，照片抠图加 10px 白边做成贴纸，蓝灰底只用两三种颜色，镜头在画布上平移缩放。画面要点：照片抠图白描边贴纸、蓝灰米白底、两三色加一个强调色、扁平图标配精确图表、超大画布、长缓动平移缩放、柱状生长与数字滚动。注意：配色一多、图表比例不准，就没有科普的严肃感。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#b88a3e"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "手机与元素周期表拆解",
+    "url": "https://vincentwei1021.github.io/mg-styles-15/?lang=zh#19-paperclip",
+    "by": "Vincentwei1021 · mg-styles-15",
+    "license": "prompts/code MIT; demo video not redistributed",
+    "media_ok": false
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": "https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits"
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/sticker-explainer"
+ },
+ {
+  "order": 11,
+  "id": "S13",
+  "slug": "feature-3d-character",
+  "name_en": "Feature-film 3D Character",
+  "name_zh": "动画电影式3D角色",
+  "card": "用你认为最好的技术做一支动画短片，主角是你的主题，电影布光、浅景深、角色有表情有表演，做到你能做到的最复杂最精致。",
+  "keywords": "one-shot 动画短片、自选技术栈、电影级逆光与夕阳、浅景深、角色表情与表演、按镜头讲小故事、电影字幕条",
+  "warn": "只说做个角色会退成简陋小人，要明确要求最复杂最精致。",
+  "fail": "只说做个角色会退成简陋的 SVG 小人；要写明往最复杂了做，放开 Three.js 或 Blender；没有景深和轮廓光就不像动画电影。",
+  "fx_a": "鹈鹕骑自行车经过夕阳码头，电影感浅景深和暖色逆光。",
+  "fx_b": "灯塔里的小机器人和复古收音机，示波器屏幕亮起，英文字幕。",
+  "full_prompt": "用你认为最好的技术做一支动画短片，主角是你的主题，电影布光、浅景深、角色有表情有表演，做到你能做到的最复杂最精致。画面要点：one-shot 动画短片、自选技术栈、电影级逆光与夕阳、浅景深、角色表情与表演、按镜头讲小故事、电影字幕条。注意：只说做个角色会退成简陋小人，要明确要求最复杂最精致。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#b86c3e"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "鹈鹕骑自行车",
+    "url": "https://prompt-motion.com/axtonliu-0b861d",
+    "by": "prompt-motion.com",
+    "license": "link only",
+    "media_ok": false
+   },
+   {
+    "layer": "B",
+    "title": "机器人守灯塔",
+    "url": "https://prompt-motion.com/faroukzy-9ff23e",
+    "by": "prompt-motion.com",
+    "license": "link only",
+    "media_ok": false
+   }
+  ],
+  "preview": null,
+  "scene": null
+ },
+ {
+  "order": 12,
+  "id": "S03",
+  "slug": "chinese-ink-wash",
+  "name_en": "Chinese Ink Wash",
+  "name_zh": "中国水墨",
+  "card": "用代码在宣纸上画你的主题的水墨动画，只用五档墨色，留白过半，笔触一笔一笔画出来，只盖一枚朱红印章。",
+  "keywords": "写意、程序宣纸纹理、墨分五色、没骨带墨量笔触、飞白干笔、留白六到八成、墨晕转场、一枚朱红印章",
+  "warn": "别画闭合描边轮廓，要用带墨量会枯的毛笔笔触。",
+  "fail": "矢量描边加笔刷贴图会很假；要带墨量的毛笔笔触，不画闭合轮廓；留白一少就成了彩色插画。",
+  "fx_a": "大片留白的宣纸上，一只鸟掠过水面，芦苇和涟漪，英文诗句字幕。",
+  "fx_b": "我们做的英文讲解版。村民放下扫帚伸出手，猫在灶边蜷起，月亮出来、红印落下，字幕 PEOPLE DID NOT CHASE IT AWAY 换成 THE CAT STAYED。",
+  "full_prompt": "用代码在宣纸上画你的主题的水墨动画，只用五档墨色，留白过半，笔触一笔一笔画出来，只盖一枚朱红印章。画面要点：写意、程序宣纸纹理、墨分五色、没骨带墨量笔触、飞白干笔、留白六到八成、墨晕转场、一枚朱红印章。注意：别画闭合描边轮廓，要用带墨量会枯的毛笔笔触。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#d8d8d8"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "持剑者与墨浪",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/ink-wash",
+    "by": "LemoLab · lemo-opuscar",
+    "license": "prompts/code MIT, demo video CC BY 4.0",
+    "media_ok": true
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": "https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits"
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/chinese-ink-wash"
+ },
+ {
+  "order": 13,
+  "id": "S10",
+  "slug": "ascii-crt",
+  "name_en": "ASCII Character Visuals",
+  "name_zh": "ASCII字符视觉",
+  "card": "用等宽字符网格拼出你的主题，琥珀色单色 CRT 荧光屏，加扫描线和辉光，推拉镜头靠改字号来做。",
+  "keywords": "monospace 字符网格、琥珀或绿色荧光单色、CRT 扫描线与桶形畸变、bloom 辉光、字符密度梯度、光标闪烁、改字号推拉、打字机字幕",
+  "warn": "每一处亮点都得是网格里的真字符，整图套 ASCII 滤镜会露馅。",
+  "fail": "整张图套 ASCII 滤镜一看就是滤镜；每个像素都要来自网格里的真字符；字符集太少画面会糊。",
+  "fx_a": "黑底上暖黄字符拼出城市夜景，一颗字符地球慢慢升起。",
+  "fx_b": "绿色字符组成的人头侧影和指纹涟漪。",
+  "full_prompt": "用等宽字符网格拼出你的主题，琥珀色单色 CRT 荧光屏，加扫描线和辉光，推拉镜头靠改字号来做。画面要点：monospace 字符网格、琥珀或绿色荧光单色、CRT 扫描线与桶形畸变、bloom 辉光、字符密度梯度、光标闪烁、改字号推拉、打字机字幕。注意：每一处亮点都得是网格里的真字符，整图套 ASCII 滤镜会露馅。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#151515"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "终端字符组成故乡与地球",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/ascii-crt",
+    "by": "LemoLab · lemo-opuscar",
+    "license": "prompts/code MIT, demo video CC BY 4.0",
+    "media_ok": true
+   },
+   {
+    "layer": "B",
+    "title": "ASCII字符音乐视觉",
+    "url": "https://prompt-motion.com/rames-jusso-589f80",
+    "by": "prompt-motion.com",
+    "license": "link only",
+    "media_ok": false
+   }
+  ],
+  "preview": {
+   "layer": "A",
+   "by": "LemoLab · lemo-opuscar"
+  },
+  "scene": null
+ },
+ {
+  "order": 14,
+  "id": "S01",
+  "slug": "isometric-world",
+  "name_en": "Isometric 2.5D World",
+  "name_zh": "等轴2.5D世界",
+  "card": "用 Canvas 或 Three.js 正交相机把你的主题做成等轴测微缩世界，每个面三色调平涂，用小图标和引线标数据。",
+  "keywords": "true isometric 30 度、每面三色调平涂、悬浮底座带剖面、Isotype 图标计数、标签引线、剖开 cutaway、建筑生长带过冲、沿路线带镜头",
+  "warn": "固定 30 度等轴，一加透视或描边就变成低多边形 3D。",
+  "fail": "夹带透视就变成低多边形 3D；固定 30 度投影、不描边；镜头乱转会破坏等轴感。",
+  "fx_a": "等轴视角的山坡咖啡园，小卡车运货，咖啡豆剖面圆标，英文字幕。",
+  "fx_b": "淡紫白的等轴城市一格格升起，中央高塔亮起，最后打出城市名标题。",
+  "full_prompt": "用 Canvas 或 Three.js 正交相机把你的主题做成等轴测微缩世界，每个面三色调平涂，用小图标和引线标数据。画面要点：true isometric 30 度、每面三色调平涂、悬浮底座带剖面、Isotype 图标计数、标签引线、剖开 cutaway、建筑生长带过冲、沿路线带镜头。注意：固定 30 度等轴，一加透视或描边就变成低多边形 3D。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#6cb83e",
+   "#b84e3e"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "咖啡从农田到咖啡机的等轴旅程",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/iso-infographic",
+    "by": "LemoLab · lemo-opuscar",
+    "license": "prompts/code MIT, demo video CC BY 4.0",
+    "media_ok": true
+   },
+   {
+    "layer": "B",
+    "title": "等轴城市从空地长出",
+    "url": "https://vincentwei1021.github.io/mg-styles-15/?lang=zh#03-isometric",
+    "by": "Vincentwei1021 · mg-styles-15",
+    "license": "prompts/code MIT; demo video not redistributed",
+    "media_ok": false
+   }
+  ],
+  "preview": {
+   "layer": "A",
+   "by": "LemoLab · lemo-opuscar"
+  },
+  "scene": null
+ },
+ {
+  "order": 15,
+  "id": "S23",
+  "slug": "van-gogh-impasto",
+  "name_en": "Van Gogh Impasto",
+  "name_zh": "梵高厚涂油画",
+  "card": "用 Canvas 2D 画你的主题，先平涂底色，再顺着流场铺短粗厚涂笔触，每块区域十几种色相，笔触每秒换八次。",
+  "keywords": "平涂底稿加流场笔触、墙竖地沿透视星空绕漩涡、区域色板十几种色相、短粗厚涂、深蓝描边、8fps 笔触沸腾、小物件单独成层",
+  "warn": "墙、地、人物分三遍铺笔触，一套参数跑全图会糊成地毯。",
+  "fail": "只换颜色不铺笔触就是普通插画；墙、地、人物要分层分别铺笔触；全屏笔触一起抖会晕。",
+  "fx_a": "少女与猫在梵高卧室里，墙、地板、人物都是短促的厚涂笔触。",
+  "fx_b": "我们做的制作。卡尔走过麦田，头顶星空漩涡和柏树。",
+  "full_prompt": "用 Canvas 2D 画你的主题，先平涂底色，再顺着流场铺短粗厚涂笔触，每块区域十几种色相，笔触每秒换八次。画面要点：平涂底稿加流场笔触、墙竖地沿透视星空绕漩涡、区域色板十几种色相、短粗厚涂、深蓝描边、8fps 笔触沸腾、小物件单独成层。注意：墙、地、人物分三遍铺笔触，一套参数跑全图会糊成地毯。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#3e6cb8",
+   "#b84e3e"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "少女与猫喝茶 · 梵高厚涂油画",
+    "url": "https://github.com/alchaincyf/huashu-art-motion",
+    "by": "alchaincyf · huashu-art-motion",
+    "license": "MIT (re-rendered from source)",
+    "media_ok": true
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": ""
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/huashu-portraits"
+ },
+ {
+  "order": 16,
+  "id": "S37",
+  "slug": "psychedelic-shader",
+  "name_en": "Iridescent Psychedelic Shader",
+  "name_zh": "虹彩迷幻Shader",
+  "card": "用 shader 做一支迷幻催眠动画，主题是你的主题，同心线和万花筒对称一直旋转，虹彩色沿边缘流动。",
+  "keywords": "psychedelic 催眠、同心线、万花筒镜像对称、旋涡隧道、虹彩薄膜色沿边缘流动、高饱和撞色、VJ 循环",
+  "warn": "只写迷幻两个字会退成普通渐变，要写清对称方式和运动方式。",
+  "fail": "来源只有一句话，容易退成普通渐变背景；要写清几重对称、怎么转、用哪几种色；A 的前 0.5 秒是黑场，剪的时候注意避开。",
+  "fx_a": "黑场后亮起一只虹彩眼睛，瞳孔放射成光束隧道。",
+  "fx_b": "品红、青、黄绿万花筒对称旋转，最后变成几何隧道。",
+  "full_prompt": "用 shader 做一支迷幻催眠动画，主题是你的主题，同心线和万花筒对称一直旋转，虹彩色沿边缘流动。画面要点：psychedelic 催眠、同心线、万花筒镜像对称、旋涡隧道、虹彩薄膜色沿边缘流动、高饱和撞色、VJ 循环。注意：只写迷幻两个字会退成普通渐变，要写清对称方式和运动方式。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#3ea8b8",
+   "#6c3eb8",
+   "#8ab83e"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "虹彩眼睛与同心线催眠",
+    "url": "https://prompt-motion.com/monokern-ade5b6",
+    "by": "prompt-motion.com",
+    "license": "link only",
+    "media_ok": false
+   },
+   {
+    "layer": "B",
+    "title": "万花筒与彩色旋涡 VJ",
+    "url": "https://x.com/yama_kiyo/status/2103740786177134910",
+    "by": "X post",
+    "license": "link only",
+    "media_ok": false
+   }
+  ],
+  "preview": null,
+  "scene": null
+ },
+ {
+  "order": 17,
+  "id": "S12",
+  "slug": "claymation",
+  "name_en": "Claymation Stop-motion",
+  "name_zh": "黏土定格",
+  "card": "用 Blender 做你的主题的黏土定格动画，表面留指纹和压痕，两帧换一个姿势按 12 帧播放，柔光棚拍浅景深。",
+  "keywords": "黏土材质指纹压痕、on twos 12fps、每拍形状微变 boil、柔光棚拍、浅景深微距、手工跳切节奏",
+  "warn": "动作一顺滑就像 CG，要故意抽帧，形状每一拍都微微变。",
+  "fail": "动作太顺就像 3D 动画，要抽帧做出定格感；材质没有指纹和压痕就是塑料；光要像桌面实拍。",
+  "fx_a": "黄底上黏土老头和一排黏土小物（牛油果、吐司、耳机）跳舞，蓝色泥点飞溅。",
+  "fx_b": "我们做的制作。黏土蓝猫揉泥团、捏出花盆、种下一棵芽。",
+  "full_prompt": "用 Blender 做你的主题的黏土定格动画，表面留指纹和压痕，两帧换一个姿势按 12 帧播放，柔光棚拍浅景深。画面要点：黏土材质指纹压痕、on twos 12fps、每拍形状微变 boil、柔光棚拍、浅景深微距、手工跳切节奏。注意：动作一顺滑就像 CG，要故意抽帧，形状每一拍都微微变。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#b8a83e"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "黏土设备乐队MV",
+    "url": "https://prompt-motion.com/davidshulmanfl-371638",
+    "by": "prompt-motion.com",
+    "license": "link only",
+    "media_ok": false
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": ""
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/claymation"
+ },
+ {
+  "order": 18,
+  "id": "S02",
+  "slug": "pixel-game",
+  "name_en": "Pixel Game",
+  "name_zh": "像素游戏",
+  "card": "用 Canvas 320×180 内部分辨率画你的主题，最近邻放大 6 倍，限定 16 到 32 色，精灵按阶梯帧动，背景分层视差。",
+  "keywords": "低分辨率大像素、16 到 32 色有限色板、nearest-neighbour 整数放大、8 到 12fps 精灵帧、视差卷轴、steps() 阶梯时序、dithering、游戏 HUD 字",
+  "warn": "一用平滑缩放或平滑缓动就糊，坐标和位移全取整数。",
+  "fail": "缩放插值或缓动会把像素糊成马赛克；坐标全取整数，用最近邻放大；调色板限在 16 到 32 色。",
+  "fx_a": "中秋夜的像素城市，月亮里兔子捣药，彩虹灯带，HAPPY CHUSEOK 像素字。",
+  "fx_b": "夜晚湖面上的像素游戏战斗，巫师放出陨石和火龙，分数在跳。",
+  "full_prompt": "用 Canvas 320×180 内部分辨率画你的主题，最近邻放大 6 倍，限定 16 到 32 色，精灵按阶梯帧动，背景分层视差。画面要点：低分辨率大像素、16 到 32 色有限色板、nearest-neighbour 整数放大、8 到 12fps 精灵帧、视差卷轴、steps() 阶梯时序、dithering、游戏 HUD 字。注意：一用平滑缩放或平滑缓动就糊，坐标和位移全取整数。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#4e3eb8"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "中秋像素夜景",
+    "url": "https://prompt-motion.com/hoyoyoda-3a5c08",
+    "by": "prompt-motion.com",
+    "license": "link only",
+    "media_ok": false
+   },
+   {
+    "layer": "B",
+    "title": "像素巫师施法",
+    "url": "https://prompt-motion.com/0xevinho-3777d8",
+    "by": "prompt-motion.com",
+    "license": "link only",
+    "media_ok": false
+   }
+  ],
+  "preview": null,
+  "scene": null
+ },
+ {
+  "order": 19,
+  "id": "S07",
+  "slug": "flat-vector",
+  "name_en": "Flat Vector",
+  "name_zh": "扁平矢量",
+  "card": "用 SVG 加 GSAP 做你的主题的扁平矢量讲解，纯色无渐变，五六种高饱和色，元素弹性入场，一镜到底。",
+  "keywords": "SVG 加 GSAP、纯色大色块、五六色高饱和色板、overshoot 弹性缓动、预备冲出回弹、约 10% 挤压拉伸、stagger 两到四帧、形状擦除转场",
+  "warn": "加渐变或几个主体同时动就散了，同一时刻只动一个主角。",
+  "fail": "加了渐变或几个主体同时动就散；一次只让一个主角动；纯色控制在五六种以内。",
+  "fx_a": "电脑屏幕飞入，红点弹跳，最后蓝底上 popwise 品牌字收尾。",
+  "fx_b": "我们做的英文讲解版，故事开头。10,000 YEARS AGO 弹出，田垄和麦子长出，农夫招手，镜头摇到三只陶罐，谷子倒进去。",
+  "full_prompt": "用 SVG 加 GSAP 做你的主题的扁平矢量讲解，纯色无渐变，五六种高饱和色，元素弹性入场，一镜到底。画面要点：SVG 加 GSAP、纯色大色块、五六色高饱和色板、overshoot 弹性缓动、预备冲出回弹、约 10% 挤压拉伸、stagger 两到四帧、形状擦除转场。注意：加渐变或几个主体同时动就散了，同一时刻只动一个主角。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#b88a3e",
+   "#3eb8a8"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "城市与电脑前的人物",
+    "url": "https://vincentwei1021.github.io/mg-styles-15/?lang=zh#01-flat-vector",
+    "by": "Vincentwei1021 · mg-styles-15",
+    "license": "prompts/code MIT; demo video not redistributed",
+    "media_ok": false
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": "https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits"
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/flat-vector"
+ },
+ {
+  "order": 20,
+  "id": "S24",
+  "slug": "monet-impressionist",
+  "name_en": "Impressionist Oil (Monet)",
+  "name_zh": "印象派油画／莫奈",
+  "card": "用 Canvas 2D 画你的主题，不勾边，水面用横向短笔触，受光侧叠暖黄、背光侧叠淡紫，光斑一闪一闪。",
+  "keywords": "印象派不勾边、横向水面笔触、受光暖黄背光淡紫的色彩阴影、亮色短笔光斑颤动、6fps 局部笔触沸腾、睡莲日本桥母题",
+  "warn": "全屏一起沸腾会变满屏噪点，地板和桥这类大面保持不动。",
+  "fail": "全屏笔触一起抖会晕，只让水面和光斑动；笔触太大人物会糊掉；颜色要补色并置，别调成灰。",
+  "fx_a": "少女与猫在莫奈睡莲窗前，全画面碎点笔触。",
+  "fx_b": "我们做的制作。卡尔走上绿色日本桥，桥下水面浮着睡莲。",
+  "full_prompt": "用 Canvas 2D 画你的主题，不勾边，水面用横向短笔触，受光侧叠暖黄、背光侧叠淡紫，光斑一闪一闪。画面要点：印象派不勾边、横向水面笔触、受光暖黄背光淡紫的色彩阴影、亮色短笔光斑颤动、6fps 局部笔触沸腾、睡莲日本桥母题。注意：全屏一起沸腾会变满屏噪点，地板和桥这类大面保持不动。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#b86c3e",
+   "#3e6cb8"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "少女与猫喝茶 · 印象派油画／莫奈",
+    "url": "https://github.com/alchaincyf/huashu-art-motion",
+    "by": "alchaincyf · huashu-art-motion",
+    "license": "MIT (re-rendered from source)",
+    "media_ok": true
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": ""
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/huashu-portraits"
+ },
+ {
+  "order": 21,
+  "id": "S35",
+  "slug": "particle-morph",
+  "name_en": "Particle Morph",
+  "name_zh": "粒子聚散造型",
+  "card": "做一支粒子动画，几十万发光粒子在深色背景上聚成你的主题的形状和文字，再散开变成下一个形状。",
+  "keywords": "数十万发光粒子、聚拢成形再散开、深蓝黑底、连线成关系网络、大数字计数器、一句英文结论字幕",
+  "warn": "粒子太少或不给目标形状，就读不出造型。",
+  "fail": "粒子太少或没给目标形状就读不出造型；要给定形状并让粒子够多；聚和散要有节奏，别一直飘。",
+  "fx_a": "深蓝底上几百万粒子聚成物体又散开，右上角计数在跳。",
+  "fx_b": "我们做的英文讲解版，故事收尾。6 万粒子聚成村子，卷成漩涡，再聚成伸手的人和坐着的猫，粒子拼出 MAYBE… THE CAT CHOSE US。",
+  "full_prompt": "做一支粒子动画，几十万发光粒子在深色背景上聚成你的主题的形状和文字，再散开变成下一个形状。画面要点：数十万发光粒子、聚拢成形再散开、深蓝黑底、连线成关系网络、大数字计数器、一句英文结论字幕。注意：粒子太少或不给目标形状，就读不出造型。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#3e6cb8",
+   "#b88a3e"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "Drone Emprit：粒子地图与关系网络",
+    "url": "https://prompt-motion.com/ismailfahmi-557268",
+    "by": "prompt-motion.com",
+    "license": "link only",
+    "media_ok": false
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": "https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits"
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/particle-morph"
+ },
+ {
+  "order": 22,
+  "id": "S28",
+  "slug": "white-model-projection",
+  "name_en": "White-model Projection",
+  "name_zh": "实体白模投影",
+  "card": "用 Three.js 做你的城市白模，纯白体块放在暗房展台上，数据只以投影光一层层打上去，光边柔和、溢出底座。",
+  "keywords": "纯白体块模型、暗房展台、数据即投影光、只亮朝向投影仪的面、柔和光边溢出底座、一层一个问题、开灯关灯作开场收尾、真实建筑数据",
+  "warn": "颜色别画进材质，暖色环境光还会把白模染黄。",
+  "fail": "白模本身带了颜色就不是投影了，颜色只能来自投影光；字要投在模型上，别浮在屏幕上。",
+  "fx_a": "灰白城市白模上投出蓝紫年代色块，1971、2015 年份切换。",
+  "fx_b": "我们做的。白模从老工厂变成公共图书馆，投影光画出路线。",
+  "full_prompt": "用 Three.js 做你的城市白模，纯白体块放在暗房展台上，数据只以投影光一层层打上去，光边柔和、溢出底座。画面要点：纯白体块模型、暗房展台、数据即投影光、只亮朝向投影仪的面、柔和光边溢出底座、一层一个问题、开灯关灯作开场收尾、真实建筑数据。注意：颜色别画进材质，暖色环境光还会把白模染黄。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#3e6cb8",
+   "#b86c3e"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "白模投影：How a Flattened City Grew Back",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/white-model",
+    "by": "LemoLab · lemo-opuscar",
+    "license": "prompts/code MIT, demo video CC BY 4.0",
+    "media_ok": true
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": ""
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/white-model-projection"
+ },
+ {
+  "order": 23,
+  "id": "S22",
+  "slug": "egyptian-mural",
+  "name_en": "Ancient Egyptian Mural",
+  "name_zh": "古埃及壁画",
+  "card": "用 Canvas 2D 把你的主题画成古埃及墓室壁画，人物侧脸正眼，分栏横带构图配象形文字栏，赭石青金平涂加黑描边。",
+  "keywords": "侧脸正眼程式、分栏横带 register、象形文字栏、赭石青金孔雀绿土黄平涂、黑色描边、太阳光线末端小手、墙面石灰质感",
+  "warn": "壁画是平的，别加透视和阴影，再让河水和光线动起来免得太静。",
+  "fail": "加透视和阴影就不像壁画；人物要正身侧脸的规范姿势；颜色只用赭红、土黄、青绿这类矿物色。",
+  "fx_a": "少女与猫画成埃及壁画，正身侧脸，象形文字边框。",
+  "fx_b": "我们做的制作。卡尔走过壁画格子，旁边纸莎草和太阳圆盘。",
+  "full_prompt": "用 Canvas 2D 把你的主题画成古埃及墓室壁画，人物侧脸正眼，分栏横带构图配象形文字栏，赭石青金平涂加黑描边。画面要点：侧脸正眼程式、分栏横带 register、象形文字栏、赭石青金孔雀绿土黄平涂、黑色描边、太阳光线末端小手、墙面石灰质感。注意：壁画是平的，别加透视和阴影，再让河水和光线动起来免得太静。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#b88a3e"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "少女与猫喝茶 · 古埃及壁画",
+    "url": "https://github.com/alchaincyf/huashu-art-motion",
+    "by": "alchaincyf · huashu-art-motion",
+    "license": "MIT (re-rendered from source)",
+    "media_ok": true
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": ""
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/huashu-portraits"
+ },
+ {
+  "order": 24,
+  "id": "S29",
+  "slug": "exploded-view",
+  "name_en": "Product Exploded View",
+  "name_zh": "产品爆炸拆解",
+  "card": "用 Blender 做你的产品爆炸拆解，零件沿一根轴等距分层抬起，棚拍主光加冷色轮廓光，引线标真实参数，最后合回一体。",
+  "keywords": "真实 CAD／PCB／BOM、沿一轴等距分层、PBR 棚拍主光加冷轮廓光、HDRI 反射、引线与尺寸线、镜头在层间穿行、最后合拢",
+  "warn": "标注只写图纸里有的数，尺寸不许估。",
+  "fail": "型号和数字瞎编会露馅；零件要沿装配轴拆开；材质要分出金属、塑料和 PCB。",
+  "fx_a": "PCB 电路板爆炸拆解，RP2040 芯片和元件一层层升起，中英字幕。",
+  "fx_b": "我们做的。相机一层层拆开，光圈叶片收放，中英字幕。",
+  "full_prompt": "用 Blender 做你的产品爆炸拆解，零件沿一根轴等距分层抬起，棚拍主光加冷色轮廓光，引线标真实参数，最后合回一体。画面要点：真实 CAD／PCB／BOM、沿一轴等距分层、PBR 棚拍主光加冷轮廓光、HDRI 反射、引线与尺寸线、镜头在层间穿行、最后合拢。注意：标注只写图纸里有的数，尺寸不许估。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#4eb83e",
+   "#b88a3e"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "产品拆解：21 Keys, Opened",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/teardown",
+    "by": "LemoLab · lemo-opuscar",
+    "license": "prompts/code MIT, demo video CC BY 4.0",
+    "media_ok": true
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": ""
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/exploded-view"
+ },
+ {
+  "order": 25,
+  "id": "S16",
+  "slug": "editorial-dataviz",
+  "name_en": "Editorial Paper Data Story",
+  "name_zh": "纸面编辑式数据叙事",
+  "card": "用 Canvas 在米色点阵纸上画你的主题的真实数据，红蓝铅笔逐点画出，手写批注钉在数据点旁，图表本身当镜头。",
+  "keywords": "米色点阵纸、真实数据逐点绘制、红蓝铅笔笔触、手写批注钉在数据点、RdBu 发散色阶、图表即镜头、按数据选图型",
+  "warn": "别做成仪表盘或幻灯片，一次只讲一个观点。",
+  "fail": "做成仪表盘或幻灯片就丢了编辑感；一次只讲一个观点；转场只用图表本身的变化。",
+  "fx_a": "米白纸上彩铅画出一条折线，标出年份和出生事件。",
+  "fx_b": "旧地图上红点扩散，20,000,000+ 印刷数字砸出，盖上 BANNED 印章。",
+  "full_prompt": "用 Canvas 在米色点阵纸上画你的主题的真实数据，红蓝铅笔逐点画出，手写批注钉在数据点旁，图表本身当镜头。画面要点：米色点阵纸、真实数据逐点绘制、红蓝铅笔笔触、手写批注钉在数据点、RdBu 发散色阶、图表即镜头、按数据选图型。注意：别做成仪表盘或幻灯片，一次只讲一个观点。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#cfcfcf"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "铅笔温度曲线与冷暖条",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/dataviz",
+    "by": "LemoLab · lemo-opuscar",
+    "license": "prompts/code MIT, demo video CC BY 4.0",
+    "media_ok": true
+   },
+   {
+    "layer": "B",
+    "title": "印刷机传播：地图、数量与报纸叙事",
+    "url": "https://x.com/maxescu/status/2104898184442962277",
+    "by": "X post",
+    "license": "link only",
+    "media_ok": false
+   }
+  ],
+  "preview": {
+   "layer": "A",
+   "by": "LemoLab · lemo-opuscar"
+  },
+  "scene": null
+ },
+ {
+  "order": 26,
+  "id": "S06",
+  "slug": "glassmorphism-ui",
+  "name_en": "Glassmorphism UI",
+  "name_zh": "玻璃拟态UI",
+  "card": "用 HTML 做你的主题的玻璃拟态动画，底层三到五个大色斑高斯模糊慢慢漂，上面浮磨砂玻璃卡片，1px 半透明白描边。",
+  "keywords": "aurora 大色斑 blur 80 到 150px、backdrop-filter 磨砂卡片、白色 5 到 10% 填充、1px 白描边、邻近色两三色、3 到 5% 噪点防色带、sine 呼吸缓动",
+  "warn": "撞色会脏，动作一快就廉价，全程慢呼吸。",
+  "fail": "用对比色会显廉价，只用邻近色；动作要慢；玻璃缺 1px 半透明白边和背景模糊就像普通卡片。",
+  "fx_a": "深蓝紫光斑上漂着磨砂玻璃卡片，开关和滑块在动，最后 Aurora 字标。",
+  "fx_b": "我们做的。琥珀橙暖色光斑上的待办玻璃卡，逐条勾选，Focus 球亮起。",
+  "full_prompt": "用 HTML 做你的主题的玻璃拟态动画，底层三到五个大色斑高斯模糊慢慢漂，上面浮磨砂玻璃卡片，1px 半透明白描边。画面要点：aurora 大色斑 blur 80 到 150px、backdrop-filter 磨砂卡片、白色 5 到 10% 填充、1px 白描边、邻近色两三色、3 到 5% 噪点防色带、sine 呼吸缓动。注意：撞色会脏，动作一快就廉价，全程慢呼吸。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#3e4eb8"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "聊天卡片与Focus玻璃开关",
+    "url": "https://vincentwei1021.github.io/mg-styles-15/?lang=zh#12-aurora-glass",
+    "by": "Vincentwei1021 · mg-styles-15",
+    "license": "prompts/code MIT; demo video not redistributed",
+    "media_ok": false
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": ""
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/glassmorphism-ui"
+ },
+ {
+  "order": 27,
+  "id": "S33",
+  "slug": "brick-toy",
+  "name_en": "Brick Toy",
+  "name_zh": "积木玩具",
+  "card": "用 Blender 做你的主题的积木定格，真实木桌上微距拍，亮面塑料带凸点，角色两帧一拍定格，镜头保持顺滑。",
+  "keywords": "真实桌面、微距浅景深、亮面 ABS 矩形高光、顶面凸点、缝隙接触阴影、角色 on twos 定格、镜头逐帧顺滑、中性棚拍 HDRI",
+  "warn": "别出现品牌字样和小人轮廓，角色用积木拼出来。",
+  "fail": "用品牌小人会有版权风险；积木要有凸点和塑料高光；景深一深就不像微距实拍。",
+  "fx_a": "积木机器人推倒红白积木塔，背景是茶壶，桌面实拍感。",
+  "fx_b": "我们做的制作。积木小车开过一座积木桥，小人在旁边搭砖。",
+  "full_prompt": "用 Blender 做你的主题的积木定格，真实木桌上微距拍，亮面塑料带凸点，角色两帧一拍定格，镜头保持顺滑。画面要点：真实桌面、微距浅景深、亮面 ABS 矩形高光、顶面凸点、缝隙接触阴影、角色 on twos 定格、镜头逐帧顺滑、中性棚拍 HDRI。注意：别出现品牌字样和小人轮廓，角色用积木拼出来。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#4eb83e",
+   "#b86c3e"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "积木玩具：Rocket from Spare Parts",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/brick-toy",
+    "by": "LemoLab · lemo-opuscar",
+    "license": "prompts/code MIT, demo video CC BY 4.0",
+    "media_ok": true
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": ""
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/brick-toy"
+ },
+ {
+  "order": 28,
+  "id": "S11",
+  "slug": "risograph",
+  "name_en": "Risograph Print",
+  "name_zh": "Risograph孔版套印",
+  "card": "用代码模拟孔版印刷做你的主题，两三种专色正片叠底，带半调网点和轻微套印错位，色块不描边。",
+  "keywords": "两三种 spot ink 专色、multiply 叠出第三色、套印错位、halftone 网点、颗粒针孔、暖白纸、无轮廓色块、角色 12fps 镜头 24fps",
+  "warn": "矢量图加噪点不算，每块颜色都得来自分版叠印。",
+  "fail": "矢量图加噪点不算，每块颜色都要来自分版叠印；没有套印错位就不像；三块版的网角要错开。",
+  "fx_a": "黄、蓝、粉三色网点印出的街道，骑车人穿过公园，鸽子飞起。",
+  "fx_b": "我们补做。MAKE IT、MOVE IT 大字砸下带套印错位，骑车人穿过公园。",
+  "full_prompt": "用代码模拟孔版印刷做你的主题，两三种专色正片叠底，带半调网点和轻微套印错位，色块不描边。画面要点：两三种 spot ink 专色、multiply 叠出第三色、套印错位、halftone 网点、颗粒针孔、暖白纸、无轮廓色块、角色 12fps 镜头 24fps。注意：矢量图加噪点不算，每块颜色都得来自分版叠印。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#a8b83e",
+   "#b83e6c"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "错版街道与公园骑行",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/risograph",
+    "by": "LemoLab · lemo-opuscar",
+    "license": "prompts/code MIT, demo video CC BY 4.0",
+    "media_ok": true
+   },
+   {
+    "layer": "B",
+    "title": "",
+    "url": "",
+    "by": "carl-motion",
+    "license": "MIT",
+    "media_ok": true,
+    "inspired_by": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/demos/effects/riso-print-hits/RisoMisregistrationHit.tsx"
+   }
+  ],
+  "preview": {
+   "layer": "B",
+   "by": "carl-motion"
+  },
+  "scene": "templates/scenes/risograph"
+ },
+ {
+  "order": 29,
+  "id": "S15",
+  "slug": "scifi-hud",
+  "name_en": "Sci-fi Scan HUD",
+  "name_zh": "科幻扫描HUD",
+  "card": "用 Three.js 线框把你的主题扫描成发光全息体，目标框锁定部件再拆开，数字从乱码滚到真值，单色加辉光。",
+  "keywords": "发光 wireframe、投影底座、扫描面生长、目标锁定框、局部拆解、乱码数字滚动落定、单冷色加一个暖色强调、近黑舞台、bloom",
+  "warn": "文字别直接压在线框上，放进暗底板，部件之间要连着。",
+  "fail": "线框上直接叠字会看不清，字要放暗底板；部件悬空会假，要连在一起；颜色一多就乱。",
+  "fx_a": "电动自行车全息扫描，电池、电机读数逐项亮出，暗青蓝底。",
+  "fx_b": "青色地球扫描界面，读数滚动，最后转成橙色目标锁定。",
+  "full_prompt": "用 Three.js 线框把你的主题扫描成发光全息体，目标框锁定部件再拆开，数字从乱码滚到真值，单色加辉光。画面要点：发光 wireframe、投影底座、扫描面生长、目标锁定框、局部拆解、乱码数字滚动落定、单冷色加一个暖色强调、近黑舞台、bloom。注意：文字别直接压在线框上，放进暗底板，部件之间要连着。输出 1920×1080、30fps、8 秒，写成可复现的源码并渲染成 MP4。",
+  "palette": [
+   "#3ea8b8"
+  ],
+  "refs": [
+   {
+    "layer": "A",
+    "title": "线框自行车与部件扫描",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/hologram-hud",
+    "by": "LemoLab · lemo-opuscar",
+    "license": "prompts/code MIT, demo video CC BY 4.0",
+    "media_ok": true
+   },
+   {
+    "layer": "B",
+    "title": "地球雷达与目标锁定",
+    "url": "https://vincentwei1021.github.io/mg-styles-15/?lang=zh#22-hud",
+    "by": "Vincentwei1021 · mg-styles-15",
+    "license": "prompts/code MIT; demo video not redistributed",
+    "media_ok": false
+   }
+  ],
+  "preview": {
+   "layer": "A",
+   "by": "LemoLab · lemo-opuscar"
+  },
+  "scene": null
+ }
+]
