@@ -6,6 +6,8 @@
 
 <sub>Preview: our render (layer B), MIT. 预览是我们渲染的 B，MIT 许可。</sub>
 
+**Status 状态:** Implemented, one scene · 单场景实做
+
 ## Prompt (copy this)
 
 Paste into Claude, GPT or any coding model. Swap *your topic* for your own subject.
@@ -48,10 +50,16 @@ Palette 主色：`#d8d8d8`
 | Layer | Title | Source | License |
 |---|---|---|---|
 | A | 持剑者与墨浪 | [LemoLab · lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/ink-wash) | prompts/code MIT, demo video CC BY 4.0 |
-| B | carl-motion | [this repo](../../templates/scenes/chinese-ink-wash) · story idea: [en.yasue.org](https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits) | MIT |
+| B | carl-motion | [this repo](../../skills/carl-motion/scenes/chinese-ink-wash) · story idea: [en.yasue.org](https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits) | MIT |
 
 ## Reproduce · 复现
 
-Source that rendered the B clip: [`templates/scenes/chinese-ink-wash`](../../templates/scenes/chinese-ink-wash) (Python (NumPy + OpenCV + Pillow)). Its README has the exact render command.
+Source that rendered the B clip: [`skills/carl-motion/scenes/chinese-ink-wash`](../../skills/carl-motion/scenes/chinese-ink-wash) (Python (NumPy + OpenCV + Pillow)). Check dependencies first with `python3 skills/carl-motion/scripts/doctor.py chinese-ink-wash`.
 
-渲染 B 的完整源码在 [`templates/scenes/chinese-ink-wash`](../../templates/scenes/chinese-ink-wash)（Python (NumPy + OpenCV + Pillow)），渲染命令写在它的 README 里。
+```bash
+cd skills/carl-motion/scenes/chinese-ink-wash
+./render.sh /tmp/chinese-ink-wash
+python3 ../../scripts/deliver.py --frames /tmp/chinese-ink-wash/frames --out chinese-ink-wash.mp4
+```
+
+渲染 B 的完整源码在 [`skills/carl-motion/scenes/chinese-ink-wash`](../../skills/carl-motion/scenes/chinese-ink-wash)（Python (NumPy + OpenCV + Pillow)），渲染命令写在它的 README 里。

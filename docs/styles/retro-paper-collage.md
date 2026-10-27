@@ -6,6 +6,8 @@
 
 <sub>Preview: our render (layer B), MIT. 预览是我们渲染的 B，MIT 许可。</sub>
 
+**Status 状态:** Implemented, one scene · 单场景实做
+
 ## Prompt (copy this)
 
 Paste into Claude, GPT or any coding model. Swap *your topic* for your own subject.
@@ -48,10 +50,16 @@ Palette 主色：`#b88a3e` `#3e8ab8`
 | Layer | Title | Source | License |
 |---|---|---|---|
 | A | 男子打开脑盖喷出宇宙 | [Vincentwei1021 · mg-styles-15](https://vincentwei1021.github.io/mg-styles-15/?lang=zh#06-collage) | prompts/code MIT; demo video not redistributed |
-| B | carl-motion | [this repo](../../templates/scenes/retro-paper-collage) · story idea: [en.yasue.org](https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits) | MIT |
+| B | carl-motion | [this repo](../../skills/carl-motion/scenes/retro-paper-collage) · story idea: [en.yasue.org](https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits) | MIT |
 
 ## Reproduce · 复现
 
-Source that rendered the B clip: [`templates/scenes/retro-paper-collage`](../../templates/scenes/retro-paper-collage) (Python (NumPy + OpenCV + Pillow)). Its README has the exact render command.
+Source that rendered the B clip: [`skills/carl-motion/scenes/retro-paper-collage`](../../skills/carl-motion/scenes/retro-paper-collage) (Python (NumPy + OpenCV + Pillow)). Check dependencies first with `python3 skills/carl-motion/scripts/doctor.py retro-paper-collage`.
 
-渲染 B 的完整源码在 [`templates/scenes/retro-paper-collage`](../../templates/scenes/retro-paper-collage)（Python (NumPy + OpenCV + Pillow)），渲染命令写在它的 README 里。
+```bash
+cd skills/carl-motion/scenes/retro-paper-collage
+./render.sh /tmp/retro-paper-collage
+python3 ../../scripts/deliver.py --frames /tmp/retro-paper-collage/frames --out retro-paper-collage.mp4
+```
+
+渲染 B 的完整源码在 [`skills/carl-motion/scenes/retro-paper-collage`](../../skills/carl-motion/scenes/retro-paper-collage)（Python (NumPy + OpenCV + Pillow)），渲染命令写在它的 README 里。

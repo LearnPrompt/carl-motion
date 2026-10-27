@@ -21,5 +21,5 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 Third-party material keeps its own license: LemoLab demo films used as
-previews are CC BY 4.0; upstream code under templates/scenes/huashu-portraits/upstream
+previews are CC BY 4.0; upstream code under skills/carl-motion/scenes/huashu-portraits/upstream
 is MIT (see its LICENSE_huashu). Clips we do not redistribute are linked only.

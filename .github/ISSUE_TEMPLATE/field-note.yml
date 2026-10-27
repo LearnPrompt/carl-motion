@@ -1,0 +1,18 @@
+name: Field note · 实测记录
+description: You used a style; tell us what broke and how you fixed it.
+labels: [field-note]
+body:
+  - type: input
+    id: slug
+    attributes: { label: Style slug, description: "e.g. risograph (see skills/carl-motion/references/styles/INDEX.md)" }
+    validations: { required: true }
+  - type: input
+    id: topic
+    attributes: { label: Your topic · 题材 }
+  - type: dropdown
+    id: verdict
+    attributes: { label: deliver.py verdict, options: [green, yellow, red] }
+  - type: textarea
+    id: note
+    attributes: { label: What broke and how you fixed it · 踩到什么坑，怎么修的 }
+    validations: { required: true }

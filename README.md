@@ -88,7 +88,7 @@ The order follows the video we cut from them: neighbouring styles sit on roughly
 
 ## Skill
 
-`carl-motion` turns this library into something your coding agent can use. Ask for a style by name or by look (*flat, warm, hand-made*). The agent picks the closest entry, fills the prompt with your topic, checks it against the known failure points, and when the style ships source code here, it starts from that engine instead of a blank file.
+`carl-motion` turns this library into something your coding agent can use. Ask for a style by name or by look (*flat, warm, hand-made*). The agent picks the closest entry, fills the prompt with your topic, checks it against the known failure points, and when the style ships source code here, it starts from that engine instead of a blank file. Every card says how far the style is proven (implemented, upstream only, or research), and the finished clip has to pass the same delivery gate.
 
 | | Prompt pages | Skill |
 |---|---|---|
@@ -98,34 +98,34 @@ The order follows the video we cut from them: neighbouring styles sit on roughly
 
 ## Templates and source
 
-**Scene engines.** 20 styles ship the code that rendered their B clip, all at 1920×1080, 30 fps, 240 frames. Each folder has a README with the render command and the known limits.
+**Scene engines.** 20 styles ship the code that rendered their B clip, all at 1920×1080, 30 fps, 240 frames. Every engine has the same entry, `./render.sh <work_dir>`, writes 240 PNG frames, and hands them to `scripts/deliver.py`, which encodes the clip and returns a red, yellow or green verdict. `scripts/doctor.py <engine>` checks the machine first. Contract: [scene-contract.md](skills/carl-motion/references/scene-contract.md).
 
 | Folder | Style | Stack |
 |---|---|---|
-| [`retro-paper-collage`](templates/scenes/retro-paper-collage) | Retro Paper Collage | Python (NumPy + OpenCV + Pillow) |
-| [`neon-synthwave`](templates/scenes/neon-synthwave) | Neon Synthwave | Blender + Python |
-| [`watercolor`](templates/scenes/watercolor) | Watercolor | Python (NumPy + OpenCV + Pillow) |
-| [`woodcut`](templates/scenes/woodcut) | Black-and-white Woodcut | Python (NumPy + OpenCV + Pillow) |
-| [`soft-inflatable-3d`](templates/scenes/soft-inflatable-3d) | Soft Inflatable 3D | Blender + Python |
-| [`point-cloud-survey`](templates/scenes/point-cloud-survey) | Point-cloud Survey | Blender + Python |
-| [`blueprint`](templates/scenes/blueprint) | Blueprint Drawing | Python (NumPy + OpenCV + Pillow) |
-| [`sticker-explainer`](templates/scenes/sticker-explainer) | Die-cut Sticker Explainer | Python (NumPy + OpenCV + Pillow) |
-| [`chinese-ink-wash`](templates/scenes/chinese-ink-wash) | Chinese Ink Wash | Python (NumPy + OpenCV + Pillow) |
-| [`huashu-portraits`](templates/scenes/huashu-portraits) | Van Gogh Impasto / Impressionist Oil (Monet) / Ancient Egyptian Mural | Canvas / HTML + Node |
-| [`claymation`](templates/scenes/claymation) | Claymation Stop-motion | Blender + Python |
-| [`flat-vector`](templates/scenes/flat-vector) | Flat Vector | Python (NumPy + OpenCV + Pillow) |
-| [`particle-morph`](templates/scenes/particle-morph) | Particle Morph | Python (NumPy + OpenCV + Pillow) |
-| [`white-model-projection`](templates/scenes/white-model-projection) | White-model Projection | Blender + Python |
-| [`exploded-view`](templates/scenes/exploded-view) | Product Exploded View | Blender + Python |
-| [`glassmorphism-ui`](templates/scenes/glassmorphism-ui) | Glassmorphism UI | Three.js + Node |
-| [`brick-toy`](templates/scenes/brick-toy) | Brick Toy | Blender + Python |
-| [`risograph`](templates/scenes/risograph) | Risograph Print | Python (NumPy + OpenCV + Pillow) |
+| [`retro-paper-collage`](skills/carl-motion/scenes/retro-paper-collage) | Retro Paper Collage | Python (NumPy + OpenCV + Pillow) |
+| [`neon-synthwave`](skills/carl-motion/scenes/neon-synthwave) | Neon Synthwave | Blender + Python |
+| [`watercolor`](skills/carl-motion/scenes/watercolor) | Watercolor | Python (NumPy + OpenCV + Pillow) |
+| [`woodcut`](skills/carl-motion/scenes/woodcut) | Black-and-white Woodcut | Python (NumPy + OpenCV + Pillow) |
+| [`soft-inflatable-3d`](skills/carl-motion/scenes/soft-inflatable-3d) | Soft Inflatable 3D | Blender + Python |
+| [`point-cloud-survey`](skills/carl-motion/scenes/point-cloud-survey) | Point-cloud Survey | Blender + Python |
+| [`blueprint`](skills/carl-motion/scenes/blueprint) | Blueprint Drawing | Python (NumPy + OpenCV + Pillow) |
+| [`sticker-explainer`](skills/carl-motion/scenes/sticker-explainer) | Die-cut Sticker Explainer | Python (NumPy + OpenCV + Pillow) |
+| [`chinese-ink-wash`](skills/carl-motion/scenes/chinese-ink-wash) | Chinese Ink Wash | Python (NumPy + OpenCV + Pillow) |
+| [`huashu-portraits`](skills/carl-motion/scenes/huashu-portraits) | Van Gogh Impasto / Impressionist Oil (Monet) / Ancient Egyptian Mural | Node + Canvas / headless Chrome |
+| [`claymation`](skills/carl-motion/scenes/claymation) | Claymation Stop-motion | Blender + Python |
+| [`flat-vector`](skills/carl-motion/scenes/flat-vector) | Flat Vector | Python (NumPy + OpenCV + Pillow) |
+| [`particle-morph`](skills/carl-motion/scenes/particle-morph) | Particle Morph | Python (NumPy + OpenCV + Pillow) |
+| [`white-model-projection`](skills/carl-motion/scenes/white-model-projection) | White-model Projection | Blender + Python |
+| [`exploded-view`](skills/carl-motion/scenes/exploded-view) | Product Exploded View | Blender + Python |
+| [`glassmorphism-ui`](skills/carl-motion/scenes/glassmorphism-ui) | Glassmorphism UI | Node + Canvas / headless Chrome |
+| [`brick-toy`](skills/carl-motion/scenes/brick-toy) | Brick Toy | Blender + Python |
+| [`risograph`](skills/carl-motion/scenes/risograph) | Risograph Print | Python (NumPy + OpenCV + Pillow) |
 
-**9:16 explainer layout.** [`templates/pipeline/script_layout.py`](templates/pipeline/script_layout.py) stacks two clips of the same style (A over B), adds a fixed title bar, and runs one 8-second beat per style underneath: question bubble, style name, the prompt typed out, then a warning strip. A presenter box on the right is a placeholder for a talking-head shot.
+**9:16 explainer layout.** [`skills/carl-motion/pipeline/script_layout.py`](skills/carl-motion/pipeline/script_layout.py) stacks two clips of the same style (A over B), adds a fixed title bar, and puts the result first: from frame 0 each style shows its name and a prompt card already half written, the rest streams in like model output, and a warning strip lands at 5.4 s. A presenter box on the right is a placeholder for a talking-head shot.
 
 <img src="./assets/layout-9x16.jpg" width="300" alt="9:16 layout: A and B clips stacked, prompt card and warning strip underneath">
 
-**Pipeline.** The rest of [`templates/pipeline`](templates/pipeline) is the tooling behind the video: `encode.sh` (one H.264 spec for every clip), `qa.py` (format, black-frame and jump-cut checks), `color_order_v4.py` (orders styles so neighbours sit on complementary colors), `color_stitch_verify.py` (re-measures every cut on the finished video) and `opener_salience.py` (scores candidate openers in CIELAB). See its [README](templates/pipeline/README.md).
+**Pipeline.** The rest of [`skills/carl-motion/pipeline`](skills/carl-motion/pipeline) is the tooling behind the video: `encode.sh` (one H.264 spec for every clip), `qa.py` (format, black-frame and jump-cut checks), `color_order_v4.py` (orders styles so neighbours sit on complementary colors), `color_stitch_verify.py` (re-measures every cut on the finished video) and `opener_salience.py` (scores candidate openers in CIELAB). See its [README](skills/carl-motion/pipeline/README.md).
 
 ## How the examples were made
 
@@ -146,7 +146,7 @@ These are the style skills and galleries this library was built on. Their prompt
 
 ## Media and licenses
 
-Code, prompts and our own renders (`assets/previews`, `assets/posters` for styles marked *source included*, `templates/`) are MIT. Preview clips for four styles are LemoLab demo films under CC BY 4.0 and are credited on their pages. Clips from prompt-motion.com, X, yasue.org and video-shotcraft are not copied here: their pages link out. The 9:16 sample frame uses a huashu (MIT) A clip and our B clip.
+Code, prompts and our own renders (`assets/previews`, `assets/posters` for styles marked *source included*, everything under `skills/`) are MIT. Preview clips for four styles are LemoLab demo films under CC BY 4.0 and are credited on their pages. Clips from prompt-motion.com, X, yasue.org and video-shotcraft are not copied here: their pages link out. The 9:16 sample frame uses a huashu (MIT) A clip and our B clip.
 
 ## Acknowledgements
 

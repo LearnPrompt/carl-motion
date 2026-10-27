@@ -4,7 +4,8 @@
     python3 scripts/generate.py
 
 Writes README.md, README_zh.md, docs/styles/<slug>.md, docs/styles/README.md,
-agents/skills/carl-motion/references/styles.md, and a text tile for each style
+the skill's style cards (skills/carl-motion/references/styles/), the version
+in SKILL.md and marketplace.json, and a text tile for each style
 that has no redistributable preview (assets/posters/<slug>.jpg).
 Edit the data or this file, never the generated output.
 """
@@ -17,6 +18,19 @@ EN = {e['id']: e for e in json.load(open(os.path.join(ROOT, 'data/styles.en.json
 N = len(ZH)
 OURS = [s for s in ZH if s['scene']]
 MOVING = [s for s in ZH if s['preview']]
+SKILL = 'skills/carl-motion'
+VERSION = open(os.path.join(ROOT, 'VERSION')).read().strip()
+STATUS = {  # data status → (English, 中文, what it means for the agent)
+    'single-scene': ('Implemented, one scene', '单场景实做', 'Our engine rendered the B clip. Start from it and change the subject.'),
+    'upstream-lib': ('Implemented on an upstream library', '基于上游库实做', 'Our scene code on the huashu-art-motion painting library (MIT). Start from it.'),
+    'upstream': ('Upstream implementation, link only', '上游实做，只给链接', 'LemoLab built it; we only link their code. Read their recipe, then build.'),
+    'research': ('Research recipe, prompt only', '研究配方，只有提示语', 'No implementation yet. Show the user a still frame before animating.'),
+}
+
+
+def engine(scene):
+    p = os.path.join(ROOT, scene, 'engine.json') if scene else ''
+    return json.load(open(p)) if p and os.path.exists(p) else {}
 
 
 def w(rel, text):
@@ -25,7 +39,9 @@ def w(rel, text):
 
 
 def stack(scene):
-    """Guess the render stack from the files in a scene folder."""
+    """Render stack from engine.json, else guessed from the files in the folder."""
+    e = engine(scene)
+    if e.get('stack'): return {'python': 'Python (NumPy + OpenCV + Pillow)', 'blender': 'Blender + Python', 'node': 'Node + Canvas / headless Chrome'}[e['stack']]
     d = os.path.join(ROOT, scene); fs = os.listdir(d)
     txt = ' '.join(open(os.path.join(d, f)).read() for f in fs if f.endswith(('.sh', '.md')))
     if 'blender' in txt.lower(): return 'Blender + Python'
@@ -92,11 +108,17 @@ def host(u):
     return re.sub(r'^https?://(www\.)?', '', u).split('/')[0]
 
 
+VARIANT = {'S22': 's22_egypt', 'S23': 's23_wheat', 'S24': 's24_bridge'}
+
+
 def scene_block(s, lang):
     if not s['scene']:
         return ('No source in this repo yet. The prompt above is enough to build it from scratch.' if lang == 'en'
                 else '本仓库暂时没有这个画风的源码，直接用上面的提示语就能从零做出来。')
-    head = (f'Source that rendered the B clip: [`{s["scene"]}`](../../{s["scene"]}) ({stack(s["scene"])}). Its README has the exact render command.'
+    crf = engine(s['scene']).get('crf', 16); var = (' ' + VARIANT[s['id']]) if s['id'] in VARIANT else ''
+    run = (f'\n\n```bash\ncd {s["scene"]}\n./render.sh /tmp/{s["slug"]}{var}\npython3 ../../scripts/deliver.py --frames /tmp/{s["slug"]}/frames --out {s["slug"]}.mp4'
+           + (f' --crf {crf}' if crf != 16 else '') + '\n```') if lang == 'en' else ''
+    head = (f'Source that rendered the B clip: [`{s["scene"]}`](../../{s["scene"]}) ({stack(s["scene"])}). Check dependencies first with `python3 {SKILL}/scripts/doctor.py {s["scene"].split("/")[-1]}`.{run}'
             if lang == 'en' else
             f'渲染 B 的完整源码在 [`{s["scene"]}`](../../{s["scene"]})（{stack(s["scene"])}），渲染命令写在它的 README 里。')
     return head
@@ -113,6 +135,8 @@ def page(s):
 <img src="{prev}" width="100%" alt="{s["name_en"]}">
 
 <sub>{credit(s, "en")} {credit(s, "zh")}</sub>
+
+**Status 状态:** {STATUS[s["status"]][0]} · {STATUS[s["status"]][1]}
 
 ## Prompt (copy this)
 
@@ -255,7 +279,7 @@ The order follows the video we cut from them: neighbouring styles sit on roughly
 
 ## Skill
 
-`carl-motion` turns this library into something your coding agent can use. Ask for a style by name or by look (*flat, warm, hand-made*). The agent picks the closest entry, fills the prompt with your topic, checks it against the known failure points, and when the style ships source code here, it starts from that engine instead of a blank file.
+`carl-motion` turns this library into something your coding agent can use. Ask for a style by name or by look (*flat, warm, hand-made*). The agent picks the closest entry, fills the prompt with your topic, checks it against the known failure points, and when the style ships source code here, it starts from that engine instead of a blank file. Every card says how far the style is proven (implemented, upstream only, or research), and the finished clip has to pass the same delivery gate.
 
 | | Prompt pages | Skill |
 |---|---|---|
@@ -265,15 +289,15 @@ The order follows the video we cut from them: neighbouring styles sit on roughly
 
 ## Templates and source
 
-**Scene engines.** {len(OURS)} styles ship the code that rendered their B clip, all at 1920×1080, 30 fps, 240 frames. Each folder has a README with the render command and the known limits.
+**Scene engines.** {len(OURS)} styles ship the code that rendered their B clip, all at 1920×1080, 30 fps, 240 frames. Every engine has the same entry, `./render.sh <work_dir>`, writes 240 PNG frames, and hands them to `scripts/deliver.py`, which encodes the clip and returns a red, yellow or green verdict. `scripts/doctor.py <engine>` checks the machine first. Contract: [scene-contract.md](skills/carl-motion/references/scene-contract.md).
 
 {scene_table("en")}
 
-**9:16 explainer layout.** [`templates/pipeline/script_layout.py`](templates/pipeline/script_layout.py) stacks two clips of the same style (A over B), adds a fixed title bar, and runs one 8-second beat per style underneath: question bubble, style name, the prompt typed out, then a warning strip. A presenter box on the right is a placeholder for a talking-head shot.
+**9:16 explainer layout.** [`skills/carl-motion/pipeline/script_layout.py`](skills/carl-motion/pipeline/script_layout.py) stacks two clips of the same style (A over B), adds a fixed title bar, and puts the result first: from frame 0 each style shows its name and a prompt card already half written, the rest streams in like model output, and a warning strip lands at 5.4 s. A presenter box on the right is a placeholder for a talking-head shot.
 
 <img src="./assets/layout-9x16.jpg" width="300" alt="9:16 layout: A and B clips stacked, prompt card and warning strip underneath">
 
-**Pipeline.** The rest of [`templates/pipeline`](templates/pipeline) is the tooling behind the video: `encode.sh` (one H.264 spec for every clip), `qa.py` (format, black-frame and jump-cut checks), `color_order_v4.py` (orders styles so neighbours sit on complementary colors), `color_stitch_verify.py` (re-measures every cut on the finished video) and `opener_salience.py` (scores candidate openers in CIELAB). See its [README](templates/pipeline/README.md).
+**Pipeline.** The rest of [`skills/carl-motion/pipeline`](skills/carl-motion/pipeline) is the tooling behind the video: `encode.sh` (one H.264 spec for every clip), `qa.py` (format, black-frame and jump-cut checks), `color_order_v4.py` (orders styles so neighbours sit on complementary colors), `color_stitch_verify.py` (re-measures every cut on the finished video) and `opener_salience.py` (scores candidate openers in CIELAB). See its [README](skills/carl-motion/pipeline/README.md).
 
 ## How the examples were made
 
@@ -287,7 +311,7 @@ These are the style skills and galleries this library was built on. Their prompt
 
 ## Media and licenses
 
-Code, prompts and our own renders (`assets/previews`, `assets/posters` for styles marked *source included*, `templates/`) are MIT. Preview clips for four styles are LemoLab demo films under CC BY 4.0 and are credited on their pages. Clips from prompt-motion.com, X, yasue.org and video-shotcraft are not copied here: their pages link out. The 9:16 sample frame uses a huashu (MIT) A clip and our B clip.
+Code, prompts and our own renders (`assets/previews`, `assets/posters` for styles marked *source included*, everything under `skills/`) are MIT. Preview clips for four styles are LemoLab demo films under CC BY 4.0 and are credited on their pages. Clips from prompt-motion.com, X, yasue.org and video-shotcraft are not copied here: their pages link out. The 9:16 sample frame uses a huashu (MIT) A clip and our B clip.
 
 ## Acknowledgements
 
@@ -340,7 +364,7 @@ Claude Code 也可以按插件装：先 `/plugin marketplace add {REPO}`，再 `
 
 ## Skill
 
-`carl-motion` 把这套画风库交给你的编程 Agent 用。你可以报画风名，也可以只描述感觉，比如扁平、暖色、手作感。Agent 会挑最接近的那一条，把你的主题填进提示语，对着已知的失败点检查一遍；这个画风在仓库里有源码的话，它会直接从那份引擎改起。
+`carl-motion` 把这套画风库交给你的编程 Agent 用。你可以报画风名，也可以只描述感觉，比如扁平、暖色、手作感。Agent 会挑最接近的那一条，把你的主题填进提示语，对着已知的失败点检查一遍；这个画风在仓库里有源码的话，它会直接从那份引擎改起。每张卡都写明这个画风验证到哪一步（已实做、只有上游、还在研究），做完的片子要过同一道交付门禁。
 
 | | 画风页 | Skill |
 |---|---|---|
@@ -350,15 +374,15 @@ Claude Code 也可以按插件装：先 `/plugin marketplace add {REPO}`，再 `
 
 ## 模版和源码
 
-**画风引擎。** {len(OURS)} 个画风附带渲染 B 的源码，统一 1920×1080、30 fps、240 帧，每个目录的 README 写了渲染命令和已知限制。
+**画风引擎。** {len(OURS)} 个画风附带渲染 B 的源码，统一 1920×1080、30 fps、240 帧，每个引擎的入口都一样，`./render.sh <工作目录>` 出 240 张 PNG，再交给 `scripts/deliver.py` 编码并给出红黄绿结论，开工前先用 `scripts/doctor.py <引擎>` 查依赖。约定写在 [scene-contract.md](skills/carl-motion/references/scene-contract.md)。
 
 {scene_table("zh")}
 
-**9:16 口播排版。** [`templates/pipeline/script_layout.py`](templates/pipeline/script_layout.py) 把同一画风的两段示例上下叠放，顶上一条常驻标题，底下每 8 秒走一遍同样的节拍：问句气泡、画风名、逐字打出的提示语、注意条。右边的机位框留给真人口播。
+**9:16 口播排版。** [`skills/carl-motion/pipeline/script_layout.py`](skills/carl-motion/pipeline/script_layout.py) 把同一画风的两段示例上下叠放，顶上一条常驻标题，底下结果前置：每组第 0 帧就亮出画风名和已经出到一半的提示语卡，剩下的像模型生成一样一段段冒出来，5.4 秒再加注意条。右边的机位框留给真人口播。
 
 <img src="./assets/layout-9x16.jpg" width="300" alt="9:16 排版：A、B 上下叠放，底部是提示语卡和注意条">
 
-**流水线。** [`templates/pipeline`](templates/pipeline) 里还有做那支视频用到的工具。`encode.sh` 把每支片编成同一规格，`qa.py` 查规格、黑帧和跳帧，`color_order_v4.py` 按互补色排画风顺序，`color_stitch_verify.py` 在拼好的成片上复测每个切点，`opener_salience.py` 在 CIELAB 里给开场候选打分。用法见它的 [README](templates/pipeline/README.md)。
+**流水线。** [`skills/carl-motion/pipeline`](skills/carl-motion/pipeline) 里还有做那支视频用到的工具。`encode.sh` 把每支片编成同一规格，`qa.py` 查规格、黑帧和跳帧，`color_order_v4.py` 按互补色排画风顺序，`color_stitch_verify.py` 在拼好的成片上复测每个切点，`opener_salience.py` 在 CIELAB 里给开场候选打分。用法见它的 [README](skills/carl-motion/pipeline/README.md)。
 
 ## 示例是怎么做出来的
 
@@ -372,7 +396,7 @@ Claude Code 也可以按插件装：先 `/plugin marketplace add {REPO}`，再 `
 
 ## 素材与许可
 
-代码、提示语和我们自己渲染的片段都按 MIT 发布，包括 `templates/`，以及标了含源码的画风在 `assets/` 里的预览。另有四个画风的预览是 LemoLab 的演示片，按 CC BY 4.0 使用并在页面里署名。prompt-motion.com、X、yasue.org 和 video-shotcraft 的片段没有复制进仓库，页面里只放链接。9:16 示例帧里的 A 来自 huashu（MIT），B 是我们渲染的。
+代码、提示语和我们自己渲染的片段都按 MIT 发布，包括 `skills/` 下的全部内容，以及标了含源码的画风在 `assets/` 里的预览。另有四个画风的预览是 LemoLab 的演示片，按 CC BY 4.0 使用并在页面里署名。prompt-motion.com、X、yasue.org 和 video-shotcraft 的片段没有复制进仓库，页面里只放链接。9:16 示例帧里的 A 来自 huashu（MIT），B 是我们渲染的。
 
 ## 致谢
 
@@ -398,21 +422,96 @@ def styles_index():
 '''
 
 
-def skill_reference():
-    out = [f'# carl-motion style reference ({N} styles)', '',
-           'Generated from data/styles.*.json. Each entry: English and Chinese prompt, key visuals, watch-out line, common failures, palette, references, and the scene folder when the repo ships source.', '']
+def readme_section(scene, keys):
+    """First '## ' section of an engine README whose heading contains one of keys."""
+    p = os.path.join(ROOT, scene, 'README.md') if scene else ''
+    if not p or not os.path.exists(p): return ''
+    parts = re.split(r'^## ', open(p).read(), flags=re.M)[1:]
+    for part in parts:
+        head, _, body = part.partition('\n')
+        if any(k in head for k in keys): return body.strip()
+    return ''
+
+
+def experience(slug):
+    p = os.path.join(ROOT, 'data/experience', f'{slug}.jsonl')
+    if not os.path.exists(p): return []
+    return [json.loads(l) for l in open(p) if l.strip()]
+
+
+def card(s):
+    e = EN[s['id']]; eng = engine(s['scene']); st = STATUS[s['status']]
+    local = s['scene'].replace(SKILL + '/', '') if s['scene'] else None
+    if local:
+        var = f' <{VARIANT[s["id"]]}>' if s['id'] in VARIANT else ''
+        where = f'Engine: `{local}/` ({stack(s["scene"])}). Run `./render.sh <work_dir>{var}`, then `scripts/deliver.py --frames <work_dir>/frames --out clip.mp4{" --crf " + str(eng["crf"]) if eng.get("crf", 16) != 16 else ""}`. Deterministic: {"verified" if eng.get("deterministic") else "not verified"}.'
+    else:
+        where = 'Engine: none in this skill. ' + ('Upstream code and recipe: see the source column in INDEX.md.' if s['status'] == 'upstream' else 'Build from the prompt; show a still frame before animating.')
+    pipe = readme_section(s['scene'], ('画风', '做法', '管线', '对应')) or (f'No engine yet. Build it from these visual keys, one pass per element:\n\n{e["keywords"]}\n\n{s["keywords"]}')
+    beats = readme_section(s['scene'], ('节拍',)) or '—'
+    lim = ''.join(f'\n- {x}' for x in eng.get('limits_en', []))
+    notes = experience(s['slug'])
+    field = '\n'.join(f'- {n.get("date", "?")} · {n.get("topic", "")}: {n.get("note", "")}' for n in notes) or \
+        'None yet. After using this style, append what broke and how you fixed it to `carl-motion-log.md` in the project (format in SKILL.md).'
+    return f'''# {s["order"]:02d} · {s["name_en"]} · {s["name_zh"]} (`{s["slug"]}`)
+
+## Status · 状态
+
+**{st[0]} · {st[1]}.** {st[2]}
+
+{where}
+
+## Prompt · 提示语
+
+EN: {e["full_prompt"]}
+
+中：{s["full_prompt"]}
+
+Palette: {", ".join(f"`{c}`" for c in s["palette"])}
+
+## Pipeline · 管线
+
+{pipe}
+
+## Beats · 节拍
+
+{beats}
+
+## Pitfalls · 踩到的坑
+
+- {e["fail"]}
+- {s["fail"]}{lim}
+
+## Field notes · 实测记录
+
+{field}
+'''
+
+
+def cards_index():
+    rows = []
     for s in ZH:
-        e = EN[s['id']]
-        out += [f'## {s["order"]:02d} {s["name_en"]} · {s["name_zh"]} (`{s["slug"]}`)', '',
-                f'- Use when: the user wants {s["name_en"].lower()} / {s["name_zh"]}.',
-                f'- Prompt (EN): {e["full_prompt"]}',
-                f'- 提示语（中）: {s["full_prompt"]}',
-                f'- Breaks when: {e["fail"]}',
-                f'- 容易失败: {s["fail"]}',
-                f'- Palette: {", ".join(s["palette"])}',
-                f'- Scene source: {s["scene"] or "none, build from the prompt"}',
-                f'- References: ' + '; '.join(f'{r["layer"]} {r["by"]} {r["url"] or ""}'.strip() for r in s['refs']), '']
-    return '\n'.join(out)
+        src = ', '.join(f'[{r["layer"]} {r["by"]}]({r["url"]})' for r in s['refs'] if r['url'] and r['by'] != 'carl-motion') or '—'
+        eng = f'`{s["scene"].split("/")[-1]}`' if s['scene'] else '—'
+        rows.append(f'| {s["order"]:02d} | [{s["name_en"]}]({s["order"]:02d}_{s["slug"]}.md) | {s["name_zh"]} | {STATUS[s["status"]][0]} | {eng} | {src} |')
+    return f'''# Style cards · 风格卡（{N}）
+
+Pick by name, Chinese name or look, then open the card. Status says how far each style is proven:
+implemented (our engine), implemented on an upstream library, upstream only (link), or research (prompt only).
+
+| # | Style | 画风 | Status | Engine | Source |
+|---|---|---|---|---|---|
+''' + '\n'.join(rows)
+
+
+def stamp_version():
+    p = os.path.join(ROOT, SKILL, 'SKILL.md'); t = open(p).read()
+    t = re.sub(r'\nmetadata:\n  version: "[^"]*"\n', '\n', t)
+    t = t.replace('\n---\n', f'\nmetadata:\n  version: "{VERSION}"\n---\n', 1)
+    open(p, 'w').write(t)
+    m = os.path.join(ROOT, '.claude-plugin/marketplace.json'); d = json.load(open(m))
+    for pl in d['plugins']: pl['version'] = VERSION
+    open(m, 'w').write(json.dumps(d, indent=2, ensure_ascii=False) + '\n')
 
 
 if __name__ == '__main__':
@@ -421,5 +520,7 @@ if __name__ == '__main__':
     w('docs/styles/README.md', styles_index())
     w('README.md', readme_en())
     w('README_zh.md', readme_zh())
-    w('agents/skills/carl-motion/references/styles.md', skill_reference())
-    print('ok', N, 'styles,', len(OURS), 'with source,', len(MOVING), 'with preview')
+    for s in ZH: w(f'{SKILL}/references/styles/{s["order"]:02d}_{s["slug"]}.md', card(s))
+    w(f'{SKILL}/references/styles/INDEX.md', cards_index())
+    stamp_version()
+    print('ok', N, 'styles,', len(OURS), 'with source,', len(MOVING), 'with preview, version', VERSION)

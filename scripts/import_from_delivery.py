@@ -61,6 +61,6 @@ for k, s in enumerate(D.S):
                 'card': s['card'], 'keywords': s['kw'], 'warn': s['warn'], 'fail': s['fail'],
                 'fx_a': s['fx_a'], 'fx_b': clean(s['fx_b']), 'full_prompt': D.full_prompt(s),
                 'palette': idx[sid]['palette']['colors'], 'refs': ref, 'preview': prev,
-                'scene': f'templates/scenes/{EN[sid][0]}' if ours_b else None, 'scene_src': sd if ours_b else None})
+                'scene': f'skills/carl-motion/scenes/{EN[sid][0]}' if ours_b else None, 'scene_src': sd if ours_b else None})
 json.dump(out, open(os.path.join(ROOT, 'data/styles.zh.json'), 'w'), ensure_ascii=False, indent=1)
 for x in out: print(x['order'], x['id'], x['slug'], 'prev=', x['preview'] and x['preview']['layer'], [r['by'][:14] for r in x['refs']])

@@ -6,6 +6,8 @@
 
 <sub>Preview: layer A by LemoLab · lemo-opuscar, CC BY 4.0. 预览是 LemoLab · lemo-opuscar 的 A，CC BY 4.0。</sub>
 
+**Status 状态:** Upstream implementation, link only · 上游实做，只给链接
+
 ## Prompt (copy this)
 
 Paste into Claude, GPT or any coding model. Swap *your topic* for your own subject.

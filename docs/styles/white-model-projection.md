@@ -6,6 +6,8 @@
 
 <sub>Preview: our render (layer B), MIT. 预览是我们渲染的 B，MIT 许可。</sub>
 
+**Status 状态:** Implemented, one scene · 单场景实做
+
 ## Prompt (copy this)
 
 Paste into Claude, GPT or any coding model. Swap *your topic* for your own subject.
@@ -48,10 +50,16 @@ Palette 主色：`#3e6cb8` `#b86c3e`
 | Layer | Title | Source | License |
 |---|---|---|---|
 | A | 白模投影：How a Flattened City Grew Back | [LemoLab · lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/white-model) | prompts/code MIT, demo video CC BY 4.0 |
-| B | carl-motion | [this repo](../../templates/scenes/white-model-projection) | MIT |
+| B | carl-motion | [this repo](../../skills/carl-motion/scenes/white-model-projection) | MIT |
 
 ## Reproduce · 复现
 
-Source that rendered the B clip: [`templates/scenes/white-model-projection`](../../templates/scenes/white-model-projection) (Blender + Python). Its README has the exact render command.
+Source that rendered the B clip: [`skills/carl-motion/scenes/white-model-projection`](../../skills/carl-motion/scenes/white-model-projection) (Blender + Python). Check dependencies first with `python3 skills/carl-motion/scripts/doctor.py white-model-projection`.
 
-渲染 B 的完整源码在 [`templates/scenes/white-model-projection`](../../templates/scenes/white-model-projection)（Blender + Python），渲染命令写在它的 README 里。
+```bash
+cd skills/carl-motion/scenes/white-model-projection
+./render.sh /tmp/white-model-projection
+python3 ../../scripts/deliver.py --frames /tmp/white-model-projection/frames --out white-model-projection.mp4
+```
+
+渲染 B 的完整源码在 [`skills/carl-motion/scenes/white-model-projection`](../../skills/carl-motion/scenes/white-model-projection)（Blender + Python），渲染命令写在它的 README 里。

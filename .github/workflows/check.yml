@@ -1,0 +1,12 @@
+name: check
+on: [push, pull_request]
+jobs:
+  release-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
+      - run: pip install numpy opencv-python-headless Pillow
+      - run: python3 scripts/check_release.py

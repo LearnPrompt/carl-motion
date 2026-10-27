@@ -6,6 +6,8 @@
 
 <sub>Preview: our render (layer B), MIT. 预览是我们渲染的 B，MIT 许可。</sub>
 
+**Status 状态:** Implemented, one scene · 单场景实做
+
 ## Prompt (copy this)
 
 Paste into Claude, GPT or any coding model. Swap *your topic* for your own subject.
@@ -48,10 +50,16 @@ Palette 主色：`#3e4eb8`
 | Layer | Title | Source | License |
 |---|---|---|---|
 | A | 聊天卡片与Focus玻璃开关 | [Vincentwei1021 · mg-styles-15](https://vincentwei1021.github.io/mg-styles-15/?lang=zh#12-aurora-glass) | prompts/code MIT; demo video not redistributed |
-| B | carl-motion | [this repo](../../templates/scenes/glassmorphism-ui) | MIT |
+| B | carl-motion | [this repo](../../skills/carl-motion/scenes/glassmorphism-ui) | MIT |
 
 ## Reproduce · 复现
 
-Source that rendered the B clip: [`templates/scenes/glassmorphism-ui`](../../templates/scenes/glassmorphism-ui) (Three.js + Node). Its README has the exact render command.
+Source that rendered the B clip: [`skills/carl-motion/scenes/glassmorphism-ui`](../../skills/carl-motion/scenes/glassmorphism-ui) (Node + Canvas / headless Chrome). Check dependencies first with `python3 skills/carl-motion/scripts/doctor.py glassmorphism-ui`.
 
-渲染 B 的完整源码在 [`templates/scenes/glassmorphism-ui`](../../templates/scenes/glassmorphism-ui)（Three.js + Node），渲染命令写在它的 README 里。
+```bash
+cd skills/carl-motion/scenes/glassmorphism-ui
+./render.sh /tmp/glassmorphism-ui
+python3 ../../scripts/deliver.py --frames /tmp/glassmorphism-ui/frames --out glassmorphism-ui.mp4
+```
+
+渲染 B 的完整源码在 [`skills/carl-motion/scenes/glassmorphism-ui`](../../skills/carl-motion/scenes/glassmorphism-ui)（Node + Canvas / headless Chrome），渲染命令写在它的 README 里。

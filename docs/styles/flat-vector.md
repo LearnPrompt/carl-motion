@@ -6,6 +6,8 @@
 
 <sub>Preview: our render (layer B), MIT. 预览是我们渲染的 B，MIT 许可。</sub>
 
+**Status 状态:** Implemented, one scene · 单场景实做
+
 ## Prompt (copy this)
 
 Paste into Claude, GPT or any coding model. Swap *your topic* for your own subject.
@@ -48,10 +50,16 @@ Palette 主色：`#b88a3e` `#3eb8a8`
 | Layer | Title | Source | License |
 |---|---|---|---|
 | A | 城市与电脑前的人物 | [Vincentwei1021 · mg-styles-15](https://vincentwei1021.github.io/mg-styles-15/?lang=zh#01-flat-vector) | prompts/code MIT; demo video not redistributed |
-| B | carl-motion | [this repo](../../templates/scenes/flat-vector) · story idea: [en.yasue.org](https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits) | MIT |
+| B | carl-motion | [this repo](../../skills/carl-motion/scenes/flat-vector) · story idea: [en.yasue.org](https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits) | MIT |
 
 ## Reproduce · 复现
 
-Source that rendered the B clip: [`templates/scenes/flat-vector`](../../templates/scenes/flat-vector) (Python (NumPy + OpenCV + Pillow)). Its README has the exact render command.
+Source that rendered the B clip: [`skills/carl-motion/scenes/flat-vector`](../../skills/carl-motion/scenes/flat-vector) (Python (NumPy + OpenCV + Pillow)). Check dependencies first with `python3 skills/carl-motion/scripts/doctor.py flat-vector`.
 
-渲染 B 的完整源码在 [`templates/scenes/flat-vector`](../../templates/scenes/flat-vector)（Python (NumPy + OpenCV + Pillow)），渲染命令写在它的 README 里。
+```bash
+cd skills/carl-motion/scenes/flat-vector
+./render.sh /tmp/flat-vector
+python3 ../../scripts/deliver.py --frames /tmp/flat-vector/frames --out flat-vector.mp4
+```
+
+渲染 B 的完整源码在 [`skills/carl-motion/scenes/flat-vector`](../../skills/carl-motion/scenes/flat-vector)（Python (NumPy + OpenCV + Pillow)），渲染命令写在它的 README 里。

@@ -6,6 +6,8 @@
 
 <sub>Preview: our render (layer B), MIT. 预览是我们渲染的 B，MIT 许可。</sub>
 
+**Status 状态:** Implemented, one scene · 单场景实做
+
 ## Prompt (copy this)
 
 Paste into Claude, GPT or any coding model. Swap *your topic* for your own subject.
@@ -48,10 +50,16 @@ Palette 主色：`#a8b83e` `#b83e6c`
 | Layer | Title | Source | License |
 |---|---|---|---|
 | A | 错版街道与公园骑行 | [LemoLab · lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/risograph) | prompts/code MIT, demo video CC BY 4.0 |
-| B | carl-motion | [this repo](../../templates/scenes/risograph) · story idea: [github.com](https://github.com/Vincentwei1021/video-shotcraft/blob/main/demos/effects/riso-print-hits/RisoMisregistrationHit.tsx) | MIT |
+| B | carl-motion | [this repo](../../skills/carl-motion/scenes/risograph) · story idea: [github.com](https://github.com/Vincentwei1021/video-shotcraft/blob/main/demos/effects/riso-print-hits/RisoMisregistrationHit.tsx) | MIT |
 
 ## Reproduce · 复现
 
-Source that rendered the B clip: [`templates/scenes/risograph`](../../templates/scenes/risograph) (Python (NumPy + OpenCV + Pillow)). Its README has the exact render command.
+Source that rendered the B clip: [`skills/carl-motion/scenes/risograph`](../../skills/carl-motion/scenes/risograph) (Python (NumPy + OpenCV + Pillow)). Check dependencies first with `python3 skills/carl-motion/scripts/doctor.py risograph`.
 
-渲染 B 的完整源码在 [`templates/scenes/risograph`](../../templates/scenes/risograph)（Python (NumPy + OpenCV + Pillow)），渲染命令写在它的 README 里。
+```bash
+cd skills/carl-motion/scenes/risograph
+./render.sh /tmp/risograph
+python3 ../../scripts/deliver.py --frames /tmp/risograph/frames --out risograph.mp4
+```
+
+渲染 B 的完整源码在 [`skills/carl-motion/scenes/risograph`](../../skills/carl-motion/scenes/risograph)（Python (NumPy + OpenCV + Pillow)），渲染命令写在它的 README 里。

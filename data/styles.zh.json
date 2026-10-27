@@ -39,7 +39,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/retro-paper-collage"
+  "scene": "skills/carl-motion/scenes/retro-paper-collage",
+  "status": "single-scene"
  },
  {
   "order": 2,
@@ -76,7 +77,8 @@
    }
   ],
   "preview": null,
-  "scene": null
+  "scene": null,
+  "status": "research"
  },
  {
   "order": 3,
@@ -117,7 +119,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/neon-synthwave"
+  "scene": "skills/carl-motion/scenes/neon-synthwave",
+  "status": "single-scene"
  },
  {
   "order": 4,
@@ -154,7 +157,8 @@
    }
   ],
   "preview": null,
-  "scene": null
+  "scene": null,
+  "status": "research"
  },
  {
   "order": 5,
@@ -195,7 +199,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/watercolor"
+  "scene": "skills/carl-motion/scenes/watercolor",
+  "status": "single-scene"
  },
  {
   "order": 6,
@@ -236,7 +241,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/woodcut"
+  "scene": "skills/carl-motion/scenes/woodcut",
+  "status": "single-scene"
  },
  {
   "order": 7,
@@ -278,7 +284,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/soft-inflatable-3d"
+  "scene": "skills/carl-motion/scenes/soft-inflatable-3d",
+  "status": "single-scene"
  },
  {
   "order": 8,
@@ -319,7 +326,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/point-cloud-survey"
+  "scene": "skills/carl-motion/scenes/point-cloud-survey",
+  "status": "single-scene"
  },
  {
   "order": 9,
@@ -360,7 +368,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/blueprint"
+  "scene": "skills/carl-motion/scenes/blueprint",
+  "status": "single-scene"
  },
  {
   "order": 10,
@@ -401,7 +410,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/sticker-explainer"
+  "scene": "skills/carl-motion/scenes/sticker-explainer",
+  "status": "single-scene"
  },
  {
   "order": 11,
@@ -438,7 +448,8 @@
    }
   ],
   "preview": null,
-  "scene": null
+  "scene": null,
+  "status": "research"
  },
  {
   "order": 12,
@@ -479,7 +490,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/chinese-ink-wash"
+  "scene": "skills/carl-motion/scenes/chinese-ink-wash",
+  "status": "single-scene"
  },
  {
   "order": 13,
@@ -519,7 +531,8 @@
    "layer": "A",
    "by": "LemoLab · lemo-opuscar"
   },
-  "scene": null
+  "scene": null,
+  "status": "upstream"
  },
  {
   "order": 14,
@@ -560,7 +573,8 @@
    "layer": "A",
    "by": "LemoLab · lemo-opuscar"
   },
-  "scene": null
+  "scene": null,
+  "status": "upstream"
  },
  {
   "order": 15,
@@ -602,7 +616,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/huashu-portraits"
+  "scene": "skills/carl-motion/scenes/huashu-portraits",
+  "status": "upstream-lib"
  },
  {
   "order": 16,
@@ -641,7 +656,8 @@
    }
   ],
   "preview": null,
-  "scene": null
+  "scene": null,
+  "status": "research"
  },
  {
   "order": 17,
@@ -682,7 +698,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/claymation"
+  "scene": "skills/carl-motion/scenes/claymation",
+  "status": "single-scene"
  },
  {
   "order": 18,
@@ -719,7 +736,8 @@
    }
   ],
   "preview": null,
-  "scene": null
+  "scene": null,
+  "status": "research"
  },
  {
   "order": 19,
@@ -761,7 +779,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/flat-vector"
+  "scene": "skills/carl-motion/scenes/flat-vector",
+  "status": "single-scene"
  },
  {
   "order": 20,
@@ -803,7 +822,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/huashu-portraits"
+  "scene": "skills/carl-motion/scenes/huashu-portraits",
+  "status": "upstream-lib"
  },
  {
   "order": 21,
@@ -845,7 +865,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/particle-morph"
+  "scene": "skills/carl-motion/scenes/particle-morph",
+  "status": "single-scene"
  },
  {
   "order": 22,
@@ -887,7 +908,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/white-model-projection"
+  "scene": "skills/carl-motion/scenes/white-model-projection",
+  "status": "single-scene"
  },
  {
   "order": 23,
@@ -928,7 +950,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/huashu-portraits"
+  "scene": "skills/carl-motion/scenes/huashu-portraits",
+  "status": "upstream-lib"
  },
  {
   "order": 24,
@@ -970,7 +993,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/exploded-view"
+  "scene": "skills/carl-motion/scenes/exploded-view",
+  "status": "single-scene"
  },
  {
   "order": 25,
@@ -1010,7 +1034,8 @@
    "layer": "A",
    "by": "LemoLab · lemo-opuscar"
   },
-  "scene": null
+  "scene": null,
+  "status": "upstream"
  },
  {
   "order": 26,
@@ -1051,7 +1076,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/glassmorphism-ui"
+  "scene": "skills/carl-motion/scenes/glassmorphism-ui",
+  "status": "single-scene"
  },
  {
   "order": 27,
@@ -1093,7 +1119,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/brick-toy"
+  "scene": "skills/carl-motion/scenes/brick-toy",
+  "status": "single-scene"
  },
  {
   "order": 28,
@@ -1135,7 +1162,8 @@
    "layer": "B",
    "by": "carl-motion"
   },
-  "scene": "templates/scenes/risograph"
+  "scene": "skills/carl-motion/scenes/risograph",
+  "status": "single-scene"
  },
  {
   "order": 29,
@@ -1175,6 +1203,7 @@
    "layer": "A",
    "by": "LemoLab · lemo-opuscar"
   },
-  "scene": null
+  "scene": null,
+  "status": "upstream"
  }
 ]

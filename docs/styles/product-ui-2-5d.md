@@ -6,6 +6,8 @@
 
 <sub>No redistributable clip. Watch it at the source link. 没有可随仓库分发的片段，去来源链接看。</sub>
 
+**Status 状态:** Research recipe, prompt only · 研究配方，只有提示语
+
 ## Prompt (copy this)
 
 Paste into Claude, GPT or any coding model. Swap *your topic* for your own subject.

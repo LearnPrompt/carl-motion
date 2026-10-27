@@ -6,6 +6,8 @@
 
 <sub>Preview: our render (layer B), MIT. 预览是我们渲染的 B，MIT 许可。</sub>
 
+**Status 状态:** Implemented, one scene · 单场景实做
+
 ## Prompt (copy this)
 
 Paste into Claude, GPT or any coding model. Swap *your topic* for your own subject.
@@ -48,10 +50,16 @@ Palette 主色：`#3e6cb8` `#b88a3e`
 | Layer | Title | Source | License |
 |---|---|---|---|
 | A | Drone Emprit：粒子地图与关系网络 | [prompt-motion.com](https://prompt-motion.com/ismailfahmi-557268) | link only |
-| B | carl-motion | [this repo](../../templates/scenes/particle-morph) · story idea: [en.yasue.org](https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits) | MIT |
+| B | carl-motion | [this repo](../../skills/carl-motion/scenes/particle-morph) · story idea: [en.yasue.org](https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits) | MIT |
 
 ## Reproduce · 复现
 
-Source that rendered the B clip: [`templates/scenes/particle-morph`](../../templates/scenes/particle-morph) (Python (NumPy + OpenCV + Pillow)). Its README has the exact render command.
+Source that rendered the B clip: [`skills/carl-motion/scenes/particle-morph`](../../skills/carl-motion/scenes/particle-morph) (Python (NumPy + OpenCV + Pillow)). Check dependencies first with `python3 skills/carl-motion/scripts/doctor.py particle-morph`.
 
-渲染 B 的完整源码在 [`templates/scenes/particle-morph`](../../templates/scenes/particle-morph)（Python (NumPy + OpenCV + Pillow)），渲染命令写在它的 README 里。
+```bash
+cd skills/carl-motion/scenes/particle-morph
+./render.sh /tmp/particle-morph
+python3 ../../scripts/deliver.py --frames /tmp/particle-morph/frames --out particle-morph.mp4
+```
+
+渲染 B 的完整源码在 [`skills/carl-motion/scenes/particle-morph`](../../skills/carl-motion/scenes/particle-morph)（Python (NumPy + OpenCV + Pillow)），渲染命令写在它的 README 里。

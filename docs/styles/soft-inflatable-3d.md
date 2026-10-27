@@ -6,6 +6,8 @@
 
 <sub>Preview: our render (layer B), MIT. 预览是我们渲染的 B，MIT 许可。</sub>
 
+**Status 状态:** Implemented, one scene · 单场景实做
+
 ## Prompt (copy this)
 
 Paste into Claude, GPT or any coding model. Swap *your topic* for your own subject.
@@ -48,10 +50,16 @@ Palette 主色：`#b83e6c` `#b86c3e`
 | Layer | Title | Source | License |
 |---|---|---|---|
 | A | 3D 渲染：soft.「柔软着陆」 | [Vincentwei1021 · mg-styles-15](https://vincentwei1021.github.io/mg-styles-15/?lang=zh#04-3d-render) | prompts/code MIT; demo video not redistributed |
-| B | carl-motion | [this repo](../../templates/scenes/soft-inflatable-3d) | MIT |
+| B | carl-motion | [this repo](../../skills/carl-motion/scenes/soft-inflatable-3d) | MIT |
 
 ## Reproduce · 复现
 
-Source that rendered the B clip: [`templates/scenes/soft-inflatable-3d`](../../templates/scenes/soft-inflatable-3d) (Blender + Python). Its README has the exact render command.
+Source that rendered the B clip: [`skills/carl-motion/scenes/soft-inflatable-3d`](../../skills/carl-motion/scenes/soft-inflatable-3d) (Blender + Python). Check dependencies first with `python3 skills/carl-motion/scripts/doctor.py soft-inflatable-3d`.
 
-渲染 B 的完整源码在 [`templates/scenes/soft-inflatable-3d`](../../templates/scenes/soft-inflatable-3d)（Blender + Python），渲染命令写在它的 README 里。
+```bash
+cd skills/carl-motion/scenes/soft-inflatable-3d
+./render.sh /tmp/soft-inflatable-3d
+python3 ../../scripts/deliver.py --frames /tmp/soft-inflatable-3d/frames --out soft-inflatable-3d.mp4
+```
+
+渲染 B 的完整源码在 [`skills/carl-motion/scenes/soft-inflatable-3d`](../../skills/carl-motion/scenes/soft-inflatable-3d)（Blender + Python），渲染命令写在它的 README 里。

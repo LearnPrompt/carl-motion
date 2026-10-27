@@ -88,7 +88,7 @@ Claude Code 也可以按插件装：先 `/plugin marketplace add LearnPrompt/car
 
 ## Skill
 
-`carl-motion` 把这套画风库交给你的编程 Agent 用。你可以报画风名，也可以只描述感觉，比如扁平、暖色、手作感。Agent 会挑最接近的那一条，把你的主题填进提示语，对着已知的失败点检查一遍；这个画风在仓库里有源码的话，它会直接从那份引擎改起。
+`carl-motion` 把这套画风库交给你的编程 Agent 用。你可以报画风名，也可以只描述感觉，比如扁平、暖色、手作感。Agent 会挑最接近的那一条，把你的主题填进提示语，对着已知的失败点检查一遍；这个画风在仓库里有源码的话，它会直接从那份引擎改起。每张卡都写明这个画风验证到哪一步（已实做、只有上游、还在研究），做完的片子要过同一道交付门禁。
 
 | | 画风页 | Skill |
 |---|---|---|
@@ -98,34 +98,34 @@ Claude Code 也可以按插件装：先 `/plugin marketplace add LearnPrompt/car
 
 ## 模版和源码
 
-**画风引擎。** 20 个画风附带渲染 B 的源码，统一 1920×1080、30 fps、240 帧，每个目录的 README 写了渲染命令和已知限制。
+**画风引擎。** 20 个画风附带渲染 B 的源码，统一 1920×1080、30 fps、240 帧，每个引擎的入口都一样，`./render.sh <工作目录>` 出 240 张 PNG，再交给 `scripts/deliver.py` 编码并给出红黄绿结论，开工前先用 `scripts/doctor.py <引擎>` 查依赖。约定写在 [scene-contract.md](skills/carl-motion/references/scene-contract.md)。
 
 | 目录 | 画风 | 技术栈 |
 |---|---|---|
-| [`retro-paper-collage`](templates/scenes/retro-paper-collage) | 复古纸张拼贴 | Python (NumPy + OpenCV + Pillow) |
-| [`neon-synthwave`](templates/scenes/neon-synthwave) | 霓虹复古Synthwave | Blender + Python |
-| [`watercolor`](templates/scenes/watercolor) | 水彩手绘 | Python (NumPy + OpenCV + Pillow) |
-| [`woodcut`](templates/scenes/woodcut) | 黑白木刻版画 | Python (NumPy + OpenCV + Pillow) |
-| [`soft-inflatable-3d`](templates/scenes/soft-inflatable-3d) | 软体充气3D | Blender + Python |
-| [`point-cloud-survey`](templates/scenes/point-cloud-survey) | 点云测绘／剥层 | Blender + Python |
-| [`blueprint`](templates/scenes/blueprint) | 蓝图工程制图 | Python (NumPy + OpenCV + Pillow) |
-| [`sticker-explainer`](templates/scenes/sticker-explainer) | 贴纸科普 | Python (NumPy + OpenCV + Pillow) |
-| [`chinese-ink-wash`](templates/scenes/chinese-ink-wash) | 中国水墨 | Python (NumPy + OpenCV + Pillow) |
-| [`huashu-portraits`](templates/scenes/huashu-portraits) | 梵高厚涂油画 / 印象派油画／莫奈 / 古埃及壁画 | Canvas / HTML + Node |
-| [`claymation`](templates/scenes/claymation) | 黏土定格 | Blender + Python |
-| [`flat-vector`](templates/scenes/flat-vector) | 扁平矢量 | Python (NumPy + OpenCV + Pillow) |
-| [`particle-morph`](templates/scenes/particle-morph) | 粒子聚散造型 | Python (NumPy + OpenCV + Pillow) |
-| [`white-model-projection`](templates/scenes/white-model-projection) | 实体白模投影 | Blender + Python |
-| [`exploded-view`](templates/scenes/exploded-view) | 产品爆炸拆解 | Blender + Python |
-| [`glassmorphism-ui`](templates/scenes/glassmorphism-ui) | 玻璃拟态UI | Three.js + Node |
-| [`brick-toy`](templates/scenes/brick-toy) | 积木玩具 | Blender + Python |
-| [`risograph`](templates/scenes/risograph) | Risograph孔版套印 | Python (NumPy + OpenCV + Pillow) |
+| [`retro-paper-collage`](skills/carl-motion/scenes/retro-paper-collage) | 复古纸张拼贴 | Python (NumPy + OpenCV + Pillow) |
+| [`neon-synthwave`](skills/carl-motion/scenes/neon-synthwave) | 霓虹复古Synthwave | Blender + Python |
+| [`watercolor`](skills/carl-motion/scenes/watercolor) | 水彩手绘 | Python (NumPy + OpenCV + Pillow) |
+| [`woodcut`](skills/carl-motion/scenes/woodcut) | 黑白木刻版画 | Python (NumPy + OpenCV + Pillow) |
+| [`soft-inflatable-3d`](skills/carl-motion/scenes/soft-inflatable-3d) | 软体充气3D | Blender + Python |
+| [`point-cloud-survey`](skills/carl-motion/scenes/point-cloud-survey) | 点云测绘／剥层 | Blender + Python |
+| [`blueprint`](skills/carl-motion/scenes/blueprint) | 蓝图工程制图 | Python (NumPy + OpenCV + Pillow) |
+| [`sticker-explainer`](skills/carl-motion/scenes/sticker-explainer) | 贴纸科普 | Python (NumPy + OpenCV + Pillow) |
+| [`chinese-ink-wash`](skills/carl-motion/scenes/chinese-ink-wash) | 中国水墨 | Python (NumPy + OpenCV + Pillow) |
+| [`huashu-portraits`](skills/carl-motion/scenes/huashu-portraits) | 梵高厚涂油画 / 印象派油画／莫奈 / 古埃及壁画 | Node + Canvas / headless Chrome |
+| [`claymation`](skills/carl-motion/scenes/claymation) | 黏土定格 | Blender + Python |
+| [`flat-vector`](skills/carl-motion/scenes/flat-vector) | 扁平矢量 | Python (NumPy + OpenCV + Pillow) |
+| [`particle-morph`](skills/carl-motion/scenes/particle-morph) | 粒子聚散造型 | Python (NumPy + OpenCV + Pillow) |
+| [`white-model-projection`](skills/carl-motion/scenes/white-model-projection) | 实体白模投影 | Blender + Python |
+| [`exploded-view`](skills/carl-motion/scenes/exploded-view) | 产品爆炸拆解 | Blender + Python |
+| [`glassmorphism-ui`](skills/carl-motion/scenes/glassmorphism-ui) | 玻璃拟态UI | Node + Canvas / headless Chrome |
+| [`brick-toy`](skills/carl-motion/scenes/brick-toy) | 积木玩具 | Blender + Python |
+| [`risograph`](skills/carl-motion/scenes/risograph) | Risograph孔版套印 | Python (NumPy + OpenCV + Pillow) |
 
-**9:16 口播排版。** [`templates/pipeline/script_layout.py`](templates/pipeline/script_layout.py) 把同一画风的两段示例上下叠放，顶上一条常驻标题，底下每 8 秒走一遍同样的节拍：问句气泡、画风名、逐字打出的提示语、注意条。右边的机位框留给真人口播。
+**9:16 口播排版。** [`skills/carl-motion/pipeline/script_layout.py`](skills/carl-motion/pipeline/script_layout.py) 把同一画风的两段示例上下叠放，顶上一条常驻标题，底下结果前置：每组第 0 帧就亮出画风名和已经出到一半的提示语卡，剩下的像模型生成一样一段段冒出来，5.4 秒再加注意条。右边的机位框留给真人口播。
 
 <img src="./assets/layout-9x16.jpg" width="300" alt="9:16 排版：A、B 上下叠放，底部是提示语卡和注意条">
 
-**流水线。** [`templates/pipeline`](templates/pipeline) 里还有做那支视频用到的工具。`encode.sh` 把每支片编成同一规格，`qa.py` 查规格、黑帧和跳帧，`color_order_v4.py` 按互补色排画风顺序，`color_stitch_verify.py` 在拼好的成片上复测每个切点，`opener_salience.py` 在 CIELAB 里给开场候选打分。用法见它的 [README](templates/pipeline/README.md)。
+**流水线。** [`skills/carl-motion/pipeline`](skills/carl-motion/pipeline) 里还有做那支视频用到的工具。`encode.sh` 把每支片编成同一规格，`qa.py` 查规格、黑帧和跳帧，`color_order_v4.py` 按互补色排画风顺序，`color_stitch_verify.py` 在拼好的成片上复测每个切点，`opener_salience.py` 在 CIELAB 里给开场候选打分。用法见它的 [README](skills/carl-motion/pipeline/README.md)。
 
 ## 示例是怎么做出来的
 
@@ -146,7 +146,7 @@ Claude Code 也可以按插件装：先 `/plugin marketplace add LearnPrompt/car
 
 ## 素材与许可
 
-代码、提示语和我们自己渲染的片段都按 MIT 发布，包括 `templates/`，以及标了含源码的画风在 `assets/` 里的预览。另有四个画风的预览是 LemoLab 的演示片，按 CC BY 4.0 使用并在页面里署名。prompt-motion.com、X、yasue.org 和 video-shotcraft 的片段没有复制进仓库，页面里只放链接。9:16 示例帧里的 A 来自 huashu（MIT），B 是我们渲染的。
+代码、提示语和我们自己渲染的片段都按 MIT 发布，包括 `skills/` 下的全部内容，以及标了含源码的画风在 `assets/` 里的预览。另有四个画风的预览是 LemoLab 的演示片，按 CC BY 4.0 使用并在页面里署名。prompt-motion.com、X、yasue.org 和 video-shotcraft 的片段没有复制进仓库，页面里只放链接。9:16 示例帧里的 A 来自 huashu（MIT），B 是我们渲染的。
 
 ## 致谢
 

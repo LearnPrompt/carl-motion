@@ -6,6 +6,8 @@
 
 <sub>Preview: our render (layer B), MIT. 预览是我们渲染的 B，MIT 许可。</sub>
 
+**Status 状态:** Implemented on an upstream library · 基于上游库实做
+
 ## Prompt (copy this)
 
 Paste into Claude, GPT or any coding model. Swap *your topic* for your own subject.
@@ -48,10 +50,16 @@ Palette 主色：`#b86c3e` `#3e6cb8`
 | Layer | Title | Source | License |
 |---|---|---|---|
 | A | 少女与猫喝茶 · 印象派油画／莫奈 | [alchaincyf · huashu-art-motion](https://github.com/alchaincyf/huashu-art-motion) | MIT (re-rendered from source) |
-| B | carl-motion | [this repo](../../templates/scenes/huashu-portraits) | MIT |
+| B | carl-motion | [this repo](../../skills/carl-motion/scenes/huashu-portraits) | MIT |
 
 ## Reproduce · 复现
 
-Source that rendered the B clip: [`templates/scenes/huashu-portraits`](../../templates/scenes/huashu-portraits) (Canvas / HTML + Node). Its README has the exact render command.
+Source that rendered the B clip: [`skills/carl-motion/scenes/huashu-portraits`](../../skills/carl-motion/scenes/huashu-portraits) (Node + Canvas / headless Chrome). Check dependencies first with `python3 skills/carl-motion/scripts/doctor.py huashu-portraits`.
 
-渲染 B 的完整源码在 [`templates/scenes/huashu-portraits`](../../templates/scenes/huashu-portraits)（Canvas / HTML + Node），渲染命令写在它的 README 里。
+```bash
+cd skills/carl-motion/scenes/huashu-portraits
+./render.sh /tmp/monet-impressionist s24_bridge
+python3 ../../scripts/deliver.py --frames /tmp/monet-impressionist/frames --out monet-impressionist.mp4
+```
+
+渲染 B 的完整源码在 [`skills/carl-motion/scenes/huashu-portraits`](../../skills/carl-motion/scenes/huashu-portraits)（Node + Canvas / headless Chrome），渲染命令写在它的 README 里。

@@ -6,6 +6,8 @@
 
 <sub>Preview: our render (layer B), MIT. 预览是我们渲染的 B，MIT 许可。</sub>
 
+**Status 状态:** Implemented, one scene · 单场景实做
+
 ## Prompt (copy this)
 
 Paste into Claude, GPT or any coding model. Swap *your topic* for your own subject.
@@ -48,10 +50,16 @@ Palette 主色：`#b83ea8`
 | Layer | Title | Source | License |
 |---|---|---|---|
 | A | NEON DRIVE棕榈公路小车 | [Vincentwei1021 · mg-styles-15](https://vincentwei1021.github.io/mg-styles-15/?lang=zh#10-synthwave) | prompts/code MIT; demo video not redistributed |
-| B | carl-motion | [this repo](../../templates/scenes/neon-synthwave) | MIT |
+| B | carl-motion | [this repo](../../skills/carl-motion/scenes/neon-synthwave) | MIT |
 
 ## Reproduce · 复现
 
-Source that rendered the B clip: [`templates/scenes/neon-synthwave`](../../templates/scenes/neon-synthwave) (Blender + Python). Its README has the exact render command.
+Source that rendered the B clip: [`skills/carl-motion/scenes/neon-synthwave`](../../skills/carl-motion/scenes/neon-synthwave) (Blender + Python). Check dependencies first with `python3 skills/carl-motion/scripts/doctor.py neon-synthwave`.
 
-渲染 B 的完整源码在 [`templates/scenes/neon-synthwave`](../../templates/scenes/neon-synthwave)（Blender + Python），渲染命令写在它的 README 里。
+```bash
+cd skills/carl-motion/scenes/neon-synthwave
+./render.sh /tmp/neon-synthwave
+python3 ../../scripts/deliver.py --frames /tmp/neon-synthwave/frames --out neon-synthwave.mp4
+```
+
+渲染 B 的完整源码在 [`skills/carl-motion/scenes/neon-synthwave`](../../skills/carl-motion/scenes/neon-synthwave)（Blender + Python），渲染命令写在它的 README 里。

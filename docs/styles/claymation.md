@@ -6,6 +6,8 @@
 
 <sub>Preview: our render (layer B), MIT. 预览是我们渲染的 B，MIT 许可。</sub>
 
+**Status 状态:** Implemented, one scene · 单场景实做
+
 ## Prompt (copy this)
 
 Paste into Claude, GPT or any coding model. Swap *your topic* for your own subject.
@@ -48,10 +50,16 @@ Palette 主色：`#b8a83e`
 | Layer | Title | Source | License |
 |---|---|---|---|
 | A | 黏土设备乐队MV | [prompt-motion.com](https://prompt-motion.com/davidshulmanfl-371638) | link only |
-| B | carl-motion | [this repo](../../templates/scenes/claymation) | MIT |
+| B | carl-motion | [this repo](../../skills/carl-motion/scenes/claymation) | MIT |
 
 ## Reproduce · 复现
 
-Source that rendered the B clip: [`templates/scenes/claymation`](../../templates/scenes/claymation) (Blender + Python). Its README has the exact render command.
+Source that rendered the B clip: [`skills/carl-motion/scenes/claymation`](../../skills/carl-motion/scenes/claymation) (Blender + Python). Check dependencies first with `python3 skills/carl-motion/scripts/doctor.py claymation`.
 
-渲染 B 的完整源码在 [`templates/scenes/claymation`](../../templates/scenes/claymation)（Blender + Python），渲染命令写在它的 README 里。
+```bash
+cd skills/carl-motion/scenes/claymation
+./render.sh /tmp/claymation
+python3 ../../scripts/deliver.py --frames /tmp/claymation/frames --out claymation.mp4
+```
+
+渲染 B 的完整源码在 [`skills/carl-motion/scenes/claymation`](../../skills/carl-motion/scenes/claymation)（Blender + Python），渲染命令写在它的 README 里。

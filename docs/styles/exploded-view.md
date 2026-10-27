@@ -6,6 +6,8 @@
 
 <sub>Preview: our render (layer B), MIT. 预览是我们渲染的 B，MIT 许可。</sub>
 
+**Status 状态:** Implemented, one scene · 单场景实做
+
 ## Prompt (copy this)
 
 Paste into Claude, GPT or any coding model. Swap *your topic* for your own subject.
@@ -48,10 +50,16 @@ Palette 主色：`#4eb83e` `#b88a3e`
 | Layer | Title | Source | License |
 |---|---|---|---|
 | A | 产品拆解：21 Keys, Opened | [LemoLab · lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/teardown) | prompts/code MIT, demo video CC BY 4.0 |
-| B | carl-motion | [this repo](../../templates/scenes/exploded-view) | MIT |
+| B | carl-motion | [this repo](../../skills/carl-motion/scenes/exploded-view) | MIT |
 
 ## Reproduce · 复现
 
-Source that rendered the B clip: [`templates/scenes/exploded-view`](../../templates/scenes/exploded-view) (Blender + Python). Its README has the exact render command.
+Source that rendered the B clip: [`skills/carl-motion/scenes/exploded-view`](../../skills/carl-motion/scenes/exploded-view) (Blender + Python). Check dependencies first with `python3 skills/carl-motion/scripts/doctor.py exploded-view`.
 
-渲染 B 的完整源码在 [`templates/scenes/exploded-view`](../../templates/scenes/exploded-view)（Blender + Python），渲染命令写在它的 README 里。
+```bash
+cd skills/carl-motion/scenes/exploded-view
+./render.sh /tmp/exploded-view
+python3 ../../scripts/deliver.py --frames /tmp/exploded-view/frames --out exploded-view.mp4
+```
+
+渲染 B 的完整源码在 [`skills/carl-motion/scenes/exploded-view`](../../skills/carl-motion/scenes/exploded-view)（Blender + Python），渲染命令写在它的 README 里。
