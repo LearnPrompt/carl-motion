@@ -70,11 +70,13 @@ def credit(s, lang):
 
 # ---------- text tiles for styles without a clip ----------
 def text_tiles():
+    font = '/System/Library/Fonts/HelveticaNeue.ttc'   # macOS only; elsewhere keep the committed tiles
     try:
         from PIL import Image, ImageDraw, ImageFont
-        fnt = lambda n, b=True: ImageFont.truetype('/System/Library/Fonts/HelveticaNeue.ttc', n, index=1 if b else 0)
     except Exception:
         return
+    if not os.path.exists(font): return
+    fnt = lambda n, b=True: ImageFont.truetype(font, n, index=1 if b else 0)
     for s in ZH:
         if s['preview']: continue
         im = Image.new('RGB', (480, 270), (17, 17, 17)); d = ImageDraw.Draw(im)
@@ -209,7 +211,7 @@ def gallery(lang, prefix, page_prefix):
         head = {'en': s['name_en'], 'zh': s['name_zh'], 'ja': JA[s['id']]}[lang]
         name = f'<b>{s["order"]:02d} · {head}</b><br><sub>{local}</sub>'
         tag = {'en': 'source included', 'zh': '含源码', 'ja': 'ソースあり'}[lang] if s['scene'] else {'en': 'prompt + source link', 'zh': '提示语加来源', 'ja': 'プロンプト＋出典'}[lang]
-        if s['scene'] and lang == 'en': tag += f' · {tool(e["card"])}'
+        if s['scene'] and lang == 'en': tag += ' · ' + {'python': 'Python', 'blender': 'Blender', 'node': 'Node'}.get(engine(s['scene']).get('stack'), tool(e['card']))
         cells.append(f'<td width="33%" valign="top" align="center"><a href="{page_prefix}{s["slug"]}.md"><img src="{img(s, prefix)}" width="260" alt="{s["name_en"]}"></a><br>{name}<br><sub>{tag}</sub></td>')
     rows = ['<tr>\n' + '\n'.join(cells[i:i + 3]) + '\n</tr>' for i in range(0, len(cells), 3)]
     return '<table>\n' + '\n'.join(rows) + '\n</table>'
