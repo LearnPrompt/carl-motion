@@ -440,7 +440,7 @@ def blocked_style(reason):
     return {'blocked': True, 'reason': reason, 'label': '缺素材'}
 
 
-def resolve(catalog, request, media, url, search, root):
+def resolve(catalog, request, media, url, search, root, approve_unreferenced_draft=False):
     styles = catalog['styles']
     by_slug = {style['slug']: style for style in styles}
     user = empty_user_reference()
@@ -479,11 +479,11 @@ def resolve(catalog, request, media, url, search, root):
         views.append(style_view(by_slug[slug], root, label))
     for view in views:
         preview = view['local_preview']
+        # A decoded preview is a measurement. No engine reads that file.
+        preview['used_as_video_reference'] = False
         if decision == 'exact' and preview.get('decoded') and preview.get('frame_count', 0) > 1:
-            preview['used_as_video_reference'] = True
             preview['application'] = 'measured_color_and_motion_only'
         elif preview.get('decoded'):
-            preview['used_as_video_reference'] = False
             preview['application'] = 'decoded_not_selected'
         if preview.get('decoded'):
             facts.append({
@@ -516,6 +516,14 @@ def resolve(catalog, request, media, url, search, root):
             style_step = blocked_style('风格还不能测量')
     render_blocked = decision in ('no_preset', 'mixed', 'candidate') or style_step['blocked']
     house_draft = decision != 'exact'
+    house_label = '草稿' if house_draft else '规格'
+    approved = False
+    # An explicit user approval can continue as a draft. It does not invent a watched video.
+    if approve_unreferenced_draft and decision == 'no_preset' and not decoded:
+        approved = True
+        render_blocked = False
+        house_draft = True
+        house_label = '用户已批准的无参考草稿'
     brief = {
         'decision': decision,
         'forced_preset': False,
@@ -541,17 +549,18 @@ def resolve(catalog, request, media, url, search, root):
             'available': False, 'attempted': False, 'refused': False, 'result_count': 0,
             'results': [], 'reminder': None, 'message': None,
         },
+        'approved_unreferenced_draft': approved,
         'steps': {
             'house_spec': {
-                'blocked': False, 'draft': house_draft,
-                'label': '草稿' if house_draft else '规格',
+                'blocked': False, 'draft': house_draft, 'label': house_label,
                 'value': dict(catalog.get('house') or HOUSE),
             },
             'style_parameters': style_step,
             'render': {
                 'blocked': render_blocked,
-                'reason': style_step['reason'] if render_blocked else None,
-                'still_first': decision == 'custom',
+                'reason': None if approved or not render_blocked else style_step['reason'],
+                'still_first': decision == 'custom' or approved,
+                'unreferenced_draft': approved,
             },
         },
         'facts': facts,
@@ -563,6 +572,14 @@ def resolve(catalog, request, media, url, search, root):
             'engines_rewritten': False,
             'catalog_urls_fetched': False,
         },
+    }
+    user_video = bool(brief['user_reference'].get('decoded') and brief['user_reference'].get('kind') == 'video')
+    watched_link = any(ref.get('decoded') for view in views for ref in view['references'])
+    brief['claims'] = {
+        'video_guided_generation': False,
+        'engine_consumes_reference_video': False,
+        'may_claim_referenced_video': user_video,
+        'may_claim_watched_link': watched_link,
     }
     if decision != 'no_preset':
         # Search permission is not part of a matched, mixed, or measured brief.
@@ -623,6 +640,7 @@ def main(argv=None):
     parser.add_argument('--search-file', default='')
     parser.add_argument('--search-cmd', default=os.environ.get('CARL_MOTION_SEARCH_CMD', ''))
     parser.add_argument('--search-refused', default='')
+    parser.add_argument('--approve-unreferenced-draft', action='store_true')
     parser.add_argument('--audit', action='store_true')
     args = parser.parse_args(argv)
     catalog = load_catalog()
@@ -633,12 +651,16 @@ def main(argv=None):
         if not args.request:
             parser.error('--request is required unless --audit')
         # An exact, mixed, or measured brief must not trigger a search.
-        preliminary = resolve(catalog, args.request, args.media, args.media_url or '', None, root)
+        preliminary = resolve(
+            catalog, args.request, args.media, args.media_url or '', None, root,
+            approve_unreferenced_draft=args.approve_unreferenced_draft,
+        )
         needs_search = preliminary['decision'] == 'no_preset' and not preliminary['user_reference']['decoded']
         if needs_search:
             payload = resolve(
                 catalog, args.request, args.media, args.media_url or '',
                 run_search(args, args.request), root,
+                approve_unreferenced_draft=args.approve_unreferenced_draft,
             )
         else:
             payload = preliminary

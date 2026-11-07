@@ -2,7 +2,9 @@
 """Behavior tests for the brief resolver. They call the CLI, not a mocked model.
 
 Passing these tests does not mean an LLM followed SKILL.md. It means the
-production entry point classified the request and probed real files.
+CLI classified the request and probed real files. A failure while
+resolve_brief.py is absent only shows that entry was added; it is not a
+regression test of the previous skill text.
 """
 import hashlib, json, os, subprocess, sys, tempfile, unittest
 from pathlib import Path
@@ -65,6 +67,11 @@ class ResolveBriefTest(unittest.TestCase):
         self.assertFalse(preview['full_source_video'])
         self.assertFalse(preview['copied_frames_into_engine'])
         self.assertEqual(preview['application'], 'measured_color_and_motion_only')
+        self.assertFalse(preview['used_as_video_reference'])
+        self.assertFalse(out['claims']['video_guided_generation'])
+        self.assertFalse(out['claims']['engine_consumes_reference_video'])
+        self.assertFalse(out['claims']['may_claim_referenced_video'])
+        self.assertFalse(out['claims']['may_claim_watched_link'])
         self.assertGreaterEqual(len(preview['colors']), 1)
         self.assertLessEqual(len(preview['colors']), 4)
         self.assertTrue(preview['path'].endswith('assets/previews/risograph.webp'))
@@ -143,6 +150,8 @@ class ResolveBriefTest(unittest.TestCase):
         self.assertEqual(out['steps']['house_spec']['label'], '草稿')
         self.assertTrue(out['steps']['render']['blocked'])
         self.assertNotIn('https://x.com/', json.dumps(out['search']))
+        self.assertFalse(out['claims']['may_claim_referenced_video'])
+        self.assertFalse(out['claims']['video_guided_generation'])
 
     def test_authorized_search_is_used_without_asking_again(self):
         fd, path = tempfile.mkstemp(suffix='.json')
@@ -235,6 +244,23 @@ class ResolveBriefTest(unittest.TestCase):
         self.assertEqual(out['styles'][0]['match'], 'keyword')
         self.assertFalse(out['forced_preset'])
         self.assertTrue(out['steps']['render']['blocked'])
+
+    def test_user_can_approve_a_draft_without_claiming_a_video(self):
+        blocked, _ = brief(['--request', '新画风：液态铬金属广告，镜面往下流'])
+        self.assertTrue(blocked['steps']['render']['blocked'])
+        out, _ = brief([
+            '--request', '新画风：液态铬金属广告，镜面往下流',
+            '--approve-unreferenced-draft',
+        ])
+        self.assertEqual(out['decision'], 'no_preset')
+        self.assertTrue(out['approved_unreferenced_draft'])
+        self.assertFalse(out['steps']['render']['blocked'])
+        self.assertEqual(out['steps']['house_spec']['label'], '用户已批准的无参考草稿')
+        self.assertTrue(out['steps']['style_parameters']['blocked'])
+        self.assertEqual(out['style_parameters']['colors'], [])
+        self.assertFalse(out['claims']['may_claim_referenced_video'])
+        self.assertFalse(out['claims']['video_guided_generation'])
+        self.assertFalse(out['claims']['engine_consumes_reference_video'])
 
     def test_rejecting_presets_does_not_lock_a_named_style(self):
         out, _ = brief(['--request', '新画风，不要套进已有画风，即使有人提到 risograph'])

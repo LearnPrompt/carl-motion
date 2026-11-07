@@ -8,7 +8,7 @@ Each style is shown as two 8-second clips in the same look on different subjects
 
 ## Brief, before a new clip
 
-`scripts/resolve_brief.py` is the entry that decides exact, candidate, mixed, custom, or no preset, and it records whether a preview file or a user file was decoded. Catalog URLs are not fetched. The 20 shipped engines stay on the stacks in their `engine.json`. The script's JSON is a probe, not proof that a model followed this note.
+`scripts/resolve_brief.py` is required on both skill tracks before an engine is copied or a renderer is written. It decides exact, candidate, mixed, custom, or no preset, and it records whether a local file was decoded. A decoded preview is a measurement, not an engine input. Catalog URLs are not fetched. `claims.video_guided_generation` stays false. The 20 shipped engines stay on the stacks in their `engine.json`. The JSON is not proof that a model followed this note.
 
 ## QA
 `python3 scripts/deliver.py --frames <dir> --out clip.mp4` checks the spec, black frames and frame-difference jumps and returns red, yellow or green; no A clip is needed. A flagged jump is fine when it is a designed cut or a beat change; say which it is.
