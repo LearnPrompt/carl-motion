@@ -18,9 +18,16 @@ metadata:
 
 0. **Check the machine.** `python3 <skill>/scripts/doctor.py`. If it reports anything missing, tell the user what to install and stop.
 
-1. **Pick the style.** Open `references/styles/INDEX.md`. If the user named a style, match it by English name, Chinese name or slug. If they described a feel (flat, warm, hand-made, techy), offer the two or three closest rows, one line each, and let them choose. Ask at most one question.
+1. **Resolve the brief before picking.** Run `python3 <skill>/scripts/resolve_brief.py --request "<the user's words>"`. Add `--media <file>` for each image or video they gave you, and `--media-url` for a link. Read the JSON. It does not render and it does not rewrite engines. `limits.llm_compliance_proven` is false on purpose: the file is a router and a probe, not a claim that you obeyed this skill.
+   - `decision: exact` — open that one card and use its engine. `local_preview.decoded: true` means this run measured frames from the redistributable excerpt (color and motion only). `references[].fetched: false` means the catalog URL was not opened. Do not tell the user you watched the original video unless `full_source_video` is true. Do not paste those frames, a logo, or music into the new topic. The engine stays on `engine.stack`.
+   - `decision: candidate` or `mixed` — do not start an engine and do not call it an exact match. Name the listed styles, one line each, and ask at most one question.
+   - `decision: custom` — do not snap the request onto the 29. Use `style_parameters`. Leave null fields unknown. Then follow 3b.
+   - `decision: no_preset` — nothing in the 29 fits, and no reference file was decoded. If `search.reminder` is set, show that string and stop the style step: search is not available, and the reminder is the ask to turn it on so a reference can be found on X. If you already have a search tool, do not ask again; run it once, write `{"results":[{"url","title","source"}]}`, and re-run with `--search-file`. A link in those results is not a video you watched. If `search.refused` is true or `result_count` is 0, keep `steps.house_spec` as a draft and stop where `steps.style_parameters.blocked` is true. Do not invent posts or say you looked on X.
+   - Missing material blocks only the step whose `blocked` field is true. Keep the unblocked steps, and mark drafts.
+   - Facts stay in `facts`. Do not add measurements you did not make to `inferences`. Do not fabricate a product screen or a number; a number needs a source and a date. Record a path or URL, when you got it, and the size or duration you actually measured.
+   - Do not move these engines onto HyperFrames, GSAP, or any other stack, and do not stop after every step waiting for a reply.
 
-2. **Read that card in full** (`references/styles/NN_slug.md`). Its status decides the next step:
+2. **Read that card in full** when the decision is exact (`references/styles/NN_slug.md`). Its status decides the next step:
    - *Implemented* or *implemented on an upstream library*: go to 3a.
    - *Upstream only* or *research*: go to 3b.
 

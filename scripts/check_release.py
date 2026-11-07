@@ -29,7 +29,7 @@ def digest(paths):
 def generated():
     return ([os.path.join(ROOT, f) for f in ('README.md', 'README_zh.md', 'README_ja.md', '.claude-plugin/marketplace.json')]
             + glob.glob(os.path.join(ROOT, 'docs/styles/*.md')) + glob.glob(os.path.join(SKILL, 'references/styles/*.md'))
-            + [os.path.join(SKILL, 'SKILL.md')])
+            + [os.path.join(SKILL, 'SKILL.md'), os.path.join(SKILL, 'references/style-catalog.json')])
 
 
 print('1 generated files match data')
@@ -101,6 +101,15 @@ if '--fast' not in sys.argv:
         r = subprocess.run([sys.executable, deliver, '--frames', d, '--out', out], capture_output=True, text=True)
         if r.returncode != 2: fail(f'deliver.py on {case}: exit {r.returncode}, expected 2')
         if os.path.exists(out): fail(f'deliver.py on {case}: wrote a clip on red')
+
+print('8 resolve_brief')
+test = os.path.join(SKILL, 'tests', 'test_resolve_brief.py')
+r = subprocess.run([sys.executable, test], capture_output=True, text=True)
+log = (r.stdout + r.stderr).strip()
+if r.returncode != 0:
+    fail('resolve_brief tests failed:\n' + log[-2000:])
+else:
+    print(log.splitlines()[-1] if log else 'ok')
 
 print('\nPASS' if not fails else f'\n{len(fails)} problem(s)')
 sys.exit(1 if fails else 0)

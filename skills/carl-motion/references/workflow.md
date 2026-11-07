@@ -6,6 +6,10 @@ Each style is shown as two 8-second clips in the same look on different subjects
 ## House spec
 1920×1080, 30 fps, 240 frames, H.264 High, yuv420p, no audio track. Stepped styles (paper collage, claymation, risograph) animate on 12 fps beats inside the 30 fps container; do not smooth them back to full frame rate.
 
+## Brief, before a new clip
+
+`scripts/resolve_brief.py` is the entry that decides exact, candidate, mixed, custom, or no preset, and it records whether a preview file or a user file was decoded. Catalog URLs are not fetched. The 20 shipped engines stay on the stacks in their `engine.json`. The script's JSON is a probe, not proof that a model followed this note.
+
 ## QA
 `python3 scripts/deliver.py --frames <dir> --out clip.mp4` checks the spec, black frames and frame-difference jumps and returns red, yellow or green; no A clip is needed. A flagged jump is fine when it is a designed cut or a beat change; say which it is.
 

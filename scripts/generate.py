@@ -294,7 +294,7 @@ The order follows the video we cut from them: neighbouring styles sit on roughly
 
 ## Skill
 
-`carl-motion` turns this library into something your coding agent can use. Ask for a style by name or by look (*flat, warm, hand-made*). The agent picks the closest entry, fills the prompt with your topic, checks it against the known failure points, and when the style ships source code here, it starts from that engine instead of a blank file. Every card says how far the style is proven (implemented, upstream only, or research), and the finished clip has to pass the same delivery gate.
+`carl-motion` turns this library into something your coding agent can use. Ask for a style by name or by look (*flat, warm, hand-made*). The skill tells the agent to run `scripts/resolve_brief.py` first. An exact name opens that card and, when this repo has a preview clip, measures frames from that clip; a catalog URL is not treated as watched. A look that matches none of the {N} is not forced onto one. When the style ships source code here, the agent starts from that engine instead of a blank file, on the stack that engine already uses. Every card says how far the style is proven (implemented, upstream only, or research), and the finished clip has to pass the same delivery gate.
 
 | | Prompt pages | Skill |
 |---|---|---|
@@ -379,7 +379,7 @@ Claude Code 也可以按插件装：先 `/plugin marketplace add {REPO}`，再 `
 
 ## Skill
 
-`carl-motion` 把这套画风库交给你的编程 Agent 用。你可以报画风名，也可以只描述感觉，比如扁平、暖色、手作感。Agent 会挑最接近的那一条，把你的主题填进提示语，对着已知的失败点检查一遍；这个画风在仓库里有源码的话，它会直接从那份引擎改起。每张卡都写明这个画风验证到哪一步（已实做、只有上游、还在研究），做完的片子要过同一道交付门禁。
+`carl-motion` 把这套画风库交给你的编程 Agent 用。你可以报画风名，也可以只描述感觉，比如扁平、暖色、手作感。Skill 要求 Agent 先跑 `scripts/resolve_brief.py`。点名命中会打开那张卡；仓库里有预览片时，测量的是这支预览的帧，来源链接不算已经看过。对不上这 {N} 种的新画风不会被硬塞进某一条。这个画风在仓库里有源码的话，Agent 从那份引擎改起，技术栈保持引擎原来的选择。每张卡都写明这个画风验证到哪一步（已实做、只有上游、还在研究），做完的片子要过同一道交付门禁。
 
 | | 画风页 | Skill |
 |---|---|---|
@@ -476,7 +476,7 @@ Claude Code ではプラグインとしても使えます：`/plugin marketplace
 
 ## Skill
 
-`carl-motion` はこのライブラリをコーディングエージェントで使える形にしたものです。スタイル名でも、「フラット、あたたかい、手作り感」のような雰囲気でも頼めます。エージェントは一番近いスタイルを選び、プロンプトにテーマを入れ、既知の崩れポイントと照らし合わせます。ソースがあるスタイルは、白紙からではなくそのエンジンから作り始めます。各カードにはそのスタイルがどこまで検証済みか（実装済み、上流のみ、研究段階）が書かれていて、完成したクリップは同じ納品ゲートを通ります。
+`carl-motion` はこのライブラリをコーディングエージェントで使える形にしたものです。スタイル名でも、「フラット、あたたかい、手作り感」のような雰囲気でも頼めます。Skill は最初に `scripts/resolve_brief.py` を実行するようエージェントに指示します。名前が一致したらそのカードを開き、リポジトリにプレビューがある場合はそのフレームを計測します。カタログの URL は視聴済みにはしません。{N} 種のどれにも合わない新しい見た目を、既存の一つに押しつけません。ソースがあるスタイルは、白紙からではなくそのエンジンから、元の技術スタックのまま作り始めます。各カードにはそのスタイルがどこまで検証済みか（実装済み、上流のみ、研究段階）が書かれていて、完成したクリップは同じ納品ゲートを通ります。
 
 | | スタイルページ | Skill |
 |---|---|---|
@@ -616,6 +616,40 @@ implemented (our engine), implemented on an upstream library, upstream only (lin
 ''' + '\n'.join(rows)
 
 
+def style_catalog():
+    """Machine-readable index shipped inside the skill. Source of truth stays data/styles.*.json."""
+    rows = []
+    for s in ZH:
+        e = EN[s['id']]
+        eng = engine(s['scene'])
+        if s.get('preview'):
+            preview = {
+                'layer': s['preview']['layer'], 'by': s['preview']['by'],
+                'file': f'assets/previews/{s["slug"]}.webp',
+                'excerpt': {'t0': 1.5, 't1': 5.5, 'fps': 10, 'source': 'scripts/make_previews.py'},
+            }
+        else:
+            preview = {
+                'layer': None, 'by': None, 'file': None,
+                'text_poster': f'assets/posters/{s["slug"]}.jpg', 'excerpt': None,
+            }
+        rows.append({
+            'order': s['order'], 'id': s['id'], 'slug': s['slug'],
+            'name_en': s['name_en'], 'name_zh': s['name_zh'], 'status': s['status'],
+            'palette': s['palette'], 'keywords_zh': s['keywords'], 'keywords_en': e['keywords'],
+            'scene': s['scene'].split(SKILL + '/')[-1] if s['scene'] else None,
+            'engine_slug': s['scene'].rstrip('/').split('/')[-1] if s['scene'] else None,
+            'engine_stack': eng.get('stack'), 'engine_entry': eng.get('entry'),
+            'card': f'references/styles/{s["order"]:02d}_{s["slug"]}.md',
+            'refs': s['refs'], 'preview': preview,
+        })
+    return json.dumps({
+        'version': VERSION,
+        'house': {'width': 1920, 'height': 1080, 'fps': 30, 'frames': 240, 'seconds': 8},
+        'styles': rows,
+    }, ensure_ascii=False, indent=1)
+
+
 def stamp_version():
     p = os.path.join(ROOT, SKILL, 'SKILL.md'); t = open(p).read()
     t = re.sub(r'\nmetadata:\n  version: "[^"]*"\n', '\n', t)
@@ -635,5 +669,6 @@ if __name__ == '__main__':
     w('README_ja.md', readme_ja())
     for s in ZH: w(f'{SKILL}/references/styles/{s["order"]:02d}_{s["slug"]}.md', card(s))
     w(f'{SKILL}/references/styles/INDEX.md', cards_index())
+    w(f'{SKILL}/references/style-catalog.json', style_catalog())
     stamp_version()
     print('ok', N, 'styles,', len(OURS), 'with source,', len(MOVING), 'with preview, version', VERSION)
