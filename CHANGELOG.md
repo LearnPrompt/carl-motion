@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Document the eight video skills from the original Snail post, distinguishing four existing upstream sources from additional workflow references.
+- Record the current WTT directory name, source versions and reuse boundaries, and the missing public URL for archival-doc. Link the guide from the Skill and all three READMEs; no new engines or rendered examples are claimed.
+
 ## 0.2.0 · 2026-10-27
 
 - Skill moved to `skills/carl-motion/` and made self-contained: engines (`scenes/`), video tooling (`pipeline/`), `scripts/deliver.py`, `scripts/doctor.py` and a LICENSE now install with it.

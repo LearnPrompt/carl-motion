@@ -135,6 +135,8 @@ Every style is a pair of 8-second clips. A is an upstream reference; B is a seco
 
 These are the style skills and galleries this library was built on. Their prompts are linked from each style page.
 
+The [eight-video-skill source guide](skills/carl-motion/references/video-skill-sources.md) (Chinese, checked 2026-11-07) maps the original roundup to this library, including the current WTT name and the archival-doc entry with no repository URL in the source post. Additional references are not installed or tested capabilities.
+
 | Upstream | What we took from it | License |
 |---|---|---|
 | [lemomo-ai/lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar) | Style recipes and demo films for 13 of the 29 styles (blueprint, watercolor, ink wash, woodcut, point cloud, white model, teardown, brick toy, risograph, ASCII, isometric, dataviz, HUD) | prompts and code MIT, demo films CC BY 4.0 |

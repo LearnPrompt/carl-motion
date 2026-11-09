@@ -49,6 +49,10 @@ Give the filled prompt as one copy-pasteable block, the style and its status, an
 - `references/workflow.md`: the A/B method, ordering many styles by complementary colour, the 9:16 explainer layout.
 - `pipeline/`: the tools behind a multi-style video (`color_order_v4.py`, `color_stitch_verify.py`, `script_layout.py`). They work on a delivery folder; see `pipeline/README.md`.
 
+## Related video workflows
+
+For questions about the eight video skills, upstream sources, or workflows beyond the built-in style clips, read [video-skill-sources.md](references/video-skill-sources.md). It distinguishes existing sources from newly catalogued references, records the WTT rename, and marks the archival-doc entry with no repository URL in the source post. A reference is not an installed or tested capability; keep the current style statuses and delivery gate.
+
 ## Language
 
 Answer in the user's language. Every card carries the prompt in English and Chinese.
