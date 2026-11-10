@@ -102,14 +102,15 @@ if '--fast' not in sys.argv:
         if r.returncode != 2: fail(f'deliver.py on {case}: exit {r.returncode}, expected 2')
         if os.path.exists(out): fail(f'deliver.py on {case}: wrote a clip on red')
 
-print('8 resolve_brief')
-test = os.path.join(SKILL, 'tests', 'test_resolve_brief.py')
-r = subprocess.run([sys.executable, test], capture_output=True, text=True)
-log = (r.stdout + r.stderr).strip()
-if r.returncode != 0:
-    fail('resolve_brief tests failed:\n' + log[-2000:])
-else:
-    print(log.splitlines()[-1] if log else 'ok')
+print('8 cli tests')
+for name in ('test_resolve_brief.py', 'test_doctor.py', 'test_collage_motion.py'):
+    test = os.path.join(SKILL, 'tests', name)
+    r = subprocess.run([sys.executable, test], capture_output=True, text=True)
+    log = (r.stdout + r.stderr).strip()
+    if r.returncode != 0:
+        fail(f'{name} failed:\n' + log[-2000:])
+    else:
+        print(name, log.splitlines()[-1] if log else 'ok')
 
 print('\nPASS' if not fails else f'\n{len(fails)} problem(s)')
 sys.exit(1 if fails else 0)

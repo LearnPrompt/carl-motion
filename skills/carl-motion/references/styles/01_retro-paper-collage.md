@@ -30,7 +30,8 @@ Palette: `#b88a3e`, `#3e8ab8`
 - Full-frame smooth motion looks like PowerPoint animation; drop to 12 fps and add a light jitter on every beat. Cut-outs without torn edges and drop shadows fall back to flat vector. Using only one typeface loses the ransom-note collage feel.
 - 满帧顺滑运动像 PPT 动画，要降到 12 帧再加每拍轻抖；剪片缺撕边和投影就退成扁平矢量；字体只用一种就没有勒索信的拼贴味。
 - The cat and mice are paper cut-out assemblies with simple swinging legs and no fine expressions.
-- The jump frames 73, 75, 78 and 155 flagged by the automated check are the title paper being pulled away and caption changes: by design.
+- Full-page moves (the title sheet leaving, a planner page entering) are a torn wipe on the 30 fps clock with ease-in-out. Do not slide a full textured sheet on the 12 fps beat clock; that trips the jump check. Character poses still step at 12 fps.
+- The sky field is the card blue #3e8ab8. Kraft stays near #b88a3e. A different topic can drift; the preset itself should not.
 - At 12 fps stop-motion, frame differences within a beat are close to 0; the style requires it.
 
 ## Field notes · 实测记录
