@@ -33,6 +33,12 @@ REJECT = re.compile(
     r'新画风|自定义画风|不要套|不要用现有|不要硬塞|29\s*种之外|custom style|not one of the',
     re.I,
 )
+# Unique name fragments at or below this set are the medium itself, not a style.
+# 「动画」is a unique bigram of 动画电影式3D角色 and must not exact-match that card.
+GENERIC_NAME_FRAGMENTS = frozenset({
+    '动画', '动效', '短片', '影片', '视频', '片子',
+    'animation', 'motion', 'video',
+})
 HOUSE = {'width': 1920, 'height': 1080, 'fps': 30, 'frames': 240, 'seconds': 8}
 
 
@@ -213,6 +219,8 @@ def name_owners(styles, request):
             hits[style['slug']] = reasons
     for frag, slugs in owners.items():
         if len(slugs) != 1:
+            continue
+        if frag in GENERIC_NAME_FRAGMENTS:
             continue
         if frag not in request and frag not in lowered:
             continue

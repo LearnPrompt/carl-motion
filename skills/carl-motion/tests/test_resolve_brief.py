@@ -95,6 +95,26 @@ class ResolveBriefTest(unittest.TestCase):
         self.assertFalse(layer_b['fetched'])
         self.assertFalse(layer_b['decoded'])
 
+    def test_generic_animation_words_do_not_select_a_style(self):
+        for request in ('动画', '做一支8秒1080p动画', '动效', 'animation', '做一支8秒1080p短片', '短片'):
+            out, _ = brief(['--request', request])
+            slugs = [s['slug'] for s in out['styles']]
+            self.assertNotIn('feature-3d-character', slugs, request)
+            self.assertNotEqual(out['decision'], 'exact', request)
+            self.assertNotEqual(out['decision'], 'mixed', request)
+
+    def test_animation_word_does_not_override_an_explicit_style(self):
+        out, _ = brief(['--request', '用扁平矢量做一支8秒1080p动画'])
+        self.assertEqual(out['decision'], 'exact')
+        self.assertEqual([s['slug'] for s in out['styles']], ['flat-vector'])
+        self.assertFalse(out['steps']['render']['blocked'])
+
+    def test_explicit_3d_character_request_still_matches(self):
+        for request in ('动画电影式3D角色', '3D角色', 'Feature-film 3D Character'):
+            out, _ = brief(['--request', request])
+            self.assertEqual(out['decision'], 'exact', request)
+            self.assertEqual(out['styles'][0]['slug'], 'feature-3d-character', request)
+
     def test_flat_vector_keeps_its_python_engine(self):
         out, _ = brief(['--request', '扁平矢量讲解'])
         self.assertEqual(out['decision'], 'exact')
