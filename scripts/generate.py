@@ -322,6 +322,8 @@ Every style is a pair of 8-second clips. A is an upstream reference; B is a seco
 
 These are the style skills and galleries this library was built on. Their prompts are linked from each style page.
 
+The [eight-video-skill source guide](skills/carl-motion/references/video-skill-sources.md) (Chinese, checked 2026-11-07) maps the original roundup to this library, including the current WTT name and the archival-doc entry with no repository URL in the source post. Additional references are not installed or tested capabilities.
+
 {UPSTREAM_EN}
 
 ## Media and licenses
@@ -406,6 +408,8 @@ Claude Code 也可以按插件装：先 `/plugin marketplace add {REPO}`，再 `
 ## 上游 Skill 和参考
 
 这套画风库建立在下面这些开源风格 Skill 和公开画廊之上，每个画风页都链回了对应的上游提示语。
+
+[八个视频 Skill 来源与选用](skills/carl-motion/references/video-skill-sources.md)（2026-11-07 核对）补齐原帖清单、与本库的对应关系、WTT 当前名称，以及 archival-doc 未提供公开地址的缺口。新增参考不代表已安装或实测。
 
 {UPSTREAM_ZH}
 
@@ -501,6 +505,8 @@ Claude Code ではプラグインとしても使えます：`/plugin marketplace
 各スタイルは 8 秒のクリップ 2 本の組です。A は上流の参考、B は同じスタイルで題材を変えた 2 本目で、見た目が別のテーマにも移せることを示します。B のうち {len(OURS)} 本はこのリポジトリのために Claude Opus 5.5 がゼロからコードを書いてレンダリングしたもので、スタイルプロンプトと A を参考にしています。そのうち 7 本は、猫が最初の農村に住みついた話を、それぞれのスタイルでリレーしています。どのクリップも同じチェックを通しています：1920×1080、30 fps、ちょうど 240 フレーム、完全デコード、黒フレームなし、検出されたジャンプフレームは目視で確認済み。
 
 ## 上流の Skill と参考
+
+[8つの動画 Skill の出典ガイド](skills/carl-motion/references/video-skill-sources.md)（中国語、2026-11-07 確認）に元の一覧、本ライブラリとの関係、WTT の現名称、archival-doc の公開URL未確認を記録しています。追加の参考情報は導入・動作検証済みの機能ではありません。
 
 このライブラリは以下のオープンなスタイル Skill と公開ギャラリーの上に作られています。各スタイルページから対応する上流プロンプトにリンクしています。
 

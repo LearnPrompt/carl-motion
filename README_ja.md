@@ -133,6 +133,8 @@ Claude Code ではプラグインとしても使えます：`/plugin marketplace
 
 ## 上流の Skill と参考
 
+[8つの動画 Skill の出典ガイド](skills/carl-motion/references/video-skill-sources.md)（中国語、2026-11-07 確認）に元の一覧、本ライブラリとの関係、WTT の現名称、archival-doc の公開URL未確認を記録しています。追加の参考情報は導入・動作検証済みの機能ではありません。
+
 このライブラリは以下のオープンなスタイル Skill と公開ギャラリーの上に作られています。各スタイルページから対応する上流プロンプトにリンクしています。
 
 | 上流 | 使ったもの | ライセンス |

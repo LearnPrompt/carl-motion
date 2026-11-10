@@ -135,6 +135,8 @@ Claude Code 也可以按插件装：先 `/plugin marketplace add LearnPrompt/car
 
 这套画风库建立在下面这些开源风格 Skill 和公开画廊之上，每个画风页都链回了对应的上游提示语。
 
+[八个视频 Skill 来源与选用](skills/carl-motion/references/video-skill-sources.md)（2026-11-07 核对）补齐原帖清单、与本库的对应关系、WTT 当前名称，以及 archival-doc 未提供公开地址的缺口。新增参考不代表已安装或实测。
+
 | 上游 | 我们用了什么 | 许可 |
 |---|---|---|
 | [lemomo-ai/lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar) | 29 个画风里 13 个的配方和演示片：蓝图、水彩、水墨、木刻、点云、白模、拆解、积木、孔版、ASCII、等轴、数据叙事、HUD | 提示语和代码 MIT，演示片 CC BY 4.0 |
