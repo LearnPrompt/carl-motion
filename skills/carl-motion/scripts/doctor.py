@@ -3,6 +3,7 @@
 
     python3 doctor.py                 # base tools: python, numpy, opencv, Pillow, ffmpeg
     python3 doctor.py risograph       # plus what scenes/risograph/engine.json asks for
+    python3 doctor.py path/to/engine  # a copied engine directory, or that directory's engine.json
     python3 doctor.py --all           # every engine, one line each
 
 Exit 0 when everything required is present, 1 otherwise. Missing fonts are warnings:
@@ -44,9 +45,29 @@ def check(req, fonts=()):
     return miss, warn
 
 
+def engine_path(arg):
+    """A scene slug, or a path to an engine directory / engine.json.
+
+    A path is anything with a separator, an absolute path, or a leading dot.
+    Those are never joined onto scenes/, so `run-case/engine` is not read as
+    the slug run-case/engine.
+    """
+    if os.path.basename(arg) == 'engine.json':
+        return os.path.abspath(arg), os.path.basename(os.path.dirname(os.path.abspath(arg)))
+    pathish = arg.startswith(('.', os.sep)) or os.path.sep in arg
+    if pathish or os.path.isdir(arg):
+        p = os.path.abspath(os.path.join(arg, 'engine.json'))
+        if not os.path.isfile(p):
+            sys.exit(f'no engine.json in "{arg}" (looked for {p}). Pass a scene slug such as risograph, or a folder that contains engine.json.')
+        return p, os.path.basename(os.path.dirname(p))
+    p = os.path.join(SKILL, 'scenes', arg, 'engine.json')
+    if not os.path.isfile(p):
+        sys.exit(f'no engine "{arg}" (looked for {p}). Pass a scene slug, or a path to an engine folder.')
+    return p, arg
+
+
 def engine(slug):
-    p = os.path.join(SKILL, 'scenes', slug, 'engine.json')
-    if not os.path.exists(p): sys.exit(f'no engine "{slug}" (looked for {p})')
+    p, _ = engine_path(slug)
     return json.load(open(p))
 
 
@@ -62,5 +83,6 @@ if __name__ == '__main__':
     m, w = check(BASE); report('base tools', m, w); bad |= bool(m)
     slugs = sorted(os.listdir(os.path.join(SKILL, 'scenes'))) if args == ['--all'] else args
     for s in slugs:
-        e = engine(s); m, w = check(e.get('requires', {}), e.get('fonts', [])); report(f'{s} ({e.get("stack")})', m, w); bad |= bool(m)
+        p, label = engine_path(s); e = json.load(open(p))
+        m, w = check(e.get('requires', {}), e.get('fonts', [])); report(f'{label} ({e.get("stack")})', m, w); bad |= bool(m)
     sys.exit(1 if bad else 0)

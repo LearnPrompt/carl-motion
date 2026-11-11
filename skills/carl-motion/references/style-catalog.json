@@ -1,0 +1,1388 @@
+{
+ "version": "0.2.0",
+ "house": {
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "frames": 240,
+  "seconds": 8
+ },
+ "styles": [
+  {
+   "order": 1,
+   "id": "S05",
+   "slug": "retro-paper-collage",
+   "name_en": "Retro Paper Collage",
+   "name_zh": "复古纸张拼贴",
+   "status": "single-scene",
+   "palette": [
+    "#b88a3e",
+    "#3e8ab8"
+   ],
+   "keywords_zh": "报纸牛皮纸底、抠图加 2 到 4px 白剪刀边、halftone 网点、12fps 乃至 6fps、正负 2px 手摆抖动、拍上来与翻页转场、红黑构成主义字、勒索信拼字",
+   "keywords_en": "newspaper and kraft paper background, cut-outs with a 2 to 4px white scissor edge, halftone dots, 12fps down to 6fps, plus or minus 2px hand-moved jitter, slap-on and page-flip transitions, red and black constructivist type, ransom-note lettering",
+   "scene": "scenes/retro-paper-collage",
+   "engine_slug": "retro-paper-collage",
+   "engine_stack": "python",
+   "engine_entry": "./render.sh <work_dir>",
+   "card": "references/styles/01_retro-paper-collage.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "男子打开脑盖喷出宇宙",
+     "url": "https://vincentwei1021.github.io/mg-styles-15/?lang=zh#06-collage",
+     "by": "Vincentwei1021 · mg-styles-15",
+     "license": "prompts/code MIT; demo video not redistributed",
+     "media_ok": false
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": "https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits"
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/retro-paper-collage.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 2,
+   "id": "S20",
+   "slug": "product-ui-2-5d",
+   "name_en": "Product UI 2.5D Camera",
+   "name_zh": "产品界面2.5D运镜",
+   "status": "research",
+   "palette": [
+    "#d2d2d2"
+   ],
+   "keywords_zh": "Remotion、真实页面截图、2.5D 页面相机、页面倾斜后分层、卡点剪辑、数字滚动、闪帧、关键信息停留一秒",
+   "keywords_en": "Remotion, real page screenshots, 2.5D page camera, pages tilted then layered, beat-synced cuts, number roll-ups, flash frames, key information held for one second",
+   "scene": null,
+   "engine_slug": null,
+   "engine_stack": null,
+   "engine_entry": null,
+   "card": "references/styles/02_product-ui-2-5d.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "Ink Press 内置宣传片模板 · the built-in promo template",
+     "url": "https://vincentwei1021.github.io/video-shotcraft/showcase.html",
+     "by": "Vincentwei1021 · video-shotcraft",
+     "license": "link only",
+     "media_ok": false
+    },
+    {
+     "layer": "B",
+     "title": "云梦小说智能体宣传片",
+     "url": "https://vincentwei1021.github.io/video-shotcraft/showcase.html",
+     "by": "Vincentwei1021 · video-shotcraft",
+     "license": "link only",
+     "media_ok": false
+    }
+   ],
+   "preview": {
+    "layer": null,
+    "by": null,
+    "file": null,
+    "text_poster": "assets/posters/product-ui-2-5d.jpg",
+    "excerpt": null
+   }
+  },
+  {
+   "order": 3,
+   "id": "S08",
+   "slug": "neon-synthwave",
+   "name_en": "Neon Synthwave",
+   "name_zh": "霓虹复古Synthwave",
+   "status": "single-scene",
+   "palette": [
+    "#b83ea8"
+   ],
+   "keywords_zh": "一点透视网格滚动、多层渐变落日、双层辉光、扫描线与 RGB 色偏、镀铬字、棕榈剪影、局部抽到 15fps 的磁带卡顿",
+   "keywords_en": "one-point-perspective grid scrolling, multi-layer gradient sunset, double-layer glow, scanlines and RGB color shift, chrome lettering, palm tree silhouettes, tape stutter at 15fps in selected spots",
+   "scene": "scenes/neon-synthwave",
+   "engine_slug": "neon-synthwave",
+   "engine_stack": "blender",
+   "engine_entry": "./render.sh <work_dir>",
+   "card": "references/styles/03_neon-synthwave.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "NEON DRIVE棕榈公路小车",
+     "url": "https://vincentwei1021.github.io/mg-styles-15/?lang=zh#10-synthwave",
+     "by": "Vincentwei1021 · mg-styles-15",
+     "license": "prompts/code MIT; demo video not redistributed",
+     "media_ok": false
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": ""
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/neon-synthwave.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 4,
+   "id": "S17",
+   "slug": "hand-drawn-notes",
+   "name_en": "Hand-drawn Paper Notes",
+   "name_zh": "纸面手绘笔记",
+   "status": "research",
+   "palette": [
+    "#ededed"
+   ],
+   "keywords_zh": "米白纸面、手绘细线器物、手写体标题与用量、步骤编号卡、从空到成品、刻度线、讲解节奏",
+   "keywords_en": "off-white paper, hand-drawn thin-line equipment, handwritten titles and amounts, numbered step cards, from empty to finished, tick marks, explainer pacing",
+   "scene": null,
+   "engine_slug": null,
+   "engine_stack": null,
+   "engine_entry": null,
+   "card": "references/styles/04_hand-drawn-notes.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "Negroni手绘酒方",
+     "url": "https://prompt-motion.com/ror-fly-9950f1",
+     "by": "prompt-motion.com",
+     "license": "link only",
+     "media_ok": false
+    },
+    {
+     "layer": "B",
+     "title": "White Russian手绘酒方",
+     "url": "https://prompt-motion.com/sarut0bisasuke-cefa43",
+     "by": "prompt-motion.com",
+     "license": "link only",
+     "media_ok": false
+    }
+   ],
+   "preview": {
+    "layer": null,
+    "by": null,
+    "file": null,
+    "text_poster": "assets/posters/hand-drawn-notes.jpg",
+    "excerpt": null
+   }
+  },
+  {
+   "order": 5,
+   "id": "S19",
+   "slug": "watercolor",
+   "name_en": "Watercolor",
+   "name_zh": "水彩手绘",
+   "status": "single-scene",
+   "palette": [
+    "#b88a3e"
+   ],
+   "keywords_zh": "暖色棉纸纤维、透明 wash 越叠越深、dry-brush 飞白、纸白当高光、手写批注加引线、逐笔上色、薄雾擦除转场、赭石灰蓝低饱和",
+   "keywords_en": "warm cotton paper fibers, transparent wash that deepens as it layers, dry-brush skips, paper white as highlight, handwritten notes with leader lines, stroke-by-stroke coloring, mist-wipe transition, low-saturation ochre and gray-blue",
+   "scene": "scenes/watercolor",
+   "engine_slug": "watercolor",
+   "engine_stack": "python",
+   "engine_entry": "./render.sh <work_dir>",
+   "card": "references/styles/05_watercolor.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "澳洲树木与水彩地图",
+     "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/watercolor",
+     "by": "LemoLab · lemo-opuscar",
+     "license": "prompts/code MIT, demo video CC BY 4.0",
+     "media_ok": true
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": "https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits"
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/watercolor.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 6,
+   "id": "S30",
+   "slug": "woodcut",
+   "name_en": "Black-and-white Woodcut",
+   "name_zh": "黑白木刻版画",
+   "status": "single-scene",
+   "palette": [
+    "#565656"
+   ],
+   "keywords_zh": "黑版白刻、光是刻出来的、画面逐刀刻出不淡入、粗刀在前细线在后、刀线顺形体走、最多一种颜色、纸边留白、反字印出转场",
+   "keywords_en": "white lines cut into a black block, light is carved out, image appears cut by cut with no fade-in, bold cuts in front and fine lines behind, cut lines follow the form, at most one color, paper margin left white, mirrored-lettering print-out transition",
+   "scene": "scenes/woodcut",
+   "engine_slug": "woodcut",
+   "engine_stack": "python",
+   "engine_entry": "./render.sh <work_dir>",
+   "card": "references/styles/06_woodcut.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "木刻版画：The Bell Founder",
+     "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/woodcut",
+     "by": "LemoLab · lemo-opuscar",
+     "license": "prompts/code MIT, demo video CC BY 4.0",
+     "media_ok": true
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": ""
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/woodcut.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 7,
+   "id": "S34",
+   "slug": "soft-inflatable-3d",
+   "name_en": "Soft Inflatable 3D",
+   "name_zh": "软体充气3D",
+   "status": "single-scene",
+   "palette": [
+    "#b83e6c",
+    "#b86c3e"
+   ],
+   "keywords_zh": "SSS 软胶、糖果色、AO 加 HDRI 三点光、克隆阵列、软体碰撞挤压、长尾缓动、浅景深与运动模糊、24fps 电影帧率",
+   "keywords_en": "SSS soft rubber, candy colors, AO plus HDRI three-point lighting, cloner arrays, soft-body collision squash, long-tail easing, shallow depth of field and motion blur, 24fps cinematic frame rate",
+   "scene": "scenes/soft-inflatable-3d",
+   "engine_slug": "soft-inflatable-3d",
+   "engine_stack": "blender",
+   "engine_entry": "./render.sh <work_dir>",
+   "card": "references/styles/07_soft-inflatable-3d.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "3D 渲染：soft.「柔软着陆」",
+     "url": "https://vincentwei1021.github.io/mg-styles-15/?lang=zh#04-3d-render",
+     "by": "Vincentwei1021 · mg-styles-15",
+     "license": "prompts/code MIT; demo video not redistributed",
+     "media_ok": false
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": ""
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/soft-inflatable-3d.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 8,
+   "id": "S27",
+   "slug": "point-cloud-survey",
+   "name_en": "Point-cloud Survey",
+   "name_zh": "点云测绘／剥层",
+   "status": "single-scene",
+   "palette": [
+    "#777777"
+   ],
+   "keywords_zh": "真实机载激光点、近黑底、扫描线或剖切面推进、点凝成掠射光实体、按地面植被建筑分类剥层、发丝线测量读数、一条设计好的运镜",
+   "keywords_en": "real airborne lidar points, near-black background, scan line or section plane advancing, points condense into a solid lit at grazing angle, layers peeled by ground, vegetation and building classes, hairline measurement readouts, one designed camera move",
+   "scene": "scenes/point-cloud-survey",
+   "engine_slug": "point-cloud-survey",
+   "engine_stack": "blender",
+   "engine_entry": "./render.sh <work_dir>",
+   "card": "references/styles/08_point-cloud-survey.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "点云测绘：The Fields Under the Forest",
+     "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/lidar-survey",
+     "by": "LemoLab · lemo-opuscar",
+     "license": "prompts/code MIT, demo video CC BY 4.0",
+     "media_ok": true
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": ""
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/point-cloud-survey.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 9,
+   "id": "S04",
+   "slug": "blueprint",
+   "name_en": "Blueprint Drawing",
+   "name_zh": "蓝图工程制图",
+   "status": "single-scene",
+   "palette": [
+    "#3e6cb8"
+   ],
+   "keywords_zh": "cyanotype 蓝晒纸、白色工程细线、逐层绘制顺序、尺寸线与引线、编号气泡、title block 图框、剖面线、整张图纸平移缩放",
+   "keywords_en": "cyanotype blueprint paper, thin white engineering lines, layer-by-layer drawing order, dimension lines and leader lines, numbered balloons, title block frame, section hatching, pan and zoom of the whole sheet",
+   "scene": "scenes/blueprint",
+   "engine_slug": "blueprint",
+   "engine_stack": "python",
+   "engine_entry": "./render.sh <work_dir>",
+   "card": "references/styles/09_blueprint.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "捕云机器专利图",
+     "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/blueprint",
+     "by": "LemoLab · lemo-opuscar",
+     "license": "prompts/code MIT, demo video CC BY 4.0",
+     "media_ok": true
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": "https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits"
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/blueprint.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 10,
+   "id": "S14",
+   "slug": "sticker-explainer",
+   "name_en": "Die-cut Sticker Explainer",
+   "name_zh": "贴纸科普",
+   "status": "single-scene",
+   "palette": [
+    "#b88a3e"
+   ],
+   "keywords_zh": "照片抠图白描边贴纸、蓝灰米白底、两三色加一个强调色、扁平图标配精确图表、超大画布、长缓动平移缩放、柱状生长与数字滚动",
+   "keywords_en": "photo cut-out stickers with white outline, blue-gray and off-white background, two or three colors plus one accent, flat icons with precise charts, oversized canvas, long-eased pan and zoom, bar growth and number roll-ups",
+   "scene": "scenes/sticker-explainer",
+   "engine_slug": "sticker-explainer",
+   "engine_stack": "python",
+   "engine_entry": "./render.sh <work_dir>",
+   "card": "references/styles/10_sticker-explainer.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "手机与元素周期表拆解",
+     "url": "https://vincentwei1021.github.io/mg-styles-15/?lang=zh#19-paperclip",
+     "by": "Vincentwei1021 · mg-styles-15",
+     "license": "prompts/code MIT; demo video not redistributed",
+     "media_ok": false
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": "https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits"
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/sticker-explainer.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 11,
+   "id": "S13",
+   "slug": "feature-3d-character",
+   "name_en": "Feature-film 3D Character",
+   "name_zh": "动画电影式3D角色",
+   "status": "research",
+   "palette": [
+    "#b86c3e"
+   ],
+   "keywords_zh": "one-shot 动画短片、自选技术栈、电影级逆光与夕阳、浅景深、角色表情与表演、按镜头讲小故事、电影字幕条",
+   "keywords_en": "one-shot animated short, tech stack of your choice, cinematic backlight and sunset, shallow depth of field, character expression and performance, a small story told shot by shot, cinematic subtitle bar",
+   "scene": null,
+   "engine_slug": null,
+   "engine_stack": null,
+   "engine_entry": null,
+   "card": "references/styles/11_feature-3d-character.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "鹈鹕骑自行车",
+     "url": "https://prompt-motion.com/axtonliu-0b861d",
+     "by": "prompt-motion.com",
+     "license": "link only",
+     "media_ok": false
+    },
+    {
+     "layer": "B",
+     "title": "机器人守灯塔",
+     "url": "https://prompt-motion.com/faroukzy-9ff23e",
+     "by": "prompt-motion.com",
+     "license": "link only",
+     "media_ok": false
+    }
+   ],
+   "preview": {
+    "layer": null,
+    "by": null,
+    "file": null,
+    "text_poster": "assets/posters/feature-3d-character.jpg",
+    "excerpt": null
+   }
+  },
+  {
+   "order": 12,
+   "id": "S03",
+   "slug": "chinese-ink-wash",
+   "name_en": "Chinese Ink Wash",
+   "name_zh": "中国水墨",
+   "status": "single-scene",
+   "palette": [
+    "#d8d8d8"
+   ],
+   "keywords_zh": "写意、程序宣纸纹理、墨分五色、没骨带墨量笔触、飞白干笔、留白六到八成、墨晕转场、一枚朱红印章",
+   "keywords_en": "freehand xieyi style, procedural rice-paper texture, five tones of ink, boneless strokes with ink load, dry-brush skips, 60 to 80 percent blank space, ink-bleed transition, one vermilion seal",
+   "scene": "scenes/chinese-ink-wash",
+   "engine_slug": "chinese-ink-wash",
+   "engine_stack": "python",
+   "engine_entry": "./render.sh <work_dir>",
+   "card": "references/styles/12_chinese-ink-wash.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "持剑者与墨浪",
+     "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/ink-wash",
+     "by": "LemoLab · lemo-opuscar",
+     "license": "prompts/code MIT, demo video CC BY 4.0",
+     "media_ok": true
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": "https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits"
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/chinese-ink-wash.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 13,
+   "id": "S10",
+   "slug": "ascii-crt",
+   "name_en": "ASCII Character Visuals",
+   "name_zh": "ASCII字符视觉",
+   "status": "upstream",
+   "palette": [
+    "#151515"
+   ],
+   "keywords_zh": "monospace 字符网格、琥珀或绿色荧光单色、CRT 扫描线与桶形畸变、bloom 辉光、字符密度梯度、光标闪烁、改字号推拉、打字机字幕",
+   "keywords_en": "monospace character grid, amber or green phosphor monochrome, CRT scanlines and barrel distortion, bloom glow, character density gradient, blinking cursor, push and pull by changing font size, typewriter subtitles",
+   "scene": null,
+   "engine_slug": null,
+   "engine_stack": null,
+   "engine_entry": null,
+   "card": "references/styles/13_ascii-crt.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "终端字符组成故乡与地球",
+     "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/ascii-crt",
+     "by": "LemoLab · lemo-opuscar",
+     "license": "prompts/code MIT, demo video CC BY 4.0",
+     "media_ok": true
+    },
+    {
+     "layer": "B",
+     "title": "ASCII字符音乐视觉",
+     "url": "https://prompt-motion.com/rames-jusso-589f80",
+     "by": "prompt-motion.com",
+     "license": "link only",
+     "media_ok": false
+    }
+   ],
+   "preview": {
+    "layer": "A",
+    "by": "LemoLab · lemo-opuscar",
+    "file": "assets/previews/ascii-crt.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 14,
+   "id": "S01",
+   "slug": "isometric-world",
+   "name_en": "Isometric 2.5D World",
+   "name_zh": "等轴2.5D世界",
+   "status": "upstream",
+   "palette": [
+    "#6cb83e",
+    "#b84e3e"
+   ],
+   "keywords_zh": "true isometric 30 度、每面三色调平涂、悬浮底座带剖面、Isotype 图标计数、标签引线、剖开 cutaway、建筑生长带过冲、沿路线带镜头",
+   "keywords_en": "true isometric 30 degrees, flat three-tone shading per face, floating base with cross-section, Isotype icon counting, label leader lines, cutaway, buildings growing with overshoot, camera following a route",
+   "scene": null,
+   "engine_slug": null,
+   "engine_stack": null,
+   "engine_entry": null,
+   "card": "references/styles/14_isometric-world.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "咖啡从农田到咖啡机的等轴旅程",
+     "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/iso-infographic",
+     "by": "LemoLab · lemo-opuscar",
+     "license": "prompts/code MIT, demo video CC BY 4.0",
+     "media_ok": true
+    },
+    {
+     "layer": "B",
+     "title": "等轴城市从空地长出",
+     "url": "https://vincentwei1021.github.io/mg-styles-15/?lang=zh#03-isometric",
+     "by": "Vincentwei1021 · mg-styles-15",
+     "license": "prompts/code MIT; demo video not redistributed",
+     "media_ok": false
+    }
+   ],
+   "preview": {
+    "layer": "A",
+    "by": "LemoLab · lemo-opuscar",
+    "file": "assets/previews/isometric-world.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 15,
+   "id": "S23",
+   "slug": "van-gogh-impasto",
+   "name_en": "Van Gogh Impasto",
+   "name_zh": "梵高厚涂油画",
+   "status": "upstream-lib",
+   "palette": [
+    "#3e6cb8",
+    "#b84e3e"
+   ],
+   "keywords_zh": "平涂底稿加流场笔触、墙竖地沿透视星空绕漩涡、区域色板十几种色相、短粗厚涂、深蓝描边、8fps 笔触沸腾、小物件单独成层",
+   "keywords_en": "flat-color underpainting plus flow-field strokes, walls vertical and floor along perspective, starry sky swirling around vortexes, region palettes of a dozen-plus hues, short thick impasto, dark blue outlines, 8fps stroke boil, small objects on their own layers",
+   "scene": "scenes/huashu-portraits",
+   "engine_slug": "huashu-portraits",
+   "engine_stack": "node",
+   "engine_entry": "./render.sh <work_dir> <s22_egypt|s23_wheat|s24_bridge>",
+   "card": "references/styles/15_van-gogh-impasto.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "少女与猫喝茶 · 梵高厚涂油画",
+     "url": "https://github.com/alchaincyf/huashu-art-motion",
+     "by": "alchaincyf · huashu-art-motion",
+     "license": "MIT (re-rendered from source)",
+     "media_ok": true
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": ""
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/van-gogh-impasto.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 16,
+   "id": "S37",
+   "slug": "psychedelic-shader",
+   "name_en": "Iridescent Psychedelic Shader",
+   "name_zh": "虹彩迷幻Shader",
+   "status": "research",
+   "palette": [
+    "#3ea8b8",
+    "#6c3eb8",
+    "#8ab83e"
+   ],
+   "keywords_zh": "psychedelic 催眠、同心线、万花筒镜像对称、旋涡隧道、虹彩薄膜色沿边缘流动、高饱和撞色、VJ 循环",
+   "keywords_en": "psychedelic hypnosis, concentric lines, kaleidoscope mirror symmetry, vortex tunnel, iridescent thin-film color flowing along edges, high-saturation clashing colors, VJ loop",
+   "scene": null,
+   "engine_slug": null,
+   "engine_stack": null,
+   "engine_entry": null,
+   "card": "references/styles/16_psychedelic-shader.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "虹彩眼睛与同心线催眠",
+     "url": "https://prompt-motion.com/monokern-ade5b6",
+     "by": "prompt-motion.com",
+     "license": "link only",
+     "media_ok": false
+    },
+    {
+     "layer": "B",
+     "title": "万花筒与彩色旋涡 VJ",
+     "url": "https://x.com/yama_kiyo/status/2103740786177134910",
+     "by": "X post",
+     "license": "link only",
+     "media_ok": false
+    }
+   ],
+   "preview": {
+    "layer": null,
+    "by": null,
+    "file": null,
+    "text_poster": "assets/posters/psychedelic-shader.jpg",
+    "excerpt": null
+   }
+  },
+  {
+   "order": 17,
+   "id": "S12",
+   "slug": "claymation",
+   "name_en": "Claymation Stop-motion",
+   "name_zh": "黏土定格",
+   "status": "single-scene",
+   "palette": [
+    "#b8a83e"
+   ],
+   "keywords_zh": "黏土材质指纹压痕、on twos 12fps、每拍形状微变 boil、柔光棚拍、浅景深微距、手工跳切节奏",
+   "keywords_en": "clay material with fingerprints and dents, on twos 12fps, slight shape change boil on every beat, soft studio light, shallow-depth macro, handmade jump-cut rhythm",
+   "scene": "scenes/claymation",
+   "engine_slug": "claymation",
+   "engine_stack": "blender",
+   "engine_entry": "./render.sh <work_dir>",
+   "card": "references/styles/17_claymation.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "黏土设备乐队MV",
+     "url": "https://prompt-motion.com/davidshulmanfl-371638",
+     "by": "prompt-motion.com",
+     "license": "link only",
+     "media_ok": false
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": ""
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/claymation.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 18,
+   "id": "S02",
+   "slug": "pixel-game",
+   "name_en": "Pixel Game",
+   "name_zh": "像素游戏",
+   "status": "research",
+   "palette": [
+    "#4e3eb8"
+   ],
+   "keywords_zh": "低分辨率大像素、16 到 32 色有限色板、nearest-neighbour 整数放大、8 到 12fps 精灵帧、视差卷轴、steps() 阶梯时序、dithering、游戏 HUD 字",
+   "keywords_en": "low-resolution big pixels, limited 16 to 32 color palette, nearest-neighbour integer upscaling, 8 to 12fps sprite frames, parallax scrolling, steps() stepped timing, dithering, game HUD type",
+   "scene": null,
+   "engine_slug": null,
+   "engine_stack": null,
+   "engine_entry": null,
+   "card": "references/styles/18_pixel-game.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "中秋像素夜景",
+     "url": "https://prompt-motion.com/hoyoyoda-3a5c08",
+     "by": "prompt-motion.com",
+     "license": "link only",
+     "media_ok": false
+    },
+    {
+     "layer": "B",
+     "title": "像素巫师施法",
+     "url": "https://prompt-motion.com/0xevinho-3777d8",
+     "by": "prompt-motion.com",
+     "license": "link only",
+     "media_ok": false
+    }
+   ],
+   "preview": {
+    "layer": null,
+    "by": null,
+    "file": null,
+    "text_poster": "assets/posters/pixel-game.jpg",
+    "excerpt": null
+   }
+  },
+  {
+   "order": 19,
+   "id": "S07",
+   "slug": "flat-vector",
+   "name_en": "Flat Vector",
+   "name_zh": "扁平矢量",
+   "status": "single-scene",
+   "palette": [
+    "#b88a3e",
+    "#3eb8a8"
+   ],
+   "keywords_zh": "SVG 加 GSAP、纯色大色块、五六色高饱和色板、overshoot 弹性缓动、预备冲出回弹、约 10% 挤压拉伸、stagger 两到四帧、形状擦除转场",
+   "keywords_en": "SVG plus GSAP, large solid color blocks, five-or-six-color high-saturation palette, overshoot elastic easing, anticipation then burst then rebound, about 10% squash and stretch, stagger of two to four frames, shape-wipe transitions",
+   "scene": "scenes/flat-vector",
+   "engine_slug": "flat-vector",
+   "engine_stack": "python",
+   "engine_entry": "./render.sh <work_dir>",
+   "card": "references/styles/19_flat-vector.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "城市与电脑前的人物",
+     "url": "https://vincentwei1021.github.io/mg-styles-15/?lang=zh#01-flat-vector",
+     "by": "Vincentwei1021 · mg-styles-15",
+     "license": "prompts/code MIT; demo video not redistributed",
+     "media_ok": false
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": "https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits"
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/flat-vector.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 20,
+   "id": "S24",
+   "slug": "monet-impressionist",
+   "name_en": "Impressionist Oil (Monet)",
+   "name_zh": "印象派油画／莫奈",
+   "status": "upstream-lib",
+   "palette": [
+    "#b86c3e",
+    "#3e6cb8"
+   ],
+   "keywords_zh": "印象派不勾边、横向水面笔触、受光暖黄背光淡紫的色彩阴影、亮色短笔光斑颤动、6fps 局部笔触沸腾、睡莲日本桥母题",
+   "keywords_en": "impressionist with no outlines, horizontal water strokes, colored shadows with warm yellow in light and pale purple in shade, bright short-stroke light flecks trembling, 6fps local stroke boil, water lily and Japanese bridge motifs",
+   "scene": "scenes/huashu-portraits",
+   "engine_slug": "huashu-portraits",
+   "engine_stack": "node",
+   "engine_entry": "./render.sh <work_dir> <s22_egypt|s23_wheat|s24_bridge>",
+   "card": "references/styles/20_monet-impressionist.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "少女与猫喝茶 · 印象派油画／莫奈",
+     "url": "https://github.com/alchaincyf/huashu-art-motion",
+     "by": "alchaincyf · huashu-art-motion",
+     "license": "MIT (re-rendered from source)",
+     "media_ok": true
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": ""
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/monet-impressionist.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 21,
+   "id": "S35",
+   "slug": "particle-morph",
+   "name_en": "Particle Morph",
+   "name_zh": "粒子聚散造型",
+   "status": "single-scene",
+   "palette": [
+    "#3e6cb8",
+    "#b88a3e"
+   ],
+   "keywords_zh": "数十万发光粒子、聚拢成形再散开、深蓝黑底、连线成关系网络、大数字计数器、一句英文结论字幕",
+   "keywords_en": "hundreds of thousands of glowing particles, gather into shape then scatter, deep blue-black background, lines connecting into a relationship network, big number counter, one English conclusion line as subtitle",
+   "scene": "scenes/particle-morph",
+   "engine_slug": "particle-morph",
+   "engine_stack": "python",
+   "engine_entry": "./render.sh <work_dir>",
+   "card": "references/styles/21_particle-morph.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "Drone Emprit：粒子地图与关系网络",
+     "url": "https://prompt-motion.com/ismailfahmi-557268",
+     "by": "prompt-motion.com",
+     "license": "link only",
+     "media_ok": false
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": "https://en.yasue.org/article/pushing-opus-5-5-video-generation-limits"
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/particle-morph.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 22,
+   "id": "S28",
+   "slug": "white-model-projection",
+   "name_en": "White-model Projection",
+   "name_zh": "实体白模投影",
+   "status": "single-scene",
+   "palette": [
+    "#3e6cb8",
+    "#b86c3e"
+   ],
+   "keywords_zh": "纯白体块模型、暗房展台、数据即投影光、只亮朝向投影仪的面、柔和光边溢出底座、一层一个问题、开灯关灯作开场收尾、真实建筑数据",
+   "keywords_en": "pure white block model, dark-room plinth, data as projected light, only faces toward the projector light up, soft light edges spilling over the base, one question per layer, lights on and off as opener and closer, real building data",
+   "scene": "scenes/white-model-projection",
+   "engine_slug": "white-model-projection",
+   "engine_stack": "blender",
+   "engine_entry": "./render.sh <work_dir>",
+   "card": "references/styles/22_white-model-projection.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "白模投影：How a Flattened City Grew Back",
+     "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/white-model",
+     "by": "LemoLab · lemo-opuscar",
+     "license": "prompts/code MIT, demo video CC BY 4.0",
+     "media_ok": true
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": ""
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/white-model-projection.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 23,
+   "id": "S22",
+   "slug": "egyptian-mural",
+   "name_en": "Ancient Egyptian Mural",
+   "name_zh": "古埃及壁画",
+   "status": "upstream-lib",
+   "palette": [
+    "#b88a3e"
+   ],
+   "keywords_zh": "侧脸正眼程式、分栏横带 register、象形文字栏、赭石青金孔雀绿土黄平涂、黑色描边、太阳光线末端小手、墙面石灰质感",
+   "keywords_en": "profile-face frontal-eye convention, column-divided horizontal registers, hieroglyph columns, flat fills of ochre, lapis, peacock green and earth yellow, black outlines, small hands at the ends of sun rays, lime plaster wall texture",
+   "scene": "scenes/huashu-portraits",
+   "engine_slug": "huashu-portraits",
+   "engine_stack": "node",
+   "engine_entry": "./render.sh <work_dir> <s22_egypt|s23_wheat|s24_bridge>",
+   "card": "references/styles/23_egyptian-mural.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "少女与猫喝茶 · 古埃及壁画",
+     "url": "https://github.com/alchaincyf/huashu-art-motion",
+     "by": "alchaincyf · huashu-art-motion",
+     "license": "MIT (re-rendered from source)",
+     "media_ok": true
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": ""
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/egyptian-mural.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 24,
+   "id": "S29",
+   "slug": "exploded-view",
+   "name_en": "Product Exploded View",
+   "name_zh": "产品爆炸拆解",
+   "status": "single-scene",
+   "palette": [
+    "#4eb83e",
+    "#b88a3e"
+   ],
+   "keywords_zh": "真实 CAD／PCB／BOM、沿一轴等距分层、PBR 棚拍主光加冷轮廓光、HDRI 反射、引线与尺寸线、镜头在层间穿行、最后合拢",
+   "keywords_en": "real CAD/PCB/BOM, evenly spaced layers along one axis, PBR studio key light plus cool rim light, HDRI reflections, leader lines and dimension lines, camera moving between layers, closing back together at the end",
+   "scene": "scenes/exploded-view",
+   "engine_slug": "exploded-view",
+   "engine_stack": "blender",
+   "engine_entry": "./render.sh <work_dir>",
+   "card": "references/styles/24_exploded-view.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "产品拆解：21 Keys, Opened",
+     "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/teardown",
+     "by": "LemoLab · lemo-opuscar",
+     "license": "prompts/code MIT, demo video CC BY 4.0",
+     "media_ok": true
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": ""
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/exploded-view.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 25,
+   "id": "S16",
+   "slug": "editorial-dataviz",
+   "name_en": "Editorial Paper Data Story",
+   "name_zh": "纸面编辑式数据叙事",
+   "status": "upstream",
+   "palette": [
+    "#cfcfcf"
+   ],
+   "keywords_zh": "米色点阵纸、真实数据逐点绘制、红蓝铅笔笔触、手写批注钉在数据点、RdBu 发散色阶、图表即镜头、按数据选图型",
+   "keywords_en": "beige dot-grid paper, real data drawn point by point, red and blue pencil strokes, handwritten notes pinned to data points, RdBu diverging color scale, chart as camera, chart type chosen by the data",
+   "scene": null,
+   "engine_slug": null,
+   "engine_stack": null,
+   "engine_entry": null,
+   "card": "references/styles/25_editorial-dataviz.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "铅笔温度曲线与冷暖条",
+     "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/dataviz",
+     "by": "LemoLab · lemo-opuscar",
+     "license": "prompts/code MIT, demo video CC BY 4.0",
+     "media_ok": true
+    },
+    {
+     "layer": "B",
+     "title": "印刷机传播：地图、数量与报纸叙事",
+     "url": "https://x.com/maxescu/status/2104898184442962277",
+     "by": "X post",
+     "license": "link only",
+     "media_ok": false
+    }
+   ],
+   "preview": {
+    "layer": "A",
+    "by": "LemoLab · lemo-opuscar",
+    "file": "assets/previews/editorial-dataviz.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 26,
+   "id": "S06",
+   "slug": "glassmorphism-ui",
+   "name_en": "Glassmorphism UI",
+   "name_zh": "玻璃拟态UI",
+   "status": "single-scene",
+   "palette": [
+    "#3e4eb8"
+   ],
+   "keywords_zh": "aurora 大色斑 blur 80 到 150px、backdrop-filter 磨砂卡片、白色 5 到 10% 填充、1px 白描边、邻近色两三色、3 到 5% 噪点防色带、sine 呼吸缓动",
+   "keywords_en": "aurora color blobs with blur 80 to 150px, backdrop-filter frosted cards, white fill at 5 to 10%, 1px white border, two or three adjacent hues, 3 to 5% noise to prevent banding, sine breathing easing",
+   "scene": "scenes/glassmorphism-ui",
+   "engine_slug": "glassmorphism-ui",
+   "engine_stack": "node",
+   "engine_entry": "./render.sh <work_dir>",
+   "card": "references/styles/26_glassmorphism-ui.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "聊天卡片与Focus玻璃开关",
+     "url": "https://vincentwei1021.github.io/mg-styles-15/?lang=zh#12-aurora-glass",
+     "by": "Vincentwei1021 · mg-styles-15",
+     "license": "prompts/code MIT; demo video not redistributed",
+     "media_ok": false
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": ""
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/glassmorphism-ui.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 27,
+   "id": "S33",
+   "slug": "brick-toy",
+   "name_en": "Brick Toy",
+   "name_zh": "积木玩具",
+   "status": "single-scene",
+   "palette": [
+    "#4eb83e",
+    "#b86c3e"
+   ],
+   "keywords_zh": "真实桌面、微距浅景深、亮面 ABS 矩形高光、顶面凸点、缝隙接触阴影、角色 on twos 定格、镜头逐帧顺滑、中性棚拍 HDRI",
+   "keywords_en": "real tabletop, macro shallow depth of field, glossy ABS rectangular highlights, studs on top faces, contact shadows in the seams, characters stop-motion on twos, camera smooth frame by frame, neutral studio HDRI",
+   "scene": "scenes/brick-toy",
+   "engine_slug": "brick-toy",
+   "engine_stack": "blender",
+   "engine_entry": "./render.sh <work_dir>",
+   "card": "references/styles/27_brick-toy.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "积木玩具：Rocket from Spare Parts",
+     "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/brick-toy",
+     "by": "LemoLab · lemo-opuscar",
+     "license": "prompts/code MIT, demo video CC BY 4.0",
+     "media_ok": true
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": ""
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/brick-toy.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 28,
+   "id": "S11",
+   "slug": "risograph",
+   "name_en": "Risograph Print",
+   "name_zh": "Risograph孔版套印",
+   "status": "single-scene",
+   "palette": [
+    "#a8b83e",
+    "#b83e6c"
+   ],
+   "keywords_zh": "两三种 spot ink 专色、multiply 叠出第三色、套印错位、halftone 网点、颗粒针孔、暖白纸、无轮廓色块、角色 12fps 镜头 24fps",
+   "keywords_en": "two or three spot ink colors, multiply to produce a third color, misregistration, halftone dots, grain and pinholes, warm white paper, outline-free color blocks, characters at 12fps and camera at 24fps",
+   "scene": "scenes/risograph",
+   "engine_slug": "risograph",
+   "engine_stack": "python",
+   "engine_entry": "./render.sh <work_dir>",
+   "card": "references/styles/28_risograph.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "错版街道与公园骑行",
+     "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/risograph",
+     "by": "LemoLab · lemo-opuscar",
+     "license": "prompts/code MIT, demo video CC BY 4.0",
+     "media_ok": true
+    },
+    {
+     "layer": "B",
+     "title": "",
+     "url": "",
+     "by": "carl-motion",
+     "license": "MIT",
+     "media_ok": true,
+     "inspired_by": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/demos/effects/riso-print-hits/RisoMisregistrationHit.tsx"
+    }
+   ],
+   "preview": {
+    "layer": "B",
+    "by": "carl-motion",
+    "file": "assets/previews/risograph.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  },
+  {
+   "order": 29,
+   "id": "S15",
+   "slug": "scifi-hud",
+   "name_en": "Sci-fi Scan HUD",
+   "name_zh": "科幻扫描HUD",
+   "status": "upstream",
+   "palette": [
+    "#3ea8b8"
+   ],
+   "keywords_zh": "发光 wireframe、投影底座、扫描面生长、目标锁定框、局部拆解、乱码数字滚动落定、单冷色加一个暖色强调、近黑舞台、bloom",
+   "keywords_en": "glowing wireframe, projection base, scan plane growth, target-lock boxes, local teardown, garbled digits rolling down to settle, one cool color plus one warm accent, near-black stage, bloom",
+   "scene": null,
+   "engine_slug": null,
+   "engine_stack": null,
+   "engine_entry": null,
+   "card": "references/styles/29_scifi-hud.md",
+   "refs": [
+    {
+     "layer": "A",
+     "title": "线框自行车与部件扫描",
+     "url": "https://github.com/lemomo-ai/lemo-opuscar/tree/main/styles/hologram-hud",
+     "by": "LemoLab · lemo-opuscar",
+     "license": "prompts/code MIT, demo video CC BY 4.0",
+     "media_ok": true
+    },
+    {
+     "layer": "B",
+     "title": "地球雷达与目标锁定",
+     "url": "https://vincentwei1021.github.io/mg-styles-15/?lang=zh#22-hud",
+     "by": "Vincentwei1021 · mg-styles-15",
+     "license": "prompts/code MIT; demo video not redistributed",
+     "media_ok": false
+    }
+   ],
+   "preview": {
+    "layer": "A",
+    "by": "LemoLab · lemo-opuscar",
+    "file": "assets/previews/scifi-hud.webp",
+    "excerpt": {
+     "t0": 1.5,
+     "t1": 5.5,
+     "fps": 10,
+     "source": "scripts/make_previews.py"
+    }
+   }
+  }
+ ]
+}

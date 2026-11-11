@@ -88,7 +88,7 @@ The order follows the video we cut from them: neighbouring styles sit on roughly
 
 ## Skill
 
-`carl-motion` turns this library into something your coding agent can use. Ask for a style by name or by look (*flat, warm, hand-made*). The agent picks the closest entry, fills the prompt with your topic, checks it against the known failure points, and when the style ships source code here, it starts from that engine instead of a blank file. Every card says how far the style is proven (implemented, upstream only, or research), and the finished clip has to pass the same delivery gate.
+`carl-motion` turns this library into something your coding agent can use. Ask for a style by name or by look (*flat, warm, hand-made*). The skill tells the agent to run `scripts/resolve_brief.py` first. An exact name opens that card and, when this repo has a preview clip, measures frames from that clip; a catalog URL is not treated as watched. A look that matches none of the 29 is not forced onto one. When the style ships source code here, the agent starts from that engine instead of a blank file, on the stack that engine already uses. Every card says how far the style is proven (implemented, upstream only, or research), and the finished clip has to pass the same delivery gate.
 
 | | Prompt pages | Skill |
 |---|---|---|

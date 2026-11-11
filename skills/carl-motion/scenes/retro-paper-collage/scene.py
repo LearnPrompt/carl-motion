@@ -15,13 +15,37 @@ from multiprocessing import Pool
 import cv2, numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
-OUT = sys.argv[1]; os.makedirs(OUT, exist_ok=True)
+OUT = sys.argv[1] if len(sys.argv) > 1 else None
+if OUT: os.makedirs(OUT, exist_ok=True)
 W, H, SS, FPS, N, TS = 1920, 1080, 2, 30, 240, 512
 SUP = '/System/Library/Fonts/Supplemental/'
-FONTS = [(SUP + 'Impact.ttf', 0), (SUP + 'Arial Black.ttf', 0), (SUP + 'Georgia Bold.ttf', 0), (SUP + 'Rockwell.ttc', 2),
-         (SUP + 'Futura.ttc', 4), (SUP + 'Didot.ttc', 2), (SUP + 'AmericanTypewriter.ttc', 2), (SUP + 'Courier New Bold.ttf', 0),
-         (SUP + 'Bodoni 72.ttc', 2), (SUP + 'Copperplate.ttc', 2)]
-TYPE = (SUP + 'AmericanTypewriter.ttc', 0)
+_FALLBACKS = (
+    '/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf',
+    '/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf',
+    '/usr/share/fonts/truetype/liberation/LiberationMono-Bold.ttf',
+    '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf',
+    '/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf',
+)
+def face(path, index=0):
+    """macOS face when it is installed; otherwise a metric-similar file so the scene still renders."""
+    if os.path.exists(path): return (path, index)
+    for alt in _FALLBACKS:
+        if os.path.exists(alt): return (alt, 0)
+    return (path, index)
+FONTS = [face(p, i) for p, i in (
+    (SUP + 'Impact.ttf', 0), (SUP + 'Arial Black.ttf', 0), (SUP + 'Georgia Bold.ttf', 0), (SUP + 'Rockwell.ttc', 2),
+    (SUP + 'Futura.ttc', 4), (SUP + 'Didot.ttc', 2), (SUP + 'AmericanTypewriter.ttc', 2), (SUP + 'Courier New Bold.ttf', 0),
+    (SUP + 'Bodoni 72.ttc', 2), (SUP + 'Copperplate.ttc', 2))]
+TYPE = face(SUP + 'AmericanTypewriter.ttc', 0)
+# Full-page pulls stay on the 30 fps clock. 12 fps steps of a whole sheet trip deliver.py.
+PULL_T0, PULL_DUR, PULL_TRAVEL = 2.40, 0.90, W + 160
+def smoothstep(u):
+    u = min(max(float(u), 0.0), 1.0)
+    return u * u * (3.0 - 2.0 * u)
+def pull_offsets(fps=30):
+    """X position of the leaving title sheet at each frame of the pull."""
+    n = max(int(round(PULL_DUR * fps)), 1)
+    return [-PULL_TRAVEL * smoothstep(k / n) for k in range(n + 1)]
 _fc = {}
 def font(key, size):
     k = (key, int(size))
@@ -45,7 +69,7 @@ def halftone(rgb, ink, cell, cover, seed):
     t = paper(rgb, seed=seed); m = np.clip((cover - dots(cell)) * 8, 0, 1)[..., None]
     return t * (1 - m) + np.array(ink, np.float32) / 255 * m
 def newsprint():
-    im = Image.new('RGB', (TS, TS), (232, 226, 210)); d = ImageDraw.Draw(im); f = font((SUP + 'Times New Roman.ttf', 0), 11)
+    im = Image.new('RGB', (TS, TS), (232, 226, 210)); d = ImageDraw.Draw(im); f = font(face(SUP + 'Times New Roman.ttf', 0), 11)
     rs = np.random.default_rng(5); al = 'abcdefghijklmnopqrstuvwxyz'
     for col in range(4):
         for row in range(40):
@@ -68,7 +92,8 @@ def grid():
 TEX = {
     'kraft': paper((176, 138, 96), 0.07, 0.05, 1), 'ground': paper((205, 170, 118), 0.06, 0.04, 2),
     'white': paper((246, 243, 233), 0.02, 0.02, 3), 'news': newsprint(), 'grid': grid(),
-    'sky': halftone((150, 200, 228), (232, 244, 250), 11, 0.32, 4), 'sun': halftone((247, 140, 40), (226, 84, 30), 9, 0.4, 5),
+    # Card blue #3e8ab8. The old light sky sat ~60 ΔE away, so deliver.py flagged the preset itself.
+    'sky': halftone((62, 138, 184), (186, 214, 230), 11, 0.22, 4), 'sun': halftone((247, 140, 40), (226, 84, 30), 9, 0.4, 5),
     'yellowdot': halftone((250, 214, 60), (236, 170, 30), 10, 0.45, 6),
     'grass': paper((96, 160, 74), 0.08, 0.05, 7), 'grass2': paper((66, 126, 64), 0.08, 0.05, 8),
     'straw': straw(), 'mud': paper((186, 132, 82), 0.09, 0.05, 9), 'dark': paper((66, 44, 34), 0.05, 0.04, 10),
@@ -138,7 +163,7 @@ def piece(cv, shapes, tex, seed, b, torn=True, rim=0, shadow=0.3, angle=0.0, alp
 # —— 勒索信字 ——
 STYLES = [('white', (0.08, 0.08, 0.08)), ('black', (0.97, 0.95, 0.9)), ('red', (0.98, 0.96, 0.9)), ('yellow', (0.08, 0.08, 0.08)),
           ('news', (0.08, 0.08, 0.08)), ('blue', (0.98, 0.96, 0.9)), ('pink', (0.1, 0.08, 0.08)), ('white', (0.78, 0.12, 0.1)), ('grid', (0.08, 0.08, 0.08))]
-def ransom(cv, text, cx, y, size, t_in, step, te, b, seed, show=True, left=False):
+def ransom(cv, text, cx, y, size, t_in, step, te, b, seed, show=True, left=False, alpha=1.0):
     rs = np.random.default_rng(seed); items = []
     for ch in text:
         if ch == ' ': items.append(None); continue
@@ -151,11 +176,31 @@ def ransom(cv, text, cx, y, size, t_in, step, te, b, seed, show=True, left=False
         if it is not None and show and te >= ti:
             ch, (bg, fg), fk, sz, ang, dy = it; pop = 1.14 if te < ti + 1 / 12 + 1e-6 else 1.0; sz *= pop
             fx, fy = x + a / 2, y + dy; fw = font(fk, sz).getlength(ch)
-            piece(cv, [('rect', fx - fw / 2 - 12, fy - sz * 0.58, fx + fw / 2 + 12, fy + sz * 0.58)], bg, seed + i, b, rough=0.7, shadow=0.35, angle=ang)
-            piece(cv, [('text', fx, fy, ch, fk, sz, 'mm')], fg, seed + i + 50, b, torn=False, shadow=0, angle=ang)
+            piece(cv, [('rect', fx - fw / 2 - 12, fy - sz * 0.58, fx + fw / 2 + 12, fy + sz * 0.58)], bg, seed + i, b, rough=0.7, shadow=0.35, angle=ang, alpha=alpha)
+            piece(cv, [('text', fx, fy, ch, fk, sz, 'mm')], fg, seed + i + 50, b, torn=False, shadow=0, angle=ang, alpha=alpha)
         x += a
 
 ease = lambda u: 1 - (1 - min(max(u, 0), 1)) ** 3
+_FROZEN = {}
+def pull_sheet(cv, t):
+    """Pull the title sheet off with a torn edge on the 30 fps clock.
+
+    Sliding the whole textured sheet decorrelates every pixel and trips the
+    jump check even when the step is small. A torn wipe only changes a strip,
+    and the soft edge is the motion blur. Poses still step at 12 fps; this
+    helper is what a rewrite should call for a full-page entrance or exit.
+    """
+    if 'sheet' not in _FROZEN:
+        sheet = np.zeros((H, W, 3), np.float32); title(sheet, PULL_T0, 0); _FROZEN['sheet'] = sheet
+    sheet = _FROZEN['sheet']
+    lin = min(max((t - PULL_T0) / PULL_DUR, 0.0), 1.0)
+    edge = (W + 80) - PULL_TRAVEL * smoothstep(lin)
+    tear = cv2.resize(TEAR[0], (1, H), interpolation=cv2.INTER_AREA).ravel()
+    offset = (tear - float(np.mean(tear))) * 42
+    xs = np.arange(W, dtype=np.float32)
+    mask = (xs[None, :] < edge + offset[:, None]).astype(np.float32)
+    mask = cv2.GaussianBlur(mask, (0, 0), 6)
+    cv[:] = cv * (1.0 - mask[..., None]) + sheet * mask[..., None]
 
 def mouse(cv, x, gy, dirn, te, b, seed, run=True):
     K = 1.9; q = lambda lx, ly: (x + lx * K * dirn, gy + ly * K)
@@ -267,20 +312,21 @@ def frame(i):
             pop = 1.12 if te < 6.4 + 1 / 12 + 1e-6 else 1.0
             piece(cv, [('poly', [(1200, 480), (1240, 480), (1240, 520), (1262, 520), (1220, 560), (1178, 520), (1200, 520)])], 'red', 600, b, rim=3, angle=-12)
             piece(cv, [('rect', 1110, 360, 1110 + 330 * pop, 360 + 92 * pop)], 'black', 601, b, rim=6, angle=-4)
-            piece(cv, [('text', 1110 + 165 * pop, 406, 'WILDCAT', (SUP + 'Impact.ttf', 0), 72 * pop, 'mm')], (0.97, 0.95, 0.9), 602, b, torn=False, shadow=0, angle=-4)
+            piece(cv, [('text', 1110 + 165 * pop, 406, 'WILDCAT', face(SUP + 'Impact.ttf', 0), 72 * pop, 'mm')], (0.97, 0.95, 0.9), 602, b, torn=False, shadow=0, angle=-4)
             if te >= 6.75:
                 piece(cv, [('rect', 1150, 452, 1400, 496)], 'white', 603, b, rough=0.6, angle=3)
                 piece(cv, [('text', 1275, 474, 'Felis lybica', TYPE, 28, 'mm')], (0.15, 0.13, 0.12), 604, b, torn=False, shadow=0, angle=3)
-        if te < 5.1: ransom(cv, 'STORED GRAIN DREW MICE', W / 2, 985, 66, 3.0, 0.045, te, b, 800)
-        else: ransom(cv, '...AND MICE DREW WILDCATS', W / 2, 985, 66, 5.2, 0.04, te, b, 900)
-        if te < 2.76:                                                  # 标题纸整张往左抽走
-            sheet = np.zeros_like(cv); title(sheet, 2.4, b); u = ease((te - 2.4) / 0.36)
-            M = cv2.getRotationMatrix2D((W / 2, H / 2), 7 * u, 1.0); M[0, 2] -= 2300 * u; M[1, 2] -= 60 * u
-            sh = cv2.warpAffine(sheet, M, (W, H)); ma = np.ones((H, W), np.float32)
-            n = crop(TEAR[b], 0, 0, 80, H); ma[:, W - 80:] = np.clip((np.linspace(1, -1, 80)[None] * 2.5 + 0.6 * n), 0, 1)
-            ma = cv2.warpAffine(ma, M, (W, H))
-            cv *= 1 - 0.4 * cv2.GaussianBlur(np.roll(ma, (14, 18), (0, 1)), (0, 0), 14)[..., None]
-            cv[:] = cv * (1 - ma[..., None]) + sh * ma[..., None]
+        # Caption swap is a crossfade on the 30 fps clock. A hard cut here is a jump frame.
+        if t < 5.1:
+            ransom(cv, 'STORED GRAIN DREW MICE', W / 2, 985, 66, 3.0, 0.045, te, b, 800)
+        elif t < 5.34:
+            a = smoothstep((t - 5.1) / 0.24)
+            ransom(cv, 'STORED GRAIN DREW MICE', W / 2, 985, 66, 3.0, 0.045, te, b, 800, alpha=1 - a)
+            ransom(cv, '...AND MICE DREW WILDCATS', W / 2, 985, 66, 5.2, 0.04, te, b, 900, alpha=a)
+        else:
+            ransom(cv, '...AND MICE DREW WILDCATS', W / 2, 985, 66, 5.2, 0.04, te, b, 900)
+        if t < PULL_T0 + PULL_DUR:
+            pull_sheet(cv, t)
     # 灯光：左上偏亮的翻拍光 + 每拍纸面噪点 + 手持微抖
     gy_, gx_ = np.mgrid[0:H, 0:W].astype(np.float32)
     light = 1.05 - 0.12 * np.hypot((gx_ / W - 0.35) * 1.2, gy_ / H - 0.3)
